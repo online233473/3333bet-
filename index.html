@@ -205,6 +205,77 @@ body{font-family:'Noto Sans Bengali',sans-serif;background:#0a0a0a;color:#fff;mi
 .personal-privacy-text{color:#888;font-size:13px;line-height:1.6;text-align:center;margin-bottom:28px;padding:0 10px}
 .personal-submit{width:100%;padding:16px;border:none;border-radius:10px;background:#e53935;color:#fff;font-size:17px;font-weight:700;cursor:pointer;font-family:inherit;box-shadow:0 4px 15px rgba(229,57,53,0.35)}
 .personal-submit:active{opacity:0.9}
+
+/* ===== NAGAD PAY PAGE ===== */
+#secNagadPay{background:#ffffff;min-height:100vh;color:#222;padding-bottom:40px;display:none}
+#secNagadPay.active{display:block}
+.nagad-pay-header{background:#006b3f;color:#fff;padding:12px 16px 10px;display:flex;justify-content:space-between;align-items:flex-start}
+.nagad-pay-header .amount{font-size:22px;font-weight:700;letter-spacing:0.3px}
+.nagad-pay-header .header-note{font-size:13px;margin-top:2px;opacity:0.95}
+.nagad-pay-header .header-right{display:flex;flex-direction:column;align-items:flex-end;gap:6px}
+.nagad-pay-header .pay-service{background:#fff;color:#006b3f;font-size:11px;font-weight:700;padding:3px 8px;border-radius:3px;letter-spacing:0.5px}
+.nagad-pay-header .lang-switch{display:flex;border:1px solid rgba(255,255,255,0.6);border-radius:3px;overflow:hidden;font-size:12px}
+.nagad-pay-header .lang-switch span{padding:2px 8px;color:#fff}
+.nagad-pay-header .lang-switch .active{background:#fff;color:#006b3f;font-weight:600}
+.nagad-pay-content{padding:18px 16px 30px}
+.nagad-pay-warning{color:#e53935;font-size:15px;font-weight:500;line-height:1.45;margin-bottom:18px}
+.nagad-banner{background:#e53935;border-radius:8px;padding:12px 14px;display:flex;align-items:center;gap:12px;margin-bottom:20px;box-shadow:0 2px 4px rgba(0,0,0,0.08)}
+.nagad-logo{width:52px;height:52px;border-radius:50%;background:#ffffff;display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0;font-weight:800;font-size:14px;color:#f9641b}
+.nagad-title{color:#fff;font-size:18px;font-weight:700;letter-spacing:0.3px}
+.wallet-label{font-size:15px;font-weight:600;margin-bottom:4px}
+.wallet-label span{color:#e53935}
+.wallet-note{font-size:13.5px;color:#333;margin-bottom:8px;line-height:1.4}
+.wallet-box{background:#f0f0f0;border-radius:6px;padding:12px 14px;display:flex;justify-content:space-between;align-items:center;margin-bottom:22px;border:1px solid #e0e0e0}
+.wallet-number{font-size:18px;font-weight:600;letter-spacing:0.5px;color:#222}
+.copy-btn{background:none;border:none;padding:4px;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0.6;color:#555;font-size:18px}
+.copy-btn:active,.copy-btn.copied{opacity:1}
+.trx-label{font-size:15px;font-weight:600;margin-bottom:10px;color:#222}
+.trx-label .required{color:#e53935;font-weight:500}
+.trx-input{width:100%;border:2px solid #e53935;border-radius:6px;padding:14px 12px;font-size:15px;outline:none;background:#fff;color:#333;font-family:inherit}
+.trx-input::placeholder{color:#b0b0b0}
+.confirm-btn{display:block;width:160px;margin:28px auto 0;padding:11px 0;background:#fff;border:1.5px solid #888;border-radius:8px;font-size:16px;font-weight:500;color:#333;text-align:center;cursor:pointer;font-family:inherit;transition:all 0.25s ease}
+.confirm-btn.active{background:#006b3f;border-color:#006b3f;color:#fff}
+.confirm-btn.processing{background:#006b3f;border-color:#006b3f;color:#fff;pointer-events:none;opacity:0.9}
+.caution{margin-top:32px;font-size:13.5px;line-height:1.5}
+.caution-title{font-weight:700;color:#222;margin-bottom:4px}
+.caution-red{color:#e53935;font-weight:500;margin-bottom:6px}
+.caution-gray{color:#777;font-size:12.5px;line-height:1.55}
+.nagad-toast{position:fixed;bottom:40px;left:50%;transform:translateX(-50%) translateY(20px);background:#333;color:#fff;padding:8px 18px;border-radius:20px;font-size:13px;opacity:0;transition:all 0.3s ease;pointer-events:none;z-index:100}
+.nagad-toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* ===== BKASH PAY PAGE ===== */
+#secBkashPay{background:#ffffff;min-height:100vh;color:#222;padding-bottom:40px}
+.bkash-header{background:#006a4e;color:#fff;padding:16px 16px 14px;display:flex;align-items:center;justify-content:space-between;position:relative}
+.bkash-header .back-btn{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.25);display:flex;align-items:center;justify-content:center;font-size:26px;font-weight:300;line-height:1;cursor:pointer}
+.bkash-header .header-center{position:absolute;left:50%;transform:translateX(-50%);text-align:center;font-size:17px;font-weight:600;white-space:nowrap}
+.bkash-header .header-right{font-size:14px;font-weight:600;letter-spacing:0.5px;background:rgba(255,255,255,0.15);padding:5px 12px;border-radius:4px}
+.bkash-header-warning{background:#006a4e;color:#fff;text-align:center;font-size:14.5px;padding:0 12px 12px;font-weight:400}
+.bkash-content{padding:20px 16px 50px;background:#fff}
+.bkash-red-warning{color:#e53935;font-size:16px;line-height:1.5;font-weight:500;margin-bottom:18px}
+.bkash-btn-banner{background:#e2136e;border-radius:10px;padding:14px 16px;display:flex;align-items:center;gap:14px;margin-bottom:24px;box-shadow:0 2px 6px rgba(226,19,110,0.25)}
+.bkash-logo{width:52px;height:52px;background:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0;font-weight:800;font-size:13px;color:#e2136e}
+.bkash-text{color:#fff;font-size:18.5px;font-weight:600;letter-spacing:0.3px}
+.bkash-label{font-size:16.5px;font-weight:600;color:#222;margin-bottom:7px}
+.bkash-label .star{color:#e53935}
+.bkash-sub-label{font-size:15px;color:#333;margin-bottom:12px;line-height:1.45}
+.bkash-sub-label .red{color:#e53935;font-weight:600}
+.bkash-input-box{background:#f5f5f5;border-radius:10px;padding:14px;display:flex;align-items:center;gap:10px;margin-bottom:24px;border:1px solid #e8e8e8}
+.bkash-input-box .doc-icon{color:#4caf50;flex-shrink:0}
+.bkash-wallet-number{flex:1;font-size:17.5px;color:#222;font-weight:500;letter-spacing:0.5px;border:none;background:transparent;outline:none}
+.bkash-copy-btn{background:#e8f5e9;border:1px solid #a5d6a7;border-radius:7px;padding:7px 12px;font-size:13.5px;color:#2e7d32;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:5px;white-space:nowrap;transition:all 0.2s;flex-shrink:0;font-family:inherit}
+.bkash-copy-btn.copied{background:#4caf50;color:#fff;border-color:#4caf50}
+.bkash-trx-label{font-size:16px;color:#222;margin-bottom:12px;line-height:1.45}
+.bkash-trx-label .red{color:#e53935;font-weight:500}
+.bkash-trx-input{border:2px solid #e53935;border-radius:10px;padding:16px;font-size:16.5px;color:#222;margin-bottom:20px;background:#fff;width:100%;outline:none;font-family:inherit}
+.bkash-trx-input::placeholder{color:#b0b0b0}
+.bkash-confirm-btn{display:block;width:160px;margin:0 auto 26px;padding:13px 0;border:1.5px solid #bbb;border-radius:10px;background:#fff;color:#555;font-size:16.5px;font-weight:500;text-align:center;cursor:pointer;transition:all 0.25s ease;outline:none;font-family:inherit}
+.bkash-confirm-btn.active{background:#4caf50;border-color:#4caf50;color:#fff;box-shadow:0 2px 8px rgba(76,175,80,0.35)}
+.bkash-processing{display:none;text-align:center;margin:0 auto 26px;padding:16px 22px;background:#fff8e1;border:1.5px solid #ffc107;border-radius:10px;color:#f57f17;font-size:16.5px;font-weight:600;width:fit-content;max-width:90%}
+.bkash-processing.show{display:block}
+.bkash-processing .spinner{display:inline-block;width:18px;height:18px;border:2.5px solid #ffc107;border-top-color:transparent;border-radius:50%;animation:spin 0.8s linear infinite;margin-right:8px;vertical-align:middle}
+.bkash-caution-title{font-size:16px;font-weight:600;color:#222;margin-bottom:7px}
+.bkash-caution-text{color:#e53935;font-size:15px;line-height:1.5;margin-bottom:16px;font-weight:500}
+.bkash-note-text{color:#9e9e9e;font-size:14px;line-height:1.55}
 </style>
 </head>
 <body>
@@ -351,6 +422,82 @@ body{font-family:'Noto Sans Bengali',sans-serif;background:#0a0a0a;color:#fff;mi
       </div>
     </div>
     <button class="next-btn active" id="nextBtn" onclick="doDepositNew()">পরবর্তী</button>
+  </div>
+
+  <!-- NAGAD PAY PAGE -->
+  <div class="sec" id="secNagadPay">
+    <div class="nagad-pay-header">
+      <div>
+        <div class="amount" id="nagadAmountText">BDT 1,000.00</div>
+        <div class="header-note">কম বা বেশি সেন্ড মানি করবেন না</div>
+      </div>
+      <div class="header-right">
+        <div class="pay-service">PAY SERVICE</div>
+        <div class="lang-switch">
+          <span>EN</span>
+          <span class="active">বাং</span>
+        </div>
+      </div>
+    </div>
+    <div class="nagad-pay-content">
+      <div class="nagad-pay-warning" id="nagadWarningText">
+        আপনি যদি টাকার পরিমাণ পরিবর্তন করেন (BDT 1,000.00), আপনি ক্রেডিট পেতে সক্ষম হবেন না।
+      </div>
+      <div class="nagad-banner">
+        <div class="nagad-logo">নগদ</div>
+        <div class="nagad-title">NAGAD Deposit</div>
+      </div>
+      <div class="wallet-label">Wallet No<span>*</span></div>
+      <div class="wallet-note">এই NAGAD নাম্বারে শুধুমাত্র সেন্ড মানি গ্রহণ করা হয়</div>
+      <div class="wallet-box">
+        <div class="wallet-number" id="walletNumber">01356978043</div>
+        <button type="button" class="copy-btn" id="copyBtn" onclick="copyWalletNumber()"><i class="far fa-copy"></i></button>
+      </div>
+      <div class="trx-label">সেন্ড মানির TrxID নাম্বারটি লিখুন<span class="required">(প্রয়োজন)</span></div>
+      <input type="text" class="trx-input" id="trxInput" placeholder="TrxID অবশ্যই পূরণ করতে হবে!" autocomplete="off" oninput="updateNagadConfirmBtn()">
+      <button type="button" class="confirm-btn" id="confirmBtn" onclick="confirmNagadPay()">নিশ্চিত</button>
+      <div class="caution">
+        <div class="caution-title">সতর্কতাঃ</div>
+        <div class="caution-red">লেনদেন আইডি সঠিকভাবে পূরণ করতে হবে, অন্যথায় স্কোর ব্যর্থ হবে! !</div>
+        <div class="caution-gray">
+          অনুগ্রহ করে নিশ্চিত হয়ে নিন যে আপনি NAGAD deposit ওয়ালেট নাম্বারে সেন্ড মানি করছেন। এই নাম্বারের অন্য কোন ওয়ালেট থেকে সেন্ড মানি করলে সেই টাকা পাওয়ার কোন সম্ভাবনা নাই
+        </div>
+      </div>
+    </div>
+    <div class="nagad-toast" id="nagadToast">নম্বর কপি হয়েছে</div>
+  </div>
+
+  <!-- BKASH PAY PAGE -->
+  <div class="sec" id="secBkashPay">
+    <div class="bkash-header">
+      <div class="back-btn" onclick="showLoadingThen(function(){switchSec('Deposit')})">‹</div>
+      <div class="header-center" id="bkashAmountText">BDT 1,000.00</div>
+      <div class="header-right">PAY SERVICE</div>
+    </div>
+    <div class="bkash-header-warning">কম বা বেশি টাকা পাঠান করবেন না</div>
+    <div class="bkash-content">
+      <div class="bkash-red-warning" id="bkashWarningText">
+        আপনি যদি টাকার পরিমাণ পরিবর্তন করেন (BDT 1,000.00), আপনি ক্রেডিট পেতে সক্ষম হবেন না।
+      </div>
+      <div class="bkash-btn-banner">
+        <div class="bkash-logo">bKash</div>
+        <div class="bkash-text">BKASH Deposit</div>
+      </div>
+      <div class="bkash-label">Wallet No <span class="star">*</span></div>
+      <div class="bkash-sub-label">এই নাম্বারে শুধুমাত্র <span class="red">সেন্ড মানি</span> গ্রহণ করা হয়</div>
+      <div class="bkash-input-box">
+        <div class="doc-icon"><i class="fas fa-file-alt" style="color:#4caf50;font-size:18px"></i></div>
+        <input type="text" class="bkash-wallet-number" id="bkashWalletNo" value="01356978043" readonly>
+        <button class="bkash-copy-btn" id="bkashCopyBtn" onclick="copyBkashWallet()"><i class="far fa-copy"></i> কপি</button>
+      </div>
+      <div class="bkash-trx-label">সেন্ড মানির TrxID নাম্বারটি লিখুন<span class="red">(প্রয়োজন)</span></div>
+      <input type="text" class="bkash-trx-input" id="bkashTrxInput" placeholder="TrxID অবশ্যই পূরণ করতে হবে!" oninput="updateBkashConfirmBtn()">
+      <button class="bkash-confirm-btn" id="bkashConfirmBtn" onclick="confirmBkashPay()">নিশ্চিত</button>
+      <div class="bkash-processing" id="bkashProcessing"><span class="spinner"></span>প্রক্রিয়াধীন</div>
+      <div class="bkash-caution-title">সতর্কতাঃ</div>
+      <div class="bkash-caution-text">লেনদেন আইডি সঠিকভাবে পূরণ করতে হবে, অন্যথায় স্কোর ব্যর্থ হবে! !</div>
+      <div class="bkash-note-text">অনুগ্রহ করে নিশ্চিত হয়ে নিন যে আপনি deposit ওয়ালেট নাম্বারে সেন্ড মানি করছেন। এই নাম্বারের অন্য কোন ওয়ালেট থেকে সেন্ড মানি করলে সেই টাকা পাওয়ার কোন সম্ভাবনা নাই</div>
+    </div>
   </div>
 
   <!-- WITHDRAW -->
@@ -669,7 +816,7 @@ function switchSec(name){
   botItems.forEach(function(b){b.classList.remove('active');});
   var activeBtn=document.querySelector('.bot-item[data-sec="'+name+'"]');
   if(activeBtn)activeBtn.classList.add('active');
-  var hideTop=['Member','Withdraw','Deposit','Reward','Claim','Personal'];
+  var hideTop=['Member','Withdraw','Deposit','Reward','Claim','Personal','NagadPay','BkashPay'];
   document.getElementById('mainTopBar').style.display=hideTop.indexOf(name)!==-1?'none':'flex';
   window.scrollTo(0,0);
 }
@@ -694,7 +841,113 @@ function selectChannel(el){document.querySelectorAll('.channel-btn').forEach(fun
 function selectAmt(el,val){document.querySelectorAll('.amt-btn').forEach(function(a){a.classList.remove('selected');});el.classList.add('selected');document.getElementById('depAmount').value=val;checkNextBtn();}
 function selectPromo(el){document.querySelectorAll('.promo-radio').forEach(function(r){r.classList.remove('selected');r.querySelector('input').checked=false;});el.classList.add('selected');el.querySelector('input').checked=true;}
 function checkNextBtn(){var amt=parseInt(document.getElementById('depAmount').value);var btn=document.getElementById('nextBtn');if(amt&&amt>=300&&amt<=50000){btn.classList.add('active');}else{btn.classList.remove('active');}}
-function doDepositNew(){var amt=parseInt(document.getElementById('depAmount').value);if(!amt||amt<300){toast('ন্যূনতম ৳৩০০ জমা করুন','er');return;}if(amt>50000){toast('সর্বোচ্চ ৳৫০,০০০ জমা করা যাবে','er');return;}showLoadingThen(function(){balance+=amt;updateBal();toast('৳'+amt.toLocaleString('en-US')+' সফলভাবে জমা হয়েছে!');switchSec('Home');});}
+function doDepositNew(){
+  var amt=parseInt(document.getElementById('depAmount').value);
+  if(!amt||amt<300){toast('ন্যূনতম ৳৩০০ জমা করুন','er');return;}
+  if(amt>50000){toast('সর্বোচ্চ ৳৫০,০০০ জমা করা যাবে','er');return;}
+  var formatted=amt.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
+  // Nagad related methods → go to Nagad payment page
+  if(currentPayMethod==='nagad'||currentPayMethod==='nagad_sm'){
+    showLoadingThen(function(){
+      document.getElementById('nagadAmountText').textContent='BDT '+formatted;
+      document.getElementById('nagadWarningText').innerHTML='আপনি যদি টাকার পরিমাণ পরিবর্তন করেন (BDT '+formatted+'), আপনি ক্রেডিট পেতে সক্ষম হবেন না।';
+      document.getElementById('trxInput').value='';
+      var btn=document.getElementById('confirmBtn');
+      btn.classList.remove('active','processing');
+      btn.textContent='নিশ্চিত';
+      window.pendingDepositAmt=amt;
+      switchSec('NagadPay');
+    });
+    return;
+  }
+  // bKash method → go to bKash payment page
+  if(currentPayMethod==='bkash_sm'){
+    showLoadingThen(function(){
+      document.getElementById('bkashAmountText').textContent='BDT '+formatted;
+      document.getElementById('bkashWarningText').innerHTML='আপনি যদি টাকার পরিমাণ পরিবর্তন করেন (BDT '+formatted+'), আপনি ক্রেডিট পেতে সক্ষম হবেন না।';
+      document.getElementById('bkashTrxInput').value='';
+      var btn=document.getElementById('bkashConfirmBtn');
+      btn.classList.remove('active');
+      btn.style.display='block';
+      document.getElementById('bkashProcessing').classList.remove('show');
+      window.pendingDepositAmt=amt;
+      switchSec('BkashPay');
+    });
+    return;
+  }
+  // Other methods keep old instant credit for now
+  showLoadingThen(function(){balance+=amt;updateBal();toast('৳'+amt.toLocaleString('en-US')+' সফলভাবে জমা হয়েছে!');switchSec('Home');});
+}
+
+function copyWalletNumber(){
+  var number=document.getElementById('walletNumber').textContent.trim();
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(number).then(showNagadCopied).catch(function(){fallbackCopyNagad(number);});
+  }else{fallbackCopyNagad(number);}
+  function fallbackCopyNagad(n){
+    var ta=document.createElement('textarea');ta.value=n;ta.style.position='fixed';ta.style.left='-9999px';
+    document.body.appendChild(ta);ta.select();
+    try{document.execCommand('copy');showNagadCopied();}catch(e){}
+    document.body.removeChild(ta);
+  }
+  function showNagadCopied(){
+    document.getElementById('copyBtn').classList.add('copied');
+    var t=document.getElementById('nagadToast');t.classList.add('show');
+    setTimeout(function(){t.classList.remove('show');document.getElementById('copyBtn').classList.remove('copied');},1500);
+  }
+}
+function updateNagadConfirmBtn(){
+  var hasValue=document.getElementById('trxInput').value.trim().length>0;
+  var btn=document.getElementById('confirmBtn');
+  if(hasValue){btn.classList.add('active');}else{btn.classList.remove('active');}
+}
+function confirmNagadPay(){
+  var trx=document.getElementById('trxInput').value.trim();
+  if(!trx){document.getElementById('trxInput').focus();return;}
+  var btn=document.getElementById('confirmBtn');
+  btn.classList.remove('active');btn.classList.add('processing');btn.textContent='প্রক্রিয়াধীন';
+  var amt=window.pendingDepositAmt||0;
+  setTimeout(function(){
+    balance+=amt;updateBal();
+    toast('৳'+amt.toLocaleString('en-US')+' সফলভাবে জমা হয়েছে!');
+    switchSec('Home');
+  },1800);
+}
+
+function copyBkashWallet(){
+  var number=document.getElementById('bkashWalletNo').value;
+  var btn=document.getElementById('bkashCopyBtn');
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(number).then(function(){
+      btn.classList.add('copied');
+      btn.innerHTML='<i class="fas fa-check"></i> কপি হয়েছে';
+      setTimeout(function(){btn.classList.remove('copied');btn.innerHTML='<i class="far fa-copy"></i> কপি';},2000);
+    }).catch(function(){fallbackBkashCopy(number);});
+  }else{fallbackBkashCopy(number);}
+  function fallbackBkashCopy(n){
+    var ta=document.createElement('textarea');ta.value=n;ta.style.position='fixed';ta.style.left='-9999px';
+    document.body.appendChild(ta);ta.select();
+    try{document.execCommand('copy');btn.classList.add('copied');btn.innerHTML='<i class="fas fa-check"></i> কপি হয়েছে';setTimeout(function(){btn.classList.remove('copied');btn.innerHTML='<i class="far fa-copy"></i> কপি';},2000);}catch(e){}
+    document.body.removeChild(ta);
+  }
+}
+function updateBkashConfirmBtn(){
+  var hasValue=document.getElementById('bkashTrxInput').value.trim().length>0;
+  var btn=document.getElementById('bkashConfirmBtn');
+  if(hasValue){btn.classList.add('active');}else{btn.classList.remove('active');}
+}
+function confirmBkashPay(){
+  var trx=document.getElementById('bkashTrxInput').value.trim();
+  if(!trx){document.getElementById('bkashTrxInput').focus();return;}
+  document.getElementById('bkashConfirmBtn').style.display='none';
+  document.getElementById('bkashProcessing').classList.add('show');
+  var amt=window.pendingDepositAmt||0;
+  setTimeout(function(){
+    balance+=amt;updateBal();
+    toast('৳'+amt.toLocaleString('en-US')+' সফলভাবে জমা হয়েছে!');
+    switchSec('Home');
+  },1800);
+}
 
 function goWalletCard(idx){currentWalletCard=idx;var track=document.getElementById('walletCardsTrack');if(track)track.style.transform='translateX(-'+(idx*50)+'%)';document.getElementById('dot0').style.background=idx===0?'#2196f3':'#ccc';document.getElementById('dot1').style.background=idx===1?'#2196f3':'#ccc';}
 function togglePass(){var inp=document.getElementById('witPass');var icon=document.getElementById('toggleWitPass');if(inp.type==='password'){inp.type='text';icon.classList.remove('fa-eye-slash');icon.classList.add('fa-eye');}else{inp.type='password';icon.classList.remove('fa-eye');icon.classList.add('fa-eye-slash');}}
