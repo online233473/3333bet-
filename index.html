@@ -10,6 +10,12 @@
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Noto Sans Bengali',sans-serif;background:#0a0a0a;color:#fff;min-height:100vh;overflow-x:hidden}
 
+#pageLoader{position:fixed;inset:0;z-index:99998;background:rgba(0,0,0,.75);display:none;align-items:center;justify-content:center;flex-direction:column;gap:14px}
+#pageLoader.show{display:flex}
+.spinner{width:42px;height:42px;border:4px solid rgba(255,215,0,.2);border-top-color:#ffd700;border-radius:50%;animation:spin .7s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+#pageLoader p{font-size:14px;color:#ffd700}
+
 #loader{position:fixed;inset:0;z-index:99999;background:#000;display:flex;align-items:center;justify-content:center;transition:opacity .45s,visibility .45s}
 #loader.hide{opacity:0;visibility:hidden;pointer-events:none}
 #loader img{width:100%;height:100%;object-fit:cover}
@@ -82,18 +88,18 @@ body{font-family:'Noto Sans Bengali',sans-serif;background:#0a0a0a;color:#fff;mi
 .g-card .heart{position:absolute;top:6px;right:6px;color:rgba(255,255,255,.65);font-size:13px}
 .g-card p{padding:7px 4px;text-align:center;font-size:11px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 
-.sec{display:none;padding:16px;padding-bottom:30px}
+.sec{display:none;padding-bottom:30px}
 .sec.active{display:block}
-.sec-title{font-size:18px;font-weight:700;margin-bottom:18px;display:flex;align-items:center;gap:8px}
+.sec-title{font-size:18px;font-weight:700;margin-bottom:18px;display:flex;align-items:center;gap:8px;padding:16px 16px 0}
 .sec-title i{color:#ffd700}
 
-.dep-amounts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:18px}
+.dep-amounts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:0 16px 18px}
 .dep-amt{background:#161616;border:1.5px solid #333;border-radius:10px;padding:14px 8px;text-align:center;cursor:pointer;font-weight:600}
 .dep-amt.on{border-color:#ffd700;color:#ffd700;background:rgba(255,215,0,.06)}
-.dep-input{margin-bottom:16px}
+.dep-input{margin:0 16px 16px}
 .dep-input label{display:block;font-size:12px;color:#888;margin-bottom:6px}
 .dep-input input{width:100%;padding:14px;background:#111;border:1.5px solid #333;border-radius:10px;color:#fff;font-size:18px;font-family:'Rajdhani',sans-serif;font-weight:700;outline:none}
-.pay-methods{margin-top:20px}
+.pay-methods{margin:20px 16px 0}
 .pay-methods h4{font-size:14px;color:#aaa;margin-bottom:10px}
 .pm-item{display:flex;align-items:center;gap:12px;padding:14px;background:#161616;border:1px solid #222;border-radius:12px;margin-bottom:8px;cursor:pointer}
 .pm-icon{width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px}
@@ -101,33 +107,18 @@ body{font-family:'Noto Sans Bengali',sans-serif;background:#0a0a0a;color:#fff;mi
 .pm-icon.nagad{background:rgba(249,100,27,.15);color:#f9641b}
 .pm-icon.rocket{background:rgba(112,54,160,.15);color:#9b59b6}
 .pm-info h5{font-size:14px}.pm-info p{font-size:11px;color:#888}
-.btn-main{width:100%;padding:15px;border:none;border-radius:50px;background:linear-gradient(90deg,#ffd700,#f5a623);color:#111;font-size:16px;font-weight:700;cursor:pointer;font-family:inherit;margin-top:10px}
+.btn-main{width:calc(100% - 32px);margin:10px 16px;padding:15px;border:none;border-radius:50px;background:linear-gradient(90deg,#ffd700,#f5a623);color:#111;font-size:16px;font-weight:700;cursor:pointer;font-family:inherit}
 
-.wit-info{background:#161616;border-radius:12px;padding:16px;margin-bottom:16px;border:1px solid #222}
+.wit-info{background:#161616;border-radius:12px;padding:16px;margin:0 16px 16px;border:1px solid #222}
 .wit-info p{font-size:13px;color:#aaa;margin-bottom:6px}
 .wit-info strong{color:#ffd700;font-size:20px}
 
-.promo-card{background:#161616;border-radius:14px;overflow:hidden;margin-bottom:14px;border:1px solid #222}
+.promo-card{background:#161616;border-radius:14px;overflow:hidden;margin:0 16px 14px;border:1px solid #222}
 .promo-card img{width:100%;height:110px;object-fit:cover}
 .promo-card .body{padding:14px}
 .promo-card h4{font-size:15px;margin-bottom:4px}
 .promo-card p{font-size:12px;color:#999;margin-bottom:10px}
 .promo-card .tag{display:inline-block;background:rgba(255,215,0,.12);color:#ffd700;font-size:11px;padding:3px 10px;border-radius:20px}
-
-.profile-head{text-align:center;padding:20px 0 24px}
-.profile-av{width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,#ffd700,#f5a623);color:#111;font-size:30px;font-weight:700;display:flex;align-items:center;justify-content:center;margin:0 auto 12px}
-.profile-head h3{font-size:18px;margin-bottom:2px}
-.profile-head p{font-size:12px;color:#888}
-.profile-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:20px}
-.stat-box{background:#161616;border-radius:12px;padding:14px 8px;text-align:center;border:1px solid #222}
-.stat-box h4{font-family:'Rajdhani',sans-serif;font-size:18px;color:#ffd700}
-.stat-box p{font-size:11px;color:#888;margin-top:2px}
-.menu-list{display:flex;flex-direction:column;gap:6px}
-.menu-item{display:flex;align-items:center;gap:12px;padding:15px 16px;background:#161616;border:1px solid #222;border-radius:12px;cursor:pointer;font-size:14px;color:#ddd}
-.menu-item i{width:22px;color:#ffd700;font-size:15px}
-.menu-item .arrow{margin-left:auto;color:#555;font-size:12px}
-.menu-item.danger{color:#e53935}
-.menu-item.danger i{color:#e53935}
 
 .bot-nav{position:fixed;bottom:0;left:0;right:0;background:#111;display:flex;padding:6px 0 10px;border-top:1px solid #222;z-index:100}
 .bot-item{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;background:none;border:none;color:#777;font-size:10px;cursor:pointer;font-family:inherit;padding:4px 0;position:relative}
@@ -151,7 +142,12 @@ body{font-family:'Noto Sans Bengali',sans-serif;background:#0a0a0a;color:#fff;mi
   <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIIPcIJuKiif4Q8ZVcAHmISMBUJ0xWJi-f5TNYZD39V8dhUX7cgIYITBc&s=10" alt="">
 </div>
 
-<!-- AUTH PAGE -->
+<div id="pageLoader">
+  <div class="spinner"></div>
+  <p>লোড হচ্ছে...</p>
+</div>
+
+<!-- AUTH -->
 <div id="authPage">
   <div class="auth-box">
     <div class="logo">
@@ -188,7 +184,7 @@ body{font-family:'Noto Sans Bengali',sans-serif;background:#0a0a0a;color:#fff;mi
 
 <!-- DASHBOARD -->
 <div id="dash">
-  <div class="top-bar">
+  <div class="top-bar" id="mainTopBar">
     <div class="top-logo">🦁 3333<b>bet</b></div>
     <div class="top-user">
       <span class="vip">VIP5</span>
@@ -201,7 +197,6 @@ body{font-family:'Noto Sans Bengali',sans-serif;background:#0a0a0a;color:#fff;mi
   <!-- HOME -->
   <div class="sec active" id="secHome">
     <div class="promo-bar"><i class="fas fa-volume-up"></i><span>bKash: রক্ষণাবেক্ষণ চলছে</span></div>
-
     <div class="banner-slider">
       <div class="banner-track" id="bannerTrack">
         <img src="https://images.6223027.com/mcs-images/announcement/xfbdtf5/1781751092226_default_mobile.png" alt="Banner 1">
@@ -212,15 +207,13 @@ body{font-family:'Noto Sans Bengali',sans-serif;background:#0a0a0a;color:#fff;mi
         <span onclick="goBanner(1)"></span>
       </div>
     </div>
-
     <div class="icon-menu">
-      <div class="icon-item" onclick="toast('Hot Games')"><i class="fas fa-heart"></i><span>Hot Games</span></div>
-      <div class="icon-item" onclick="toast('Services')"><i class="fas fa-headset"></i><span>Services</span></div>
-      <div class="icon-item" onclick="toast('Cashback')"><i class="fas fa-coins"></i><span>Cashback</span></div>
-      <div class="icon-item" onclick="toast('Agent')"><i class="fas fa-handshake"></i><span>Agent</span></div>
-      <div class="icon-item" onclick="toast('Reward')"><i class="fas fa-trophy badge"></i><span>Reward</span></div>
+      <div class="icon-item" onclick="showLoadingThen(function(){toast('Hot Games')})"><i class="fas fa-heart"></i><span>Hot Games</span></div>
+      <div class="icon-item" onclick="showLoadingThen(function(){toast('Services')})"><i class="fas fa-headset"></i><span>Services</span></div>
+      <div class="icon-item" onclick="showLoadingThen(function(){toast('Cashback')})"><i class="fas fa-coins"></i><span>Cashback</span></div>
+      <div class="icon-item" onclick="showLoadingThen(function(){toast('Agent')})"><i class="fas fa-handshake"></i><span>Agent</span></div>
+      <div class="icon-item" onclick="showLoadingThen(function(){toast('Reward')})"><i class="fas fa-trophy badge"></i><span>Reward</span></div>
     </div>
-
     <div class="main-wrap">
       <div class="left-cat">
         <div class="cat-item active"><i class="fas fa-dice"></i>Casino</div>
@@ -229,63 +222,44 @@ body{font-family:'Noto Sans Bengali',sans-serif;background:#0a0a0a;color:#fff;mi
         <div class="cat-item"><i class="fas fa-spade"></i>Poker</div>
         <div class="cat-item"><i class="fas fa-futbol"></i>Sports</div>
       </div>
-
       <div class="games-area">
         <div class="games-title"><i class="fas fa-fire"></i> Hot Games</div>
         <div class="game-grid">
-          <!-- Aviator -->
-          <div class="g-card" onclick="toast('Aviator লোড হচ্ছে...')">
+          <div class="g-card" onclick="showLoadingThen(function(){toast('Aviator লোড হচ্ছে...')})">
             <img src="https://images.6223027.com/TCG_GAME_ICONS/SPB/EN/SPB002.avif" alt="Aviator">
-            <i class="far fa-heart heart"></i>
-            <p>Aviator</p>
+            <i class="far fa-heart heart"></i><p>Aviator</p>
           </div>
-          <!-- Super Ace -->
-          <div class="g-card" onclick="toast('Super Ace')">
+          <div class="g-card" onclick="showLoadingThen(function(){toast('Super Ace')})">
             <img src="https://images.6223027.com/TCG_GAME_ICONS/JL/EN/JL0033.avif" alt="Super Ace">
-            <i class="far fa-heart heart"></i>
-            <p>Super Ace</p>
+            <i class="far fa-heart heart"></i><p>Super Ace</p>
           </div>
-          <!-- SUPER ELEMENTS 2 -->
-          <div class="g-card" onclick="toast('SUPER ELEMENTS 2')">
+          <div class="g-card" onclick="showLoadingThen(function(){toast('SUPER ELEMENTS 2')})">
             <img src="https://images.6223027.com/TCG_GAME_ICONS/FC/EN/22098.avif" alt="SUPER ELEMENTS 2">
-            <i class="far fa-heart heart"></i>
-            <p>SUPER ELEMENTS 2</p>
+            <i class="far fa-heart heart"></i><p>SUPER ELEMENTS 2</p>
           </div>
-          <!-- Wild Bounty Showdown -->
-          <div class="g-card" onclick="toast('Wild Bounty Showdown')">
+          <div class="g-card" onclick="showLoadingThen(function(){toast('Wild Bounty Showdown')})">
             <img src="https://images.6223027.com/TCG_GAME_ICONS/PG/EN/PG0113.avif" alt="Wild Bounty Showdown">
-            <i class="far fa-heart heart"></i>
-            <p>Wild Bounty Showdown</p>
+            <i class="far fa-heart heart"></i><p>Wild Bounty Showdown</p>
           </div>
-          <!-- Super Ace Deluxe -->
-          <div class="g-card" onclick="toast('Super Ace Deluxe')">
+          <div class="g-card" onclick="showLoadingThen(function(){toast('Super Ace Deluxe')})">
             <img src="https://images.6223027.com/TCG_GAME_ICONS/JL/EN/JL0162.avif" alt="Super Ace Deluxe">
-            <i class="far fa-heart heart"></i>
-            <p>Super Ace Deluxe</p>
+            <i class="far fa-heart heart"></i><p>Super Ace Deluxe</p>
           </div>
-          <!-- Super Elements -->
-          <div class="g-card" onclick="toast('Super Elements')">
+          <div class="g-card" onclick="showLoadingThen(function(){toast('Super Elements')})">
             <img src="https://images.6223027.com/TCG_GAME_ICONS/FC/EN/FC0045.avif" alt="Super Elements">
-            <i class="far fa-heart heart"></i>
-            <p>Super Elements</p>
+            <i class="far fa-heart heart"></i><p>Super Elements</p>
           </div>
-          <!-- Boxing King -->
-          <div class="g-card" onclick="toast('Boxing King')">
+          <div class="g-card" onclick="showLoadingThen(function(){toast('Boxing King')})">
             <img src="https://images.6223027.com/TCG_GAME_ICONS/JL/EN/JL0038.avif" alt="Boxing King">
-            <i class="far fa-heart heart"></i>
-            <p>Boxing King</p>
+            <i class="far fa-heart heart"></i><p>Boxing King</p>
           </div>
-          <!-- Fortune Gems 3 -->
-          <div class="g-card" onclick="toast('Fortune Gems 3')">
+          <div class="g-card" onclick="showLoadingThen(function(){toast('Fortune Gems 3')})">
             <img src="https://images.6223027.com/TCG_GAME_ICONS/JL/EN/JL0156.avif" alt="Fortune Gems 3">
-            <i class="far fa-heart heart"></i>
-            <p>Fortune Gems 3</p>
+            <i class="far fa-heart heart"></i><p>Fortune Gems 3</p>
           </div>
-          <!-- Fortune Garuda 500 -->
-          <div class="g-card" onclick="toast('Fortune Garuda 500')">
+          <div class="g-card" onclick="showLoadingThen(function(){toast('Fortune Garuda 500')})">
             <img src="https://images.6223027.com/TCG_GAME_ICONS/JL/EN/696.avif" alt="Fortune Garuda 500">
-            <i class="far fa-heart heart"></i>
-            <p>Fortune Garuda 500</p>
+            <i class="far fa-heart heart"></i><p>Fortune Garuda 500</p>
           </div>
         </div>
       </div>
@@ -330,25 +304,123 @@ body{font-family:'Noto Sans Bengali',sans-serif;background:#0a0a0a;color:#fff;mi
     <div class="promo-card"><img src="https://picsum.photos/seed/pr3/600/200"><div class="body"><h4>রেফার অ্যান্ড আর্ন</h4><p>বন্ধুকে ইনভাইট করুন, প্রতি রেফারে ৳২০০</p><span class="tag">রেফার</span></div></div>
   </div>
 
-  <!-- MEMBER -->
-  <div class="sec" id="secMember">
-    <div class="profile-head">
-      <div class="profile-av" id="profileAv">U</div>
-      <h3 id="profileName">User</h3>
-      <p>ID: MC-829461 · VIP5</p>
+  <!-- MEMBER (White Background + Profile Image) -->
+  <div class="sec" id="secMember" style="background:#ffffff;min-height:100vh;color:#333">
+    <div style="display:flex;align-items:center;padding:14px 16px;background:#fff;border-bottom:1px solid #eee;position:sticky;top:0;z-index:10">
+      <div onclick="showLoadingThen(function(){switchSec('Home')})" style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:18px;color:#333">
+        <i class="fas fa-arrow-left"></i>
+      </div>
+      <h2 style="flex:1;text-align:center;font-size:17px;font-weight:600;margin-right:36px;color:#222">আমার অ্যাকাউন্ট</h2>
     </div>
-    <div class="profile-stats">
-      <div class="stat-box"><h4 id="statBal">৳ ০</h4><p>ব্যালেন্স</p></div>
-      <div class="stat-box"><h4>১২</h4><p>মোট গেম</p></div>
-      <div class="stat-box"><h4>৩</h4><p>জয়</p></div>
+
+    <div style="margin:16px;background:linear-gradient(135deg,#f8f9fc,#eef1f8);border-radius:16px;padding:20px;position:relative;overflow:hidden;border:1px solid #e0e4ef;box-shadow:0 2px 12px rgba(0,0,0,.06)">
+      <div style="position:absolute;top:10px;right:15px;opacity:.12;font-size:80px;color:#c9a227"><i class="fas fa-medal"></i></div>
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:16px">
+        <img id="profileAv" src="https://images.3521315.com//TCG_PROD_IMAGES/B2C/333BDTF7/PROFILE/1.png" alt="Profile"
+             style="width:70px;height:70px;border-radius:50%;object-fit:cover;border:3px solid #ffd700;flex-shrink:0;background:#eee">
+        <div>
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
+            <span style="background:#333;color:#ffd700;font-size:11px;padding:3px 10px;border-radius:20px;font-weight:600">
+              <i class="fas fa-crown" style="font-size:10px"></i> VIP0
+            </span>
+          </div>
+          <div style="font-size:16px;font-weight:600;display:flex;align-items:center;gap:6px;color:#222">
+            <span id="profileId">1340148599</span>
+            <i class="far fa-copy" style="font-size:13px;color:#999;cursor:pointer" onclick="toast('কপি করা হয়েছে')"></i>
+          </div>
+          <div style="font-size:12px;color:#888;margin-top:3px">যোগদান করেছেন: 2026-08-20</div>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:18px">
+        <div style="font-size:26px;font-weight:700;color:#e6a800;font-family:'Rajdhani',sans-serif" id="memberBal">৳ 0.00</div>
+        <div onclick="toast('রিফ্রেশ করা হয়েছে')" style="width:34px;height:34px;border-radius:50%;background:rgba(0,0,0,.05);display:flex;align-items:center;justify-content:center;cursor:pointer">
+          <i class="fas fa-sync-alt" style="color:#666;font-size:14px"></i>
+        </div>
+      </div>
+      <div style="display:flex;gap:10px">
+        <button onclick="showLoadingThen(function(){switchSec('Deposit')})" style="flex:1;padding:11px 0;border:none;border-radius:25px;background:#fff;color:#333;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;box-shadow:0 2px 8px rgba(0,0,0,.08)">জমা দিন</button>
+        <button onclick="showLoadingThen(function(){switchSec('Withdraw')})" style="flex:1;padding:11px 0;border:none;border-radius:25px;background:#fff;color:#333;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;box-shadow:0 2px 8px rgba(0,0,0,.08)">উত্তোলন</button>
+        <button onclick="toast('আমার কার্ড')" style="flex:1;padding:11px 0;border:none;border-radius:25px;background:#fff;color:#333;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;box-shadow:0 2px 8px rgba(0,0,0,.08)">আমার কার্ড</button>
+      </div>
     </div>
-    <div class="menu-list">
-      <div class="menu-item" onclick="toast('প্রোফাইল এডিট')"><i class="fas fa-user-edit"></i> প্রোফাইল এডিট <i class="fas fa-chevron-right arrow"></i></div>
-      <div class="menu-item" onclick="toast('লেনদেনের ইতিহাস')"><i class="fas fa-receipt"></i> লেনদেনের ইতিহাস <i class="fas fa-chevron-right arrow"></i></div>
-      <div class="menu-item" onclick="toast('গেম ইতিহাস')"><i class="fas fa-history"></i> গেম ইতিহাস <i class="fas fa-chevron-right arrow"></i></div>
-      <div class="menu-item" onclick="toast('সিকিউরিটি')"><i class="fas fa-shield-halved"></i> সিকিউরিটি <i class="fas fa-chevron-right arrow"></i></div>
-      <div class="menu-item" onclick="toast('সাপোর্ট')"><i class="fas fa-headset"></i> সাপোর্ট <i class="fas fa-chevron-right arrow"></i></div>
-      <div class="menu-item danger" id="menuLogout"><i class="fas fa-sign-out-alt"></i> লগআউট <i class="fas fa-chevron-right arrow"></i></div>
+
+    <div style="padding:0 16px 20px">
+      <div style="display:inline-block;background:#f0f0f0;color:#b8860b;font-size:12px;padding:4px 12px;border-radius:20px;margin-bottom:16px;font-weight:500">সদস্য সেন্টার</div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px 8px">
+        <div onclick="showLoadingThen(function(){toast('পুরস্কার সেন্টার')})" style="text-align:center;cursor:pointer">
+          <div style="width:48px;height:48px;border-radius:50%;background:#fff8e7;margin:0 auto 6px;display:flex;align-items:center;justify-content:center;position:relative;box-shadow:0 2px 6px rgba(0,0,0,.06)">
+            <i class="fas fa-trophy" style="color:#d4a017;font-size:18px"></i>
+            <span style="position:absolute;top:-4px;right:-4px;background:#e53935;color:#fff;font-size:9px;width:16px;height:16px;border-radius:50%;display:flex;align-items:center;justify-content:center">3</span>
+          </div>
+          <div style="font-size:11px;color:#555;line-height:1.3">পুরস্কার<br>সেন্টার</div>
+        </div>
+        <div onclick="showLoadingThen(function(){toast('বেটিং রেকর্ড')})" style="text-align:center;cursor:pointer">
+          <div style="width:48px;height:48px;border-radius:50%;background:#fff8e7;margin:0 auto 6px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(0,0,0,.06)"><i class="fas fa-star" style="color:#d4a017;font-size:18px"></i></div>
+          <div style="font-size:11px;color:#555;line-height:1.3">বেটিং<br>রেকর্ড</div>
+        </div>
+        <div onclick="showLoadingThen(function(){toast('লাভ এবং লস')})" style="text-align:center;cursor:pointer">
+          <div style="width:48px;height:48px;border-radius:50%;background:#fff8e7;margin:0 auto 6px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(0,0,0,.06)"><i class="fas fa-file-invoice-dollar" style="color:#d4a017;font-size:18px"></i></div>
+          <div style="font-size:11px;color:#555;line-height:1.3">লাভ এবং<br>লস</div>
+        </div>
+        <div onclick="showLoadingThen(function(){toast('জমা রেকর্ড')})" style="text-align:center;cursor:pointer">
+          <div style="width:48px;height:48px;border-radius:50%;background:#fff8e7;margin:0 auto 6px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(0,0,0,.06)"><i class="fas fa-clipboard-list" style="color:#d4a017;font-size:18px"></i></div>
+          <div style="font-size:11px;color:#555;line-height:1.3">জমা<br>রেকর্ড</div>
+        </div>
+        <div onclick="showLoadingThen(function(){toast('উত্তোলন রেকর্ড')})" style="text-align:center;cursor:pointer">
+          <div style="width:48px;height:48px;border-radius:50%;background:#fff8e7;margin:0 auto 6px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(0,0,0,.06)"><i class="fas fa-clipboard-check" style="color:#d4a017;font-size:18px"></i></div>
+          <div style="font-size:11px;color:#555;line-height:1.3">উত্তোলন<br>রেকর্ড</div>
+        </div>
+        <div onclick="showLoadingThen(function(){toast('অ্যাকাউন্ট রেকর্ড')})" style="text-align:center;cursor:pointer">
+          <div style="width:48px;height:48px;border-radius:50%;background:#fff8e7;margin:0 auto 6px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(0,0,0,.06)"><i class="fas fa-history" style="color:#d4a017;font-size:18px"></i></div>
+          <div style="font-size:11px;color:#555;line-height:1.3">অ্যাকাউন্ট<br>রেকর্ড</div>
+        </div>
+        <div onclick="showLoadingThen(function(){toast('আমার অ্যাকাউন্ট')})" style="text-align:center;cursor:pointer">
+          <div style="width:48px;height:48px;border-radius:50%;background:#fff8e7;margin:0 auto 6px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(0,0,0,.06)"><i class="fas fa-user" style="color:#d4a017;font-size:18px"></i></div>
+          <div style="font-size:11px;color:#555;line-height:1.3">আমার<br>অ্যাকাউন্ট</div>
+        </div>
+        <div onclick="showLoadingThen(function(){toast('সুরক্ষা কেন্দ্র')})" style="text-align:center;cursor:pointer">
+          <div style="width:48px;height:48px;border-radius:50%;background:#fff8e7;margin:0 auto 6px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(0,0,0,.06)"><i class="fas fa-shield-alt" style="color:#d4a017;font-size:18px"></i></div>
+          <div style="font-size:11px;color:#555;line-height:1.3">সুরক্ষা<br>কেন্দ্র</div>
+        </div>
+        <div onclick="showLoadingThen(function(){toast('বন্ধুদের আমন্ত্রণ')})" style="text-align:center;cursor:pointer">
+          <div style="width:48px;height:48px;border-radius:50%;background:#fff8e7;margin:0 auto 6px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(0,0,0,.06)"><i class="fas fa-user-plus" style="color:#d4a017;font-size:18px"></i></div>
+          <div style="font-size:11px;color:#555;line-height:1.3">বন্ধুদের<br>আমন্ত্রণ</div>
+        </div>
+        <div onclick="showLoadingThen(function(){toast('মিশন')})" style="text-align:center;cursor:pointer">
+          <div style="width:48px;height:48px;border-radius:50%;background:#fff8e7;margin:0 auto 6px;display:flex;align-items:center;justify-content:center;position:relative;box-shadow:0 2px 6px rgba(0,0,0,.06)">
+            <i class="fas fa-gift" style="color:#d4a017;font-size:18px"></i>
+            <span style="position:absolute;top:-4px;right:-4px;background:#e53935;color:#fff;font-size:9px;width:16px;height:16px;border-radius:50%;display:flex;align-items:center;justify-content:center">1</span>
+          </div>
+          <div style="font-size:11px;color:#555;line-height:1.3">মিশন</div>
+        </div>
+        <div onclick="showLoadingThen(function(){toast('রিবেট')})" style="text-align:center;cursor:pointer">
+          <div style="width:48px;height:48px;border-radius:50%;background:#fff8e7;margin:0 auto 6px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(0,0,0,.06)"><i class="fas fa-hand-holding-usd" style="color:#d4a017;font-size:18px"></i></div>
+          <div style="font-size:11px;color:#555;line-height:1.3">রিবেট</div>
+        </div>
+        <div onclick="showLoadingThen(function(){toast('মেইল')})" style="text-align:center;cursor:pointer">
+          <div style="width:48px;height:48px;border-radius:50%;background:#fff8e7;margin:0 auto 6px;display:flex;align-items:center;justify-content:center;position:relative;box-shadow:0 2px 6px rgba(0,0,0,.06)">
+            <i class="fas fa-envelope" style="color:#d4a017;font-size:18px"></i>
+            <span style="position:absolute;top:-4px;right:-4px;background:#e53935;color:#fff;font-size:9px;width:16px;height:16px;border-radius:50%;display:flex;align-items:center;justify-content:center">1</span>
+          </div>
+          <div style="font-size:11px;color:#555;line-height:1.3">মেইল</div>
+        </div>
+        <div onclick="showLoadingThen(function(){toast('পরামর্শ')})" style="text-align:center;cursor:pointer">
+          <div style="width:48px;height:48px;border-radius:50%;background:#fff8e7;margin:0 auto 6px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(0,0,0,.06)"><i class="fas fa-comment-dots" style="color:#d4a017;font-size:18px"></i></div>
+          <div style="font-size:11px;color:#555;line-height:1.3">পরামর্শ</div>
+        </div>
+        <div onclick="showLoadingThen(function(){toast('অ্যাপ')})" style="text-align:center;cursor:pointer">
+          <div style="width:48px;height:48px;border-radius:50%;background:#fff8e7;margin:0 auto 6px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(0,0,0,.06)"><i class="fas fa-mobile-alt" style="color:#d4a017;font-size:18px"></i></div>
+          <div style="font-size:11px;color:#555;line-height:1.3">অ্যাপ</div>
+        </div>
+        <div onclick="showLoadingThen(function(){toast('কাস্টমার')})" style="text-align:center;cursor:pointer">
+          <div style="width:48px;height:48px;border-radius:50%;background:#fff8e7;margin:0 auto 6px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(0,0,0,.06)"><i class="fas fa-headset" style="color:#d4a017;font-size:18px"></i></div>
+          <div style="font-size:11px;color:#555;line-height:1.3">কাস্টমার</div>
+        </div>
+        <div onclick="showLoadingThen(function(){toast('সাহায্য কেন্দ্র')})" style="text-align:center;cursor:pointer">
+          <div style="width:48px;height:48px;border-radius:50%;background:#fff8e7;margin:0 auto 6px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(0,0,0,.06)"><i class="fas fa-question-circle" style="color:#d4a017;font-size:18px"></i></div>
+          <div style="font-size:11px;color:#555;line-height:1.3">সাহায্য<br>কেন্দ্র</div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -379,6 +451,15 @@ function toast(msg, type){
   setTimeout(function(){ t.remove(); }, 2600);
 }
 
+function showLoadingThen(callback){
+  var loader = document.getElementById('pageLoader');
+  loader.classList.add('show');
+  setTimeout(function(){
+    loader.classList.remove('show');
+    if(callback) callback();
+  }, 700);
+}
+
 var balance = 0;
 var currentBanner = 0;
 
@@ -396,7 +477,7 @@ setInterval(function(){
 document.getElementById('loginBtn').onclick = function(){
   var user = document.getElementById('loginUser').value.trim();
   if(!user){ toast('ইউজারনেম লিখুন', 'er'); return; }
-  enterDash(user);
+  showLoadingThen(function(){ enterDash(user); });
 };
 document.getElementById('regBtn').onclick = function(){
   var name = document.getElementById('regName').value.trim();
@@ -405,15 +486,14 @@ document.getElementById('regBtn').onclick = function(){
   if(!name){ toast('নাম লিখুন', 'er'); return; }
   if(p1 !== p2){ toast('পাসওয়ার্ড মিলছে না!', 'er'); return; }
   toast('অ্যাকাউন্ট তৈরি সফল!');
-  setTimeout(function(){ enterDash(name); }, 600);
+  showLoadingThen(function(){ enterDash(name); });
 };
 
 function enterDash(name){
   document.getElementById('authPage').classList.remove('show');
   document.getElementById('dash').classList.add('show');
   document.getElementById('dashUser').textContent = name;
-  document.getElementById('profileName').textContent = name;
-  document.getElementById('profileAv').textContent = name.charAt(0).toUpperCase();
+  document.getElementById('profileId').textContent = Math.floor(1000000000 + Math.random() * 900000000);
   updateBal();
   toast('স্বাগতম, ' + name + '!');
 }
@@ -422,20 +502,20 @@ function updateBal(){
   var txt = '৳ ' + balance.toLocaleString('bn-BD');
   document.getElementById('balText').textContent = txt;
   document.getElementById('witBal').textContent = txt;
-  document.getElementById('statBal').textContent = txt;
+  document.getElementById('memberBal').textContent = txt;
 }
 
-document.getElementById('logoutBtn').onclick = logout;
-document.getElementById('menuLogout').onclick = logout;
-function logout(){
-  document.getElementById('dash').classList.remove('show');
-  document.getElementById('authPage').classList.add('show');
-  showLogin();
-  document.getElementById('loginUser').value = '';
-  document.getElementById('loginPass').value = '';
-  switchSec('Home');
-  toast('লগআউট সফল');
-}
+document.getElementById('logoutBtn').onclick = function(){
+  showLoadingThen(function(){
+    document.getElementById('dash').classList.remove('show');
+    document.getElementById('authPage').classList.add('show');
+    showLogin();
+    document.getElementById('loginUser').value = '';
+    document.getElementById('loginPass').value = '';
+    switchSec('Home');
+    toast('লগআউট সফল');
+  });
+};
 
 document.getElementById('showRegBtn').onclick = function(e){ e.preventDefault(); showReg(); };
 document.getElementById('showLoginBtn').onclick = function(e){ e.preventDefault(); showLogin(); };
@@ -453,13 +533,19 @@ function showLogin(){
 
 var botItems = document.querySelectorAll('.bot-item');
 botItems.forEach(function(btn){
-  btn.onclick = function(){ switchSec(this.getAttribute('data-sec')); };
+  btn.onclick = function(){
+    var sec = this.getAttribute('data-sec');
+    showLoadingThen(function(){ switchSec(sec); });
+  };
 });
+
 function switchSec(name){
   document.querySelectorAll('.sec').forEach(function(s){ s.classList.remove('active'); });
   document.getElementById('sec' + name).classList.add('active');
   botItems.forEach(function(b){ b.classList.remove('active'); });
-  document.querySelector('.bot-item[data-sec="'+name+'"]').classList.add('active');
+  var activeBtn = document.querySelector('.bot-item[data-sec="'+name+'"]');
+  if(activeBtn) activeBtn.classList.add('active');
+  document.getElementById('mainTopBar').style.display = (name === 'Member') ? 'none' : 'flex';
   window.scrollTo(0,0);
 }
 
@@ -471,9 +557,11 @@ function selAmt(el, val){
 function doDeposit(){
   var amt = parseInt(document.getElementById('depAmount').value);
   if(!amt || amt < 100){ toast('ন্যূনতম ৳১০০ জমা করুন', 'er'); return; }
-  balance += amt;
-  updateBal();
-  toast('৳' + amt.toLocaleString('bn-BD') + ' সফলভাবে জমা হয়েছে!');
+  showLoadingThen(function(){
+    balance += amt;
+    updateBal();
+    toast('৳' + amt.toLocaleString('bn-BD') + ' সফলভাবে জমা হয়েছে!');
+  });
 }
 function doWithdraw(){
   var amt = parseInt(document.getElementById('witAmount').value);
@@ -481,11 +569,13 @@ function doWithdraw(){
   if(!amt || amt < 100){ toast('ন্যূনতম ৳১০০ উত্তোলন করুন', 'er'); return; }
   if(amt > balance){ toast('পর্যাপ্ত ব্যালেন্স নেই', 'er'); return; }
   if(!num || num.length < 11){ toast('সঠিক নম্বর দিন', 'er'); return; }
-  balance -= amt;
-  updateBal();
-  toast('৳' + amt.toLocaleString('bn-BD') + ' উত্তোলনের অনুরোধ নেওয়া হয়েছে');
-  document.getElementById('witAmount').value = '';
-  document.getElementById('witNumber').value = '';
+  showLoadingThen(function(){
+    balance -= amt;
+    updateBal();
+    toast('৳' + amt.toLocaleString('bn-BD') + ' উত্তোলনের অনুরোধ নেওয়া হয়েছে');
+    document.getElementById('witAmount').value = '';
+    document.getElementById('witNumber').value = '';
+  });
 }
 </script>
 </body>
