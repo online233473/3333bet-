@@ -49,7 +49,7 @@ body{font-family:'Noto Sans Bengali',sans-serif;background:#0a0a0a;color:#fff;mi
 .top-user{display:flex;align-items:center;gap:8px}
 .top-user .vip{background:linear-gradient(90deg,#ffd700,#f5a623);color:#111;font-size:11px;font-weight:700;padding:3px 8px;border-radius:4px}
 .top-user .uname{font-size:13px;color:#bbb}
-.top-user .bal{font-size:15px;font-weight:700;color:#ffd700}
+.top-user .bal{font-size:15px;font-weight:700;color:#ffd700;font-family:Arial,Helvetica,sans-serif}
 .top-user .logout{width:32px;height:32px;border-radius:50%;border:1px solid #444;background:#1a1a1a;color:#aaa;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:14px}
 .promo-bar{background:#161616;padding:10px 14px;display:flex;align-items:center;gap:8px;font-size:13px;color:#ccc;border-bottom:1px solid #222}
 .promo-bar i{color:#ffd700;font-size:15px}
@@ -90,7 +90,7 @@ body{font-family:'Noto Sans Bengali',sans-serif;background:#0a0a0a;color:#fff;mi
 .bot-item.promo .p-circle i{color:#111;font-size:22px}
 .bot-item.promo .p-circle .dot{position:absolute;top:3px;right:3px;width:11px;height:11px;background:#e53935;border-radius:50%;border:2px solid #111}
 .bot-item .m-badge{position:absolute;top:0;right:14px;background:#e53935;color:#fff;font-size:10px;width:16px;height:16px;border-radius:50%;display:flex;align-items:center;justify-content:center}
-.toast{position:fixed;top:18px;right:14px;padding:12px 16px;border-radius:10px;font-size:13px;z-index:9999;animation:slideIn .3s;max-width:260px}
+.toast{position:fixed;top:18px;right:14px;padding:12px 16px;border-radius:10px;font-size:13px;z-index:9999;animation:slideIn .3s;max-width:280px}
 .toast.ok{background:#00c853;color:#000}
 .toast.er{background:#e53935;color:#fff}
 @keyframes slideIn{from{transform:translateX(80px);opacity:0}to{transform:none;opacity:1}}
@@ -130,6 +130,60 @@ body{font-family:'Noto Sans Bengali',sans-serif;background:#0a0a0a;color:#fff;mi
 .promo-radio .right{margin-left:auto;font-size:13px;color:#888}
 .next-btn{position:fixed;bottom:78px;left:0;right:0;background:#e0e0e0;color:#999;text-align:center;padding:16px;font-size:17px;font-weight:600;cursor:pointer;z-index:90;border:none;font-family:inherit;transition:all .2s}
 .next-btn.active{background:#e53935;color:#fff}
+
+/* PROMO CARDS */
+.promo-card{background:#161616;border-radius:14px;overflow:hidden;margin:0 16px 16px;border:1px solid #222}
+.promo-card img{width:100%;height:160px;object-fit:cover;display:block}
+.promo-card .body{padding:14px}
+.promo-card h4{font-size:15px;margin-bottom:6px;color:#ffd700}
+.promo-card p{font-size:13px;color:#aaa;margin-bottom:10px;line-height:1.5}
+.promo-card .tag{display:inline-block;background:rgba(255,215,0,.12);color:#ffd700;font-size:11px;padding:3px 10px;border-radius:20px}
+
+/* ===== REWARD CENTER ===== */
+#secReward{background:#f5f5f5;min-height:100vh;color:#333;padding-bottom:90px}
+.reward-header{background:linear-gradient(180deg,#ff6b00 0%,#ff8c00 100%);padding:16px 16px 40px;position:relative;text-align:center}
+.reward-header .back{position:absolute;left:14px;top:16px;width:36px;height:36px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:20px;color:#fff}
+.reward-header .title{font-size:18px;font-weight:600;color:#fff;padding-top:4px}
+.reward-card{background:#fff;border-radius:16px;margin:-30px 16px 20px;padding:18px;box-shadow:0 4px 20px rgba(0,0,0,.08);position:relative;z-index:5}
+.reward-card .user-row{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.reward-card .user-row img{width:52px;height:52px;border-radius:50%;object-fit:cover;border:2px solid #ffd700}
+.reward-card .user-info{flex:1}
+.reward-card .user-info .uid{font-size:15px;font-weight:600;color:#333;display:flex;align-items:center;gap:6px}
+.reward-card .user-info .bal{font-size:16px;font-weight:700;color:#333;font-family:Arial,Helvetica,sans-serif;margin-top:2px}
+.reward-card .vip-row{display:flex;align-items:center;justify-content:space-between;margin-top:8px}
+.reward-card .vip-badge{display:inline-flex;align-items:center;gap:4px;font-size:13px;color:#666}
+.reward-card .progress{height:4px;background:#eee;border-radius:2px;margin-top:10px;overflow:hidden}
+.reward-card .progress-bar{height:100%;width:0%;background:#ff6b00}
+.reward-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:0 16px 20px}
+.reward-box{border-radius:14px;padding:24px 12px;text-align:center;cursor:pointer;position:relative;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff}
+.reward-box.green{background:linear-gradient(135deg,#00c853,#00e676)}
+.reward-box.orange{background:linear-gradient(135deg,#ff9800,#ffb74d)}
+.reward-box.pink{background:linear-gradient(135deg,#e91e63,#f06292);grid-column:1 / -1}
+.reward-box i{font-size:32px;margin-bottom:10px}
+.reward-box span{font-size:14px;font-weight:600}
+.reward-box .badge-num{position:absolute;top:10px;right:14px;background:#e53935;color:#fff;font-size:12px;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700}
+
+/* ===== CLAIM PAGE ===== */
+#secClaim{background:#f0f4f8;min-height:100vh;color:#333;padding-bottom:90px}
+.claim-header{background:linear-gradient(180deg,#2196f3 0%,#42a5f5 100%);padding:20px 16px 50px;position:relative}
+.claim-header .back{position:absolute;left:14px;top:16px;width:36px;height:36px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:20px;color:#fff}
+.claim-header .user-area{display:flex;align-items:center;gap:12px;padding-top:10px}
+.claim-header .user-area img{width:56px;height:56px;border-radius:50%;border:3px solid rgba(255,255,255,.5);object-fit:cover}
+.claim-header .user-area .info .uid{font-size:16px;font-weight:600;color:#fff}
+.claim-header .user-area .info .bal{font-size:18px;font-weight:700;color:#fff;font-family:Arial,Helvetica,sans-serif;margin-top:2px}
+.claim-list{margin:-30px 12px 20px;position:relative;z-index:5}
+.claim-item{background:#fff;border-radius:14px;padding:14px;margin-bottom:12px;display:flex;align-items:center;gap:12px;box-shadow:0 2px 10px rgba(0,0,0,.06)}
+.claim-item .coupon{min-width:90px;padding:14px 10px;border-radius:10px;color:#fff;text-align:center;font-size:12px;font-weight:600;line-height:1.4}
+.claim-item .coupon.orange{background:linear-gradient(135deg,#ff6b00,#ff9800)}
+.claim-item .coupon.pink{background:linear-gradient(135deg,#e91e63,#f06292)}
+.claim-item .coupon.purple{background:linear-gradient(135deg,#9c27b0,#ba68c8)}
+.claim-item .details{flex:1}
+.claim-item .details h5{font-size:14px;font-weight:600;color:#333;margin-bottom:4px}
+.claim-item .details p{font-size:12px;color:#888;line-height:1.4}
+.claim-item .right{text-align:right}
+.claim-item .right .days{font-size:12px;color:#999;margin-bottom:6px}
+.claim-item .right .days strong{font-size:20px;color:#333;display:block}
+.claim-item .right .btn-claim{background:#4caf50;color:#fff;border:none;border-radius:20px;padding:8px 18px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit}
 </style>
 </head>
 <body>
@@ -165,7 +219,7 @@ body{font-family:'Noto Sans Bengali',sans-serif;background:#0a0a0a;color:#fff;mi
     <div class="top-user">
       <span class="vip">VIP5</span>
       <span class="uname" id="dashUser">Ruminfarhana83</span>
-      <span class="bal" id="balText">৳ 45,000.00</span>
+      <span class="bal" id="balText">৳ 45,670.00</span>
       <div class="logout" id="logoutBtn"><i class="fas fa-power-off"></i></div>
     </div>
   </div>
@@ -191,7 +245,7 @@ body{font-family:'Noto Sans Bengali',sans-serif;background:#0a0a0a;color:#fff;mi
       <div class="icon-item" onclick="openCustomerService()"><i class="fas fa-headset"></i><span>Services</span></div>
       <div class="icon-item" onclick="showLoadingThen(function(){toast('Cashback')})"><i class="fas fa-coins"></i><span>Cashback</span></div>
       <div class="icon-item" onclick="showLoadingThen(function(){toast('Agent')})"><i class="fas fa-handshake"></i><span>Agent</span></div>
-      <div class="icon-item" onclick="showLoadingThen(function(){toast('Reward')})"><i class="fas fa-trophy badge"></i><span>Reward</span></div>
+      <div class="icon-item" onclick="showLoadingThen(function(){switchSec('Reward')})"><i class="fas fa-trophy badge"></i><span>Reward</span></div>
     </div>
     <div class="main-wrap">
       <div class="left-cat">
@@ -229,37 +283,16 @@ body{font-family:'Noto Sans Bengali',sans-serif;background:#0a0a0a;color:#fff;mi
     <div class="dep-header">
       <div class="back" onclick="showLoadingThen(function(){switchSec('Home')})"><i class="fas fa-arrow-left"></i></div>
       <div class="title">জমা দিন</div>
-      <div class="icons">
-        <i class="fas fa-clipboard-list" onclick="toast('জমা রেকর্ড')"></i>
-        <i class="fas fa-headset" onclick="openCustomerService()"></i>
-      </div>
+      <div class="icons"><i class="fas fa-clipboard-list" onclick="toast('জমা রেকর্ড')"></i><i class="fas fa-headset" onclick="openCustomerService()"></i></div>
     </div>
     <div class="dep-section">
       <div class="dep-section-title">আমানতের মোড</div>
       <div class="pay-mode-grid" id="payModeGrid">
-        <div class="pay-mode-card selected" data-method="nagad" onclick="selectPayMode(this,'nagad')">
-          <div class="logo-box" style="background:#f9641b">নগদ</div>
-          <div class="name">NAGAD</div>
-        </div>
-        <div class="pay-mode-card" data-method="rocket" onclick="selectPayMode(this,'rocket')">
-          <div class="logo-box" style="background:#8e24aa">ROCKET</div>
-          <div class="name">ROCKET</div>
-        </div>
-        <div class="pay-mode-card" data-method="nagad_sm" onclick="selectPayMode(this,'nagad_sm')">
-          <div class="logo-box" style="background:#f9641b;font-size:11px">Nagad</div>
-          <div class="name">Send Money</div>
-          <div class="sub">Nagad</div>
-        </div>
-        <div class="pay-mode-card" data-method="bkash_sm" onclick="selectPayMode(this,'bkash_sm')">
-          <div class="logo-box" style="background:#e2136e;font-size:11px">bKash</div>
-          <div class="name">Send Money</div>
-          <div class="sub">Bkash</div>
-        </div>
-        <div class="pay-mode-card usdt" data-method="usdt" onclick="selectPayMode(this,'usdt')">
-          <div class="logo-box">T</div>
-          <div class="name">USDT</div>
-          <div class="sub" style="color:#e53935">+5%</div>
-        </div>
+        <div class="pay-mode-card selected" data-method="nagad" onclick="selectPayMode(this,'nagad')"><div class="logo-box" style="background:#f9641b">নগদ</div><div class="name">NAGAD</div></div>
+        <div class="pay-mode-card" data-method="rocket" onclick="selectPayMode(this,'rocket')"><div class="logo-box" style="background:#8e24aa">ROCKET</div><div class="name">ROCKET</div></div>
+        <div class="pay-mode-card" data-method="nagad_sm" onclick="selectPayMode(this,'nagad_sm')"><div class="logo-box" style="background:#f9641b;font-size:11px">Nagad</div><div class="name">Send Money</div><div class="sub">Nagad</div></div>
+        <div class="pay-mode-card" data-method="bkash_sm" onclick="selectPayMode(this,'bkash_sm')"><div class="logo-box" style="background:#e2136e;font-size:11px">bKash</div><div class="name">Send Money</div><div class="sub">Bkash</div></div>
+        <div class="pay-mode-card usdt" data-method="usdt" onclick="selectPayMode(this,'usdt')"><div class="logo-box">T</div><div class="name">USDT</div><div class="sub" style="color:#e53935">+5%</div></div>
       </div>
     </div>
     <div class="dep-section"><div class="warning-box" id="warningText1">অনুগ্রহ করে আপনার (Nagad) একাউন্টের মাধ্যমে অর্থ স্থানান্তর করুন এবং পেমেন্ট পাতায় (TRX ID) অনুলিপি করে সঠিকভাবে পূরণ করুন। <span>⚠️ ⚠️ ⚠️</span> যদি আপনি (TRX ID) না লিখেন বা ভুল লিখেন, তাহলে আপনার লেনদেন সফলভাবে সম্পন্ন হবে না।</div></div>
@@ -347,8 +380,8 @@ body{font-family:'Noto Sans Bengali',sans-serif;background:#0a0a0a;color:#fff;mi
           <div>🔒 দয়া করে আবার পরীক্ষা করুন এবং নিরাপদে উত্তোলন সম্পন্ন করুন! 💰</div>
         </div>
         <div style="margin-bottom:4px">দৈনিক উত্তোলন ৯৯ (বার), অবশিষ্ট উত্তোলন ৯৯ (বার)</div>
-        <div style="margin-bottom:2px">প্রধান ওয়ালেট : ৳ <span id="witMainBal" style="color:#000;font-weight:600">45,000.00</span></div>
-        <div style="margin-bottom:14px">উপলব্ধ পরিমাণ : ৳ <span id="witAvailBal" style="color:#000;font-weight:600">45,000.00</span></div>
+        <div style="margin-bottom:2px">প্রধান ওয়ালেট : ৳ <span id="witMainBal" style="color:#000;font-weight:600;font-family:Arial,Helvetica,sans-serif">45,670.00</span></div>
+        <div style="margin-bottom:14px">উপলব্ধ পরিমাণ : ৳ <span id="witAvailBal" style="color:#000;font-weight:600;font-family:Arial,Helvetica,sans-serif">45,670.00</span></div>
       </div>
       <div style="padding:0 16px;margin-bottom:16px"><button onclick="updateBal();toast('ব্যালেন্স রিফ্রেশ হয়েছে')" style="width:100%;padding:12px;border:none;border-radius:25px;background:#e3f2fd;color:#1976d2;font-size:15px;font-weight:600;cursor:pointer;font-family:inherit;display:flex;align-items:center;justify-content:center;gap:8px"><i class="fas fa-sync-alt"></i> আপনার ব্যালেন্স রিফ্রেশ করুন</button></div>
       <div style="padding:0 16px 20px;background:#fff;margin:0 0 10px;border-top:1px solid #eee">
@@ -362,9 +395,102 @@ body{font-family:'Noto Sans Bengali',sans-serif;background:#0a0a0a;color:#fff;mi
     <div id="cryptoPanel" style="display:none;background:#f5f5f5;min-height:70vh;padding:40px 20px;text-align:center;color:#999"><i class="fab fa-bitcoin" style="font-size:48px;margin-bottom:12px;color:#f9a825"></i><div style="font-size:16px">Crypto Wallet coming soon</div></div>
   </div>
 
+  <!-- PROMO -->
   <div class="sec" id="secPromo">
     <div class="sec-title"><i class="fas fa-gift"></i> প্রমোশন</div>
-    <div style="background:#161616;border-radius:14px;overflow:hidden;margin:0 16px 14px;border:1px solid #222"><img src="https://images.6223027.com/mcs-images/announcement/xfbdtf5/1781751092226_default_mobile.png" alt="Promo 1" style="width:100%;height:145px;object-fit:cover"><div style="padding:14px"><h4 style="font-size:15px;margin-bottom:6px">🎉 ওয়েলকাম বোনাস</h4><p style="font-size:13px;color:#999;margin-bottom:10px;line-height:1.5">নতুন সদস্যদের জন্য প্রথম ডিপোজিটে <strong>১০০% বোনাস</strong> — সর্বোচ্চ ৳১০,০০০ পর্যন্ত।</p><span style="display:inline-block;background:rgba(255,215,0,.12);color:#ffd700;font-size:11px;padding:3px 10px;border-radius:20px">নতুন ইউজার</span></div></div>
+    <div class="promo-card"><img src="https://images.3521315.com/mcs-images/announcement/333bdtf7/3050182_1778609757067.png" alt="Promo 1"><div class="body"><h4>🎉 ওয়েলকাম বোনাস ১০০%</h4><p>নতুন সদস্যদের জন্য প্রথম ডিপোজিটে <strong>১০০% বোনাস</strong> — সর্বোচ্চ ৳১০,০০০ পর্যন্ত পান।</p><span class="tag">নতুন ইউজার</span></div></div>
+    <div class="promo-card"><img src="https://images.3521315.com/mcs-images/announcement/333bdtf7/3028437_1758355166759.jpeg" alt="Promo 2"><div class="body"><h4>💰 দৈনিক রিলোড বোনাস</h4><p>প্রতিদিন ডিপোজিট করলেই পাবেন অতিরিক্ত <strong>২০% রিলোড বোনাস</strong>।</p><span class="tag">দৈনিক</span></div></div>
+    <div class="promo-card"><img src="https://images.3521315.com/mcs-images/announcement/333bdtf7/3050183_1781432360666.gif" alt="Promo 3"><div class="body"><h4>🔥 স্পেশাল ক্যাশব্যাক</h4><p>হারানো বাজির উপর প্রতিদিন <strong>১০% ক্যাশব্যাক</strong> ফিরে পান।</p><span class="tag">ক্যাশব্যাক</span></div></div>
+    <div class="promo-card"><img src="https://images.3521315.com/mcs-images/announcement/333bdtf7/3050183_1780980852624.gif" alt="Promo 4"><div class="body"><h4>🎰 ফ্রি স্পিন অফার</h4><p>৳২,০০০+ ডিপোজিটে পান <strong>৫০ ফ্রি স্পিন</strong> + অতিরিক্ত বোনাস।</p><span class="tag">ফ্রি স্পিন</span></div></div>
+    <div class="promo-card"><img src="https://images.3521315.com/mcs-images/announcement/333bdtf7/3645089_1780073282687.gif" alt="Promo 5"><div class="body"><h4>👥 রেফার অ্যান্ড আর্ন</h4><p>বন্ধুকে ইনভাইট করুন এবং প্রতি সফল রেফারে পাবেন <strong>৳৫০০ বোনাস</strong>।</p><span class="tag">রেফার</span></div></div>
+    <div class="promo-card"><img src="https://images.3521315.com/mcs-images/announcement/333bdtf7/3645089_1778487114639.png" alt="Promo 6"><div class="body"><h4>🏆 VIP এক্সক্লুসিভ বোনাস</h4><p>VIP সদস্যদের জন্য বিশেষ <strong>৫০% ডিপোজিট বোনাস</strong> + সাপ্তাহিক ক্যাশব্যাক।</p><span class="tag">VIP</span></div></div>
+  </div>
+
+  <!-- REWARD CENTER -->
+  <div class="sec" id="secReward">
+    <div class="reward-header">
+      <div class="back" onclick="showLoadingThen(function(){switchSec('Home')})"><i class="fas fa-arrow-left"></i></div>
+      <div class="title">পুরস্কার সেন্টার</div>
+    </div>
+    <div class="reward-card">
+      <div class="user-row">
+        <img src="https://images.3521315.com//TCG_PROD_IMAGES/B2C/333BDTF7/PROFILE/1.png" alt="Profile">
+        <div class="user-info">
+          <div class="uid">Ruminfarhana83 <i class="far fa-copy" style="font-size:13px;color:#999;cursor:pointer" onclick="toast('কপি করা হয়েছে')"></i></div>
+          <div class="bal">৳ 45,670.00 <i class="fas fa-sync-alt" style="font-size:13px;color:#999;cursor:pointer" onclick="toast('রিফ্রেশ')"></i></div>
+        </div>
+      </div>
+      <div class="vip-row">
+        <div class="vip-badge"><i class="fas fa-crown" style="color:#ffd700"></i> VIP0</div>
+        <div style="font-size:13px;color:#999;cursor:pointer" onclick="toast('সুবিধা')">সুবিধা <i class="fas fa-chevron-right" style="font-size:11px"></i></div>
+      </div>
+      <div class="progress"><div class="progress-bar"></div></div>
+      <div style="text-align:right;font-size:12px;color:#999;margin-top:4px">0/1</div>
+    </div>
+    <div class="reward-grid">
+      <div class="reward-box green" onclick="showLoadingThen(function(){switchSec('Claim')})">
+        <div class="badge-num">3</div>
+        <i class="fas fa-gift"></i>
+        <span>দাবি করা</span>
+      </div>
+      <div class="reward-box orange" onclick="toast('উদ্ধার তহবিল')">
+        <i class="fas fa-coins"></i>
+        <span>উদ্ধার তহবিল</span>
+      </div>
+      <div class="reward-box pink" onclick="toast('বন্ধুদের আমন্ত্রণ')">
+        <i class="fas fa-user-plus"></i>
+        <span>বন্ধুদের আমন্ত্রণ জানান</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CLAIM PAGE -->
+  <div class="sec" id="secClaim">
+    <div class="claim-header">
+      <div class="back" onclick="showLoadingThen(function(){switchSec('Reward')})"><i class="fas fa-arrow-left"></i></div>
+      <div class="user-area">
+        <img src="https://images.3521315.com//TCG_PROD_IMAGES/B2C/333BDTF7/PROFILE/1.png" alt="Profile">
+        <div class="info">
+          <div class="uid">Ruminfarhana83</div>
+          <div class="bal">৳ 45,670.00</div>
+        </div>
+      </div>
+    </div>
+    <div class="claim-list">
+      <div class="claim-item">
+        <div class="coupon orange">কুপন<br>ভাঙুন ও জিতুন!<br>2026.08.21</div>
+        <div class="details">
+          <h5>প্রতিদিন লগইন করলেই গোল্ডেন এগ...</h5>
+          <p>পুরস্কার : প্রতিদিন লগইন করলেই গোল্ডেন এগ ভাঙতে পারবেন</p>
+        </div>
+        <div class="right">
+          <div class="days">নির্ধারিত তারিখ<br><strong>0</strong>দিন<br>17:17:11</div>
+          <button class="btn-claim" onclick="toast('দাবি সফল!')">দাবি</button>
+        </div>
+      </div>
+      <div class="claim-item">
+        <div class="coupon pink">কুপন<br>পুরস্কার চক্র<br>2026.08.21</div>
+        <div class="details">
+          <h5>iPhone 17 Pro Max জিততে দৈনিক...</h5>
+          <p>পুরস্কার : iPhone 17 Pro Max জিততে দৈনিক ডিপোজিট করুন</p>
+        </div>
+        <div class="right">
+          <div class="days">নির্ধারিত তারিখ<br><strong>0</strong>দিন<br>17:17:11</div>
+          <button class="btn-claim" onclick="toast('দাবি সফল!')">দাবি</button>
+        </div>
+      </div>
+      <div class="claim-item">
+        <div class="coupon purple">কুপন<br>লাল প্যাকেজ<br>2026.08.21</div>
+        <div class="details">
+          <h5>প্রতিদিন ভাগ্যবান লাল খাম, সর্বোচ্চ বোনাস...</h5>
+          <p>পুরস্কার : প্রতিদিন ভাগ্যবান লাল খাম, সর্বোচ্চ বোনাস 88888</p>
+        </div>
+        <div class="right">
+          <div class="days">নির্ধারিত তারিখ<br><strong>0</strong>দিন<br>17:17:11</div>
+          <button class="btn-claim" onclick="toast('দাবি সফল!')">দাবি</button>
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- MEMBER -->
@@ -384,7 +510,7 @@ body{font-family:'Noto Sans Bengali',sans-serif;background:#0a0a0a;color:#fff;mi
         </div>
       </div>
       <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:18px">
-        <div style="font-size:28px;font-weight:700;color:#000;font-family:'Rajdhani',sans-serif" id="memberBal">৳ 45,000.00</div>
+        <div style="font-size:28px;font-weight:700;color:#000;font-family:Arial,Helvetica,sans-serif" id="memberBal">৳ 45,670.00</div>
         <div onclick="toast('রিফ্রেশ করা হয়েছে')" style="width:36px;height:36px;border-radius:50%;background:rgba(0,0,0,.05);display:flex;align-items:center;justify-content:center;cursor:pointer"><i class="fas fa-sync-alt" style="color:#666;font-size:15px"></i></div>
       </div>
       <div style="display:flex;gap:10px">
@@ -396,7 +522,7 @@ body{font-family:'Noto Sans Bengali',sans-serif;background:#0a0a0a;color:#fff;mi
     <div style="padding:0 16px 20px">
       <div style="display:inline-block;background:#f0f0f0;color:#b8860b;font-size:13px;padding:5px 14px;border-radius:20px;margin-bottom:18px;font-weight:500">সদস্য সেন্টার</div>
       <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:18px 10px">
-        <div onclick="showLoadingThen(function(){toast('পুরস্কার সেন্টার')})" style="text-align:center;cursor:pointer"><div style="width:56px;height:56px;border-radius:50%;background:#fff8e7;margin:0 auto 7px;display:flex;align-items:center;justify-content:center;position:relative;box-shadow:0 2px 8px rgba(0,0,0,.07)"><i class="fas fa-trophy" style="color:#d4a017;font-size:22px"></i><span style="position:absolute;top:-4px;right:-4px;background:#e53935;color:#fff;font-size:10px;width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center">3</span></div><div style="font-size:12px;color:#555;line-height:1.3">পুরস্কার<br>সেন্টার</div></div>
+        <div onclick="showLoadingThen(function(){switchSec('Reward')})" style="text-align:center;cursor:pointer"><div style="width:56px;height:56px;border-radius:50%;background:#fff8e7;margin:0 auto 7px;display:flex;align-items:center;justify-content:center;position:relative;box-shadow:0 2px 8px rgba(0,0,0,.07)"><i class="fas fa-trophy" style="color:#d4a017;font-size:22px"></i><span style="position:absolute;top:-4px;right:-4px;background:#e53935;color:#fff;font-size:10px;width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center">3</span></div><div style="font-size:12px;color:#555;line-height:1.3">পুরস্কার<br>সেন্টার</div></div>
         <div onclick="showLoadingThen(function(){toast('বেটিং রেকর্ড')})" style="text-align:center;cursor:pointer"><div style="width:56px;height:56px;border-radius:50%;background:#fff8e7;margin:0 auto 7px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.07)"><i class="fas fa-star" style="color:#d4a017;font-size:22px"></i></div><div style="font-size:12px;color:#555;line-height:1.3">বেটিং<br>রেকর্ড</div></div>
         <div onclick="showLoadingThen(function(){toast('লাভ এবং লস')})" style="text-align:center;cursor:pointer"><div style="width:56px;height:56px;border-radius:50%;background:#fff8e7;margin:0 auto 7px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.07)"><i class="fas fa-file-invoice-dollar" style="color:#d4a017;font-size:22px"></i></div><div style="font-size:12px;color:#555;line-height:1.3">লাভ এবং<br>লস</div></div>
         <div onclick="showLoadingThen(function(){toast('জমা রেকর্ড')})" style="text-align:center;cursor:pointer"><div style="width:56px;height:56px;border-radius:50%;background:#fff8e7;margin:0 auto 7px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.07)"><i class="fas fa-clipboard-list" style="color:#d4a017;font-size:22px"></i></div><div style="font-size:12px;color:#555;line-height:1.3">জমা<br>রেকর্ড</div></div>
@@ -427,54 +553,42 @@ body{font-family:'Noto Sans Bengali',sans-serif;background:#0a0a0a;color:#fff;mi
 
 <script>
 setTimeout(function(){document.getElementById('loader').classList.add('hide');document.getElementById('authPage').classList.add('show');},1500);
-function toast(msg,type){type=type||'ok';var t=document.createElement('div');t.className='toast '+type;t.textContent=msg;document.body.appendChild(t);setTimeout(function(){t.remove();},2600);}
+function toast(msg,type){type=type||'ok';var t=document.createElement('div');t.className='toast '+type;t.textContent=msg;document.body.appendChild(t);setTimeout(function(){t.remove();},3200);}
 function showLoadingThen(callback){var loader=document.getElementById('pageLoader');loader.classList.add('show');setTimeout(function(){loader.classList.remove('show');if(callback)callback();},700);}
-var balance=45000,currentBanner=0,totalBanners=4,currentWalletCard=0,currentPayMethod='nagad';
+var balance=45670,currentBanner=0,totalBanners=4,currentWalletCard=0,currentPayMethod='nagad';
 
-/* Customer Service Link */
-function openCustomerService(){
-  window.open('https://jkbjsd3333jwau.com/', '_blank');
-}
+function openCustomerService(){window.open('https://jkbjsd3333jwau.com/','_blank');}
 
 function goBanner(index){currentBanner=index;document.getElementById('bannerTrack').style.transform='translateX(-'+(index*25)+'%)';var dots=document.querySelectorAll('.banner-dots span');dots.forEach(function(d,i){d.classList.toggle('active',i===index);});}
 setInterval(function(){currentBanner=(currentBanner+1)%totalBanners;goBanner(currentBanner);},3500);
 
-/* LOGIN - Fixed Username & Password */
 document.getElementById('loginBtn').onclick=function(){
   var user=document.getElementById('loginUser').value.trim();
   var pass=document.getElementById('loginPass').value;
   if(!user){toast('ইউজারনেম লিখুন','er');return;}
   if(!pass){toast('পাসওয়ার্ড লিখুন','er');return;}
-  // Case-insensitive username check
-  if(user.toLowerCase() !== 'ruminfarhana83'){
-    toast('ইউজারনেম ভুল!','er');
-    return;
-  }
-  if(pass !== '11223344'){
-    toast('পাসওয়ার্ড ভুল!','er');
-    return;
-  }
+  if(user.toLowerCase()!=='ruminfarhana83'){toast('ইউজারনেম ভুল!','er');return;}
+  if(pass!=='11223344'){toast('পাসওয়ার্ড ভুল!','er');return;}
   showLoadingThen(function(){enterDash('Ruminfarhana83');});
 };
-
 document.getElementById('regBtn').onclick=function(){toast('রেজিস্ট্রেশন বর্তমানে বন্ধ আছে','er');};
 
 function enterDash(name){
   document.getElementById('authPage').classList.remove('show');
   document.getElementById('dash').classList.add('show');
-  document.getElementById('dashUser').textContent = 'Ruminfarhana83';
-  document.getElementById('profileId').textContent = 'Ruminfarhana83';
+  document.getElementById('dashUser').textContent='Ruminfarhana83';
+  document.getElementById('profileId').textContent='Ruminfarhana83';
   updateBal();
   toast('স্বাগতম, Ruminfarhana83!');
 }
 
 function updateBal(){
-  var enTxt = balance.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
-  var txt = '৳ ' + enTxt;
-  document.getElementById('balText').textContent = txt;
-  if(document.getElementById('witMainBal')) document.getElementById('witMainBal').textContent = enTxt;
-  if(document.getElementById('witAvailBal')) document.getElementById('witAvailBal').textContent = enTxt;
-  if(document.getElementById('memberBal')) document.getElementById('memberBal').textContent = txt;
+  var enTxt=balance.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
+  var txt='৳ '+enTxt;
+  document.getElementById('balText').textContent=txt;
+  if(document.getElementById('witMainBal'))document.getElementById('witMainBal').textContent=enTxt;
+  if(document.getElementById('witAvailBal'))document.getElementById('witAvailBal').textContent=enTxt;
+  if(document.getElementById('memberBal'))document.getElementById('memberBal').textContent=txt;
 }
 
 document.getElementById('logoutBtn').onclick=function(){showLoadingThen(function(){document.getElementById('dash').classList.remove('show');document.getElementById('authPage').classList.add('show');showLogin();document.getElementById('loginUser').value='';document.getElementById('loginPass').value='';switchSec('Home');toast('লগআউট সফল');});};
@@ -488,46 +602,50 @@ var botItems=document.querySelectorAll('.bot-item');
 botItems.forEach(function(btn){btn.onclick=function(){var sec=this.getAttribute('data-sec');showLoadingThen(function(){switchSec(sec);});};});
 function switchSec(name){
   document.querySelectorAll('.sec').forEach(function(s){s.classList.remove('active');});
-  document.getElementById('sec'+name).classList.add('active');
+  var el=document.getElementById('sec'+name);
+  if(el)el.classList.add('active');
   botItems.forEach(function(b){b.classList.remove('active');});
   var activeBtn=document.querySelector('.bot-item[data-sec="'+name+'"]');
   if(activeBtn)activeBtn.classList.add('active');
-  document.getElementById('mainTopBar').style.display=(name==='Member'||name==='Withdraw'||name==='Deposit')?'none':'flex';
+  var hideTop=['Member','Withdraw','Deposit','Reward','Claim'];
+  document.getElementById('mainTopBar').style.display=hideTop.indexOf(name)!==-1?'none':'flex';
   window.scrollTo(0,0);
 }
 
-/* DEPOSIT */
-function selectPayMode(el, method){
+function selectPayMode(el,method){
   document.querySelectorAll('.pay-mode-card').forEach(function(c){c.classList.remove('selected');});
   el.classList.add('selected');
-  currentPayMethod = method;
-  var nameMap = {'nagad':'Nagad','rocket':'Rocket','nagad_sm':'Nagad','bkash_sm':'bKash','usdt':'USDT'};
-  var payName = nameMap[method] || 'Nagad';
-  var warn = 'অনুগ্রহ করে আপনার ('+payName+') একাউন্টের মাধ্যমে অর্থ স্থানান্তর করুন এবং পেমেন্ট পাতায় (TRX ID) অনুলিপি করে সঠিকভাবে পূরণ করুন। <span>⚠️ ⚠️ ⚠️</span> যদি আপনি (TRX ID) না লিখেন বা ভুল লিখেন, তাহলে আপনার লেনদেন সফলভাবে সম্পন্ন হবে না।';
-  document.getElementById('warningText1').innerHTML = warn;
-  document.getElementById('warningText2').innerHTML = warn;
-  var channelGrid = document.getElementById('channelGrid');
-  if(method === 'nagad' || method === 'nagad_sm'){
-    channelGrid.innerHTML = '<div class="channel-btn selected" onclick="selectChannel(this)">চ্যানেল 2</div><div class="channel-btn" onclick="selectChannel(this)">চ্যানেল 1</div><div class="channel-btn" onclick="selectChannel(this)">চ্যানেল 21</div>';
-  } else if(method === 'rocket'){
-    channelGrid.innerHTML = '<div class="channel-btn selected" onclick="selectChannel(this)">চ্যানেল 3</div><div class="channel-btn" onclick="selectChannel(this)">চ্যানেল 5</div><div class="channel-btn" onclick="selectChannel(this)">চ্যানেল 12</div>';
-  } else if(method === 'bkash_sm'){
-    channelGrid.innerHTML = '<div class="channel-btn selected" onclick="selectChannel(this)">চ্যানেল 7</div><div class="channel-btn" onclick="selectChannel(this)">চ্যানেল 9</div><div class="channel-btn" onclick="selectChannel(this)">চ্যানেল 15</div>';
-  } else if(method === 'usdt'){
-    channelGrid.innerHTML = '<div class="channel-btn selected" onclick="selectChannel(this)">TRC20</div><div class="channel-btn" onclick="selectChannel(this)">ERC20</div>';
-  }
-  toast(payName + ' সিলেক্টেড');
+  currentPayMethod=method;
+  var nameMap={'nagad':'Nagad','rocket':'Rocket','nagad_sm':'Nagad','bkash_sm':'bKash','usdt':'USDT'};
+  var payName=nameMap[method]||'Nagad';
+  var warn='অনুগ্রহ করে আপনার ('+payName+') একাউন্টের মাধ্যমে অর্থ স্থানান্তর করুন এবং পেমেন্ট পাতায় (TRX ID) অনুলিপি করে সঠিকভাবে পূরণ করুন। <span>⚠️ ⚠️ ⚠️</span> যদি আপনি (TRX ID) না লিখেন বা ভুল লিখেন, তাহলে আপনার লেনদেন সফলভাবে সম্পন্ন হবে না।';
+  document.getElementById('warningText1').innerHTML=warn;
+  document.getElementById('warningText2').innerHTML=warn;
+  var channelGrid=document.getElementById('channelGrid');
+  if(method==='nagad'||method==='nagad_sm'){channelGrid.innerHTML='<div class="channel-btn selected" onclick="selectChannel(this)">চ্যানেল 2</div><div class="channel-btn" onclick="selectChannel(this)">চ্যানেল 1</div><div class="channel-btn" onclick="selectChannel(this)">চ্যানেল 21</div>';}
+  else if(method==='rocket'){channelGrid.innerHTML='<div class="channel-btn selected" onclick="selectChannel(this)">চ্যানেল 3</div><div class="channel-btn" onclick="selectChannel(this)">চ্যানেল 5</div><div class="channel-btn" onclick="selectChannel(this)">চ্যানেল 12</div>';}
+  else if(method==='bkash_sm'){channelGrid.innerHTML='<div class="channel-btn selected" onclick="selectChannel(this)">চ্যানেল 7</div><div class="channel-btn" onclick="selectChannel(this)">চ্যানেল 9</div><div class="channel-btn" onclick="selectChannel(this)">চ্যানেল 15</div>';}
+  else if(method==='usdt'){channelGrid.innerHTML='<div class="channel-btn selected" onclick="selectChannel(this)">TRC20</div><div class="channel-btn" onclick="selectChannel(this)">ERC20</div>';}
+  toast(payName+' সিলেক্টেড');
 }
 function selectChannel(el){document.querySelectorAll('.channel-btn').forEach(function(c){c.classList.remove('selected');});el.classList.add('selected');}
-function selectAmt(el, val){document.querySelectorAll('.amt-btn').forEach(function(a){a.classList.remove('selected');});el.classList.add('selected');document.getElementById('depAmount').value = val;checkNextBtn();}
-function selectPromo(el){document.querySelectorAll('.promo-radio').forEach(function(r){r.classList.remove('selected'); r.querySelector('input').checked=false;});el.classList.add('selected');el.querySelector('input').checked = true;}
-function checkNextBtn(){var amt = parseInt(document.getElementById('depAmount').value);var btn = document.getElementById('nextBtn');if(amt && amt >= 300 && amt <= 50000){btn.classList.add('active');} else {btn.classList.remove('active');}}
-function doDepositNew(){var amt = parseInt(document.getElementById('depAmount').value);if(!amt || amt < 300){toast('ন্যূনতম ৳৩০০ জমা করুন','er');return;}if(amt > 50000){toast('সর্বোচ্চ ৳৫০,০০০ জমা করা যাবে','er');return;}showLoadingThen(function(){balance += amt;updateBal();toast('৳'+amt.toLocaleString('en-US')+' সফলভাবে জমা হয়েছে!');switchSec('Home');});}
+function selectAmt(el,val){document.querySelectorAll('.amt-btn').forEach(function(a){a.classList.remove('selected');});el.classList.add('selected');document.getElementById('depAmount').value=val;checkNextBtn();}
+function selectPromo(el){document.querySelectorAll('.promo-radio').forEach(function(r){r.classList.remove('selected');r.querySelector('input').checked=false;});el.classList.add('selected');el.querySelector('input').checked=true;}
+function checkNextBtn(){var amt=parseInt(document.getElementById('depAmount').value);var btn=document.getElementById('nextBtn');if(amt&&amt>=300&&amt<=50000){btn.classList.add('active');}else{btn.classList.remove('active');}}
+function doDepositNew(){var amt=parseInt(document.getElementById('depAmount').value);if(!amt||amt<300){toast('ন্যূনতম ৳৩০০ জমা করুন','er');return;}if(amt>50000){toast('সর্বোচ্চ ৳৫০,০০০ জমা করা যাবে','er');return;}showLoadingThen(function(){balance+=amt;updateBal();toast('৳'+amt.toLocaleString('en-US')+' সফলভাবে জমা হয়েছে!');switchSec('Home');});}
 
-/* WITHDRAW */
 function goWalletCard(idx){currentWalletCard=idx;var track=document.getElementById('walletCardsTrack');if(track)track.style.transform='translateX(-'+(idx*50)+'%)';document.getElementById('dot0').style.background=idx===0?'#2196f3':'#ccc';document.getElementById('dot1').style.background=idx===1?'#2196f3':'#ccc';}
 function togglePass(){var inp=document.getElementById('witPass');var icon=document.getElementById('toggleWitPass');if(inp.type==='password'){inp.type='text';icon.classList.remove('fa-eye-slash');icon.classList.add('fa-eye');}else{inp.type='password';icon.classList.remove('fa-eye');icon.classList.add('fa-eye-slash');}}
-function doWithdrawNew(){var amt=parseInt(document.getElementById('witAmount').value);var pass=document.getElementById('witPass').value.trim();if(!amt||amt<500){toast('ন্যূনতম ৳৫০০ উত্তোলন করুন','er');return;}if(amt>25000){toast('সর্বোচ্চ ৳২৫,০০০ উত্তোলন করা যাবে','er');return;}if(amt>balance){toast('পর্যাপ্ত ব্যালেন্স নেই','er');return;}if(!pass||pass.length<4){toast('লেনদেন পাসওয়ার্ড দিন','er');return;}showLoadingThen(function(){balance-=amt;updateBal();toast('৳'+amt.toLocaleString('en-US')+' উত্তোলনের অনুরোধ নেওয়া হয়েছে');document.getElementById('witAmount').value='';document.getElementById('witPass').value='';});}
+function doWithdrawNew(){
+  var amt=parseInt(document.getElementById('witAmount').value);
+  var pass=document.getElementById('witPass').value.trim();
+  if(!amt||amt<500){toast('ন্যূনতম ৳৫০০ উত্তোলন করুন','er');return;}
+  if(amt>25000){toast('সর্বোচ্চ ৳২৫,০০০ উত্তোলন করা যাবে','er');return;}
+  if(amt>balance){toast('পর্যাপ্ত ব্যালেন্স নেই','er');return;}
+  if(!pass){toast('লেনদেন পাসওয়ার্ড দিন','er');return;}
+  if(pass!=='12345678'){toast('লেনদেন পাসওয়ার্ড ভুল!','er');return;}
+  toast('টাকা উত্তোলনের জন্য অবশ্যই বোনাসের ১০% ডিপোজিট জমা করতে হবে একাউন্টে।','er');
+}
 document.addEventListener('DOMContentLoaded',function(){var amtInput=document.getElementById('witAmount');if(amtInput){amtInput.addEventListener('input',function(){var btn=document.getElementById('witSubmitBtn');if(this.value&&parseInt(this.value)>=500){btn.style.background='linear-gradient(90deg,#ffd700,#f5a623)';btn.style.color='#111';}else{btn.style.background='#bdbdbd';btn.style.color='#fff';}});}});
 (function(){var track=null,startX=0,currentX=0,isDragging=false;function initSwipe(){track=document.getElementById('walletCardsTrack');if(!track)return;var container=track.parentElement;container.addEventListener('touchstart',function(e){startX=e.touches[0].clientX;isDragging=true;track.style.transition='none';},{passive:true});container.addEventListener('touchmove',function(e){if(!isDragging)return;currentX=e.touches[0].clientX;var diff=currentX-startX;var base=currentWalletCard*-50;var percent=(diff/container.offsetWidth)*50;var newPos=base+percent;if(newPos>0)newPos=0;if(newPos<-50)newPos=-50;track.style.transform='translateX('+newPos+'%)';},{passive:true});container.addEventListener('touchend',function(){if(!isDragging)return;isDragging=false;track.style.transition='transform 0.35s ease';var diff=currentX-startX;if(diff<-40&&currentWalletCard<1)goWalletCard(1);else if(diff>40&&currentWalletCard>0)goWalletCard(0);else goWalletCard(currentWalletCard);},{passive:true});}document.addEventListener('DOMContentLoaded',initSwipe);})();
 function switchWitTab(tab){if(tab==='ewallet'){document.getElementById('ewalletPanel').style.display='block';document.getElementById('cryptoPanel').style.display='none';document.getElementById('tabEwallet').style.color='#e91e63';document.getElementById('tabEwallet').style.borderBottom='3px solid #e91e63';document.getElementById('tabCrypto').style.color='#999';document.getElementById('tabCrypto').style.borderBottom='3px solid transparent';}else{document.getElementById('ewalletPanel').style.display='none';document.getElementById('cryptoPanel').style.display='block';document.getElementById('tabCrypto').style.color='#f9a825';document.getElementById('tabCrypto').style.borderBottom='3px solid #f9a825';document.getElementById('tabEwallet').style.color='#999';document.getElementById('tabEwallet').style.borderBottom='3px solid transparent';}}
