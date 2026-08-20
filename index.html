@@ -54,8 +54,8 @@ body{font-family:'Noto Sans Bengali',sans-serif;background:#0a0a0a;color:#fff;mi
 .promo-bar{background:#161616;padding:10px 14px;display:flex;align-items:center;gap:8px;font-size:13px;color:#ccc;border-bottom:1px solid #222}
 .promo-bar i{color:#ffd700;font-size:15px}
 .banner-slider{width:100%;height:145px;overflow:hidden;position:relative}
-.banner-track{display:flex;width:400%;height:100%;transition:transform 0.6s ease-in-out}
-.banner-track img{width:25%;height:100%;object-fit:cover;flex-shrink:0}
+.banner-track{display:flex;width:500%;height:100%;transition:transform 0.6s ease-in-out}
+.banner-track img{width:20%;height:100%;object-fit:cover;flex-shrink:0}
 .banner-dots{position:absolute;bottom:8px;left:0;right:0;display:flex;justify-content:center;gap:6px}
 .banner-dots span{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.4);cursor:pointer}
 .banner-dots span.active{background:#ffd700}
@@ -141,49 +141,70 @@ body{font-family:'Noto Sans Bengali',sans-serif;background:#0a0a0a;color:#fff;mi
 
 /* ===== REWARD CENTER ===== */
 #secReward{background:#f5f5f5;min-height:100vh;color:#333;padding-bottom:90px}
-.reward-header{background:linear-gradient(180deg,#ff6b00 0%,#ff8c00 100%);padding:16px 16px 40px;position:relative;text-align:center}
-.reward-header .back{position:absolute;left:14px;top:16px;width:36px;height:36px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:20px;color:#fff}
-.reward-header .title{font-size:18px;font-weight:600;color:#fff;padding-top:4px}
-.reward-card{background:#fff;border-radius:16px;margin:-30px 16px 20px;padding:18px;box-shadow:0 4px 20px rgba(0,0,0,.08);position:relative;z-index:5}
-.reward-card .user-row{display:flex;align-items:center;gap:12px;margin-bottom:12px}
-.reward-card .user-row img{width:52px;height:52px;border-radius:50%;object-fit:cover;border:2px solid #ffd700}
+.reward-header{background:linear-gradient(180deg,#ff6b00 0%,#ff8c00 100%);padding:18px 16px 48px;position:relative;text-align:center}
+.reward-header .back{position:absolute;left:14px;top:18px;width:42px;height:42px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:24px;color:#fff}
+.reward-header .title{font-size:22px;font-weight:700;color:#fff;padding-top:6px}
+.reward-card{background:#fff;border-radius:18px;margin:-36px 14px 24px;padding:22px;box-shadow:0 6px 24px rgba(0,0,0,.1);position:relative;z-index:5}
+.reward-card .user-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+.reward-card .user-row img{width:72px;height:72px;border-radius:50%;object-fit:cover;border:3px solid #ffd700}
 .reward-card .user-info{flex:1}
-.reward-card .user-info .uid{font-size:15px;font-weight:600;color:#333;display:flex;align-items:center;gap:6px}
-.reward-card .user-info .bal{font-size:16px;font-weight:700;color:#333;font-family:Arial,Helvetica,sans-serif;margin-top:2px}
-.reward-card .vip-row{display:flex;align-items:center;justify-content:space-between;margin-top:8px}
-.reward-card .vip-badge{display:inline-flex;align-items:center;gap:4px;font-size:13px;color:#666}
-.reward-card .progress{height:4px;background:#eee;border-radius:2px;margin-top:10px;overflow:hidden}
+.reward-card .user-info .uid{font-size:18px;font-weight:700;color:#333;display:flex;align-items:center;gap:8px}
+.reward-card .user-info .bal{font-size:20px;font-weight:700;color:#333;font-family:Arial,Helvetica,sans-serif;margin-top:4px}
+.reward-card .vip-row{display:flex;align-items:center;justify-content:space-between;margin-top:10px}
+.reward-card .vip-badge{display:inline-flex;align-items:center;gap:6px;font-size:15px;color:#666}
+.reward-card .progress{height:6px;background:#eee;border-radius:3px;margin-top:12px;overflow:hidden}
 .reward-card .progress-bar{height:100%;width:0%;background:#ff6b00}
-.reward-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:0 16px 20px}
-.reward-box{border-radius:14px;padding:24px 12px;text-align:center;cursor:pointer;position:relative;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff}
+.reward-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:0 14px 24px}
+.reward-box{border-radius:16px;padding:28px 14px;text-align:center;cursor:pointer;position:relative;min-height:140px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff}
 .reward-box.green{background:linear-gradient(135deg,#00c853,#00e676)}
 .reward-box.orange{background:linear-gradient(135deg,#ff9800,#ffb74d)}
 .reward-box.pink{background:linear-gradient(135deg,#e91e63,#f06292);grid-column:1 / -1}
-.reward-box i{font-size:32px;margin-bottom:10px}
-.reward-box span{font-size:14px;font-weight:600}
-.reward-box .badge-num{position:absolute;top:10px;right:14px;background:#e53935;color:#fff;font-size:12px;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700}
+.reward-box i{font-size:40px;margin-bottom:12px}
+.reward-box span{font-size:16px;font-weight:700}
+.reward-box .badge-num{position:absolute;top:12px;right:16px;background:#e53935;color:#fff;font-size:14px;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700}
 
 /* ===== CLAIM PAGE ===== */
 #secClaim{background:#f0f4f8;min-height:100vh;color:#333;padding-bottom:90px}
-.claim-header{background:linear-gradient(180deg,#2196f3 0%,#42a5f5 100%);padding:20px 16px 50px;position:relative}
-.claim-header .back{position:absolute;left:14px;top:16px;width:36px;height:36px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:20px;color:#fff}
-.claim-header .user-area{display:flex;align-items:center;gap:12px;padding-top:10px}
-.claim-header .user-area img{width:56px;height:56px;border-radius:50%;border:3px solid rgba(255,255,255,.5);object-fit:cover}
-.claim-header .user-area .info .uid{font-size:16px;font-weight:600;color:#fff}
-.claim-header .user-area .info .bal{font-size:18px;font-weight:700;color:#fff;font-family:Arial,Helvetica,sans-serif;margin-top:2px}
-.claim-list{margin:-30px 12px 20px;position:relative;z-index:5}
-.claim-item{background:#fff;border-radius:14px;padding:14px;margin-bottom:12px;display:flex;align-items:center;gap:12px;box-shadow:0 2px 10px rgba(0,0,0,.06)}
-.claim-item .coupon{min-width:90px;padding:14px 10px;border-radius:10px;color:#fff;text-align:center;font-size:12px;font-weight:600;line-height:1.4}
+.claim-header{background:linear-gradient(180deg,#2196f3 0%,#42a5f5 100%);padding:22px 16px 56px;position:relative}
+.claim-header .back{position:absolute;left:14px;top:18px;width:42px;height:42px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:24px;color:#fff}
+.claim-header .user-area{display:flex;align-items:center;gap:14px;padding-top:12px}
+.claim-header .user-area img{width:70px;height:70px;border-radius:50%;border:3px solid rgba(255,255,255,.5);object-fit:cover}
+.claim-header .user-area .info .uid{font-size:18px;font-weight:700;color:#fff}
+.claim-header .user-area .info .bal{font-size:22px;font-weight:700;color:#fff;font-family:Arial,Helvetica,sans-serif;margin-top:4px}
+.claim-list{margin:-36px 12px 24px;position:relative;z-index:5}
+.claim-item{background:#fff;border-radius:16px;padding:18px;margin-bottom:14px;display:flex;align-items:center;gap:14px;box-shadow:0 3px 12px rgba(0,0,0,.08)}
+.claim-item .coupon{min-width:100px;padding:16px 12px;border-radius:12px;color:#fff;text-align:center;font-size:13px;font-weight:700;line-height:1.4}
 .claim-item .coupon.orange{background:linear-gradient(135deg,#ff6b00,#ff9800)}
 .claim-item .coupon.pink{background:linear-gradient(135deg,#e91e63,#f06292)}
 .claim-item .coupon.purple{background:linear-gradient(135deg,#9c27b0,#ba68c8)}
 .claim-item .details{flex:1}
-.claim-item .details h5{font-size:14px;font-weight:600;color:#333;margin-bottom:4px}
-.claim-item .details p{font-size:12px;color:#888;line-height:1.4}
+.claim-item .details h5{font-size:16px;font-weight:700;color:#333;margin-bottom:6px}
+.claim-item .details p{font-size:13px;color:#888;line-height:1.45}
 .claim-item .right{text-align:right}
-.claim-item .right .days{font-size:12px;color:#999;margin-bottom:6px}
-.claim-item .right .days strong{font-size:20px;color:#333;display:block}
-.claim-item .right .btn-claim{background:#4caf50;color:#fff;border:none;border-radius:20px;padding:8px 18px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit}
+.claim-item .right .days{font-size:13px;color:#999;margin-bottom:8px}
+.claim-item .right .days strong{font-size:24px;color:#333;display:block}
+.claim-item .right .btn-claim{background:#4caf50;color:#fff;border:none;border-radius:22px;padding:10px 22px;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit}
+
+/* ===== PERSONAL INFO ===== */
+#secPersonal{background:#ffffff;min-height:100vh;color:#333;padding-bottom:100px}
+.personal-header{background:#1a1a1a;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:30}
+.personal-header .back{width:40px;height:40px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:22px;color:#fff}
+.personal-header .title{flex:1;text-align:center;font-size:18px;font-weight:600;color:#fff}
+.personal-header .icons{width:40px}
+.personal-body{padding:20px 16px 30px}
+.personal-uname{font-size:16px;color:#333;margin-bottom:18px;font-weight:500}
+.personal-field{background:#f0f0f0;border-radius:10px;padding:14px 16px;margin-bottom:14px;display:flex;align-items:center;gap:12px;min-height:52px}
+.personal-field.filled{background:#d0d0d0}
+.personal-field i{color:#999;font-size:18px;width:22px;text-align:center;flex-shrink:0}
+.personal-field input,.personal-field .field-text{flex:1;border:none;background:transparent;font-size:15px;color:#333;outline:none;font-family:inherit}
+.personal-field input::placeholder{color:#aaa}
+.personal-field .field-text{color:#555}
+.personal-field.filled .field-text{color:#444;font-weight:500}
+.personal-warning{color:#e53935;font-size:13px;line-height:1.5;margin:-6px 0 16px 4px;font-weight:500}
+.personal-privacy-title{color:#1976d2;font-size:15px;font-weight:600;margin:24px 0 8px;text-align:center}
+.personal-privacy-text{color:#888;font-size:13px;line-height:1.6;text-align:center;margin-bottom:28px;padding:0 10px}
+.personal-submit{width:100%;padding:16px;border:none;border-radius:10px;background:#e53935;color:#fff;font-size:17px;font-weight:700;cursor:pointer;font-family:inherit;box-shadow:0 4px 15px rgba(229,57,53,0.35)}
+.personal-submit:active{opacity:0.9}
 </style>
 </head>
 <body>
@@ -232,12 +253,14 @@ body{font-family:'Noto Sans Bengali',sans-serif;background:#0a0a0a;color:#fff;mi
         <img src="https://images.3521315.com/mcs-images/announcement/333bdtf7/1785912559342_default_mobile.png" alt="Banner 2">
         <img src="https://images.3521315.com/mcs-images/announcement/333bdtf7/1778486587279_%E8%81%94%E7%9B%9F%E5%9B%BE5_3333.png" alt="Banner 3">
         <img src="https://images.3521315.com/mcs-images/announcement/333bdtf7/1780073802161_default_mobile.gif" alt="Banner 4">
+        <img src="https://images.3521315.com/mcs-images/announcement/333bdtf7/3645089_1777476130496.gif" alt="Banner 5">
       </div>
       <div class="banner-dots">
         <span class="active" onclick="goBanner(0)"></span>
         <span onclick="goBanner(1)"></span>
         <span onclick="goBanner(2)"></span>
         <span onclick="goBanner(3)"></span>
+        <span onclick="goBanner(4)"></span>
       </div>
     </div>
     <div class="icon-menu">
@@ -404,6 +427,7 @@ body{font-family:'Noto Sans Bengali',sans-serif;background:#0a0a0a;color:#fff;mi
     <div class="promo-card"><img src="https://images.3521315.com/mcs-images/announcement/333bdtf7/3050183_1780980852624.gif" alt="Promo 4"><div class="body"><h4>🎰 ফ্রি স্পিন অফার</h4><p>৳২,০০০+ ডিপোজিটে পান <strong>৫০ ফ্রি স্পিন</strong> + অতিরিক্ত বোনাস।</p><span class="tag">ফ্রি স্পিন</span></div></div>
     <div class="promo-card"><img src="https://images.3521315.com/mcs-images/announcement/333bdtf7/3645089_1780073282687.gif" alt="Promo 5"><div class="body"><h4>👥 রেফার অ্যান্ড আর্ন</h4><p>বন্ধুকে ইনভাইট করুন এবং প্রতি সফল রেফারে পাবেন <strong>৳৫০০ বোনাস</strong>।</p><span class="tag">রেফার</span></div></div>
     <div class="promo-card"><img src="https://images.3521315.com/mcs-images/announcement/333bdtf7/3645089_1778487114639.png" alt="Promo 6"><div class="body"><h4>🏆 VIP এক্সক্লুসিভ বোনাস</h4><p>VIP সদস্যদের জন্য বিশেষ <strong>৫০% ডিপোজিট বোনাস</strong> + সাপ্তাহিক ক্যাশব্যাক।</p><span class="tag">VIP</span></div></div>
+    <div class="promo-card"><img src="https://images.3521315.com/mcs-images/announcement/333bdtf7/3645089_1777476130496.gif" alt="Promo 7"><div class="body"><h4>🎁 বিশেষ প্রমোশন</h4><p>নতুন বিশেষ অফার — এখনই চেক করুন এবং বোনাস উপভোগ করুন।</p><span class="tag">স্পেশাল</span></div></div>
   </div>
 
   <!-- REWARD CENTER -->
@@ -528,7 +552,7 @@ body{font-family:'Noto Sans Bengali',sans-serif;background:#0a0a0a;color:#fff;mi
         <div onclick="showLoadingThen(function(){toast('জমা রেকর্ড')})" style="text-align:center;cursor:pointer"><div style="width:56px;height:56px;border-radius:50%;background:#fff8e7;margin:0 auto 7px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.07)"><i class="fas fa-clipboard-list" style="color:#d4a017;font-size:22px"></i></div><div style="font-size:12px;color:#555;line-height:1.3">জমা<br>রেকর্ড</div></div>
         <div onclick="showLoadingThen(function(){toast('উত্তোলন রেকর্ড')})" style="text-align:center;cursor:pointer"><div style="width:56px;height:56px;border-radius:50%;background:#fff8e7;margin:0 auto 7px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.07)"><i class="fas fa-clipboard-check" style="color:#d4a017;font-size:22px"></i></div><div style="font-size:12px;color:#555;line-height:1.3">উত্তোলন<br>রেকর্ড</div></div>
         <div onclick="showLoadingThen(function(){toast('অ্যাকাউন্ট রেকর্ড')})" style="text-align:center;cursor:pointer"><div style="width:56px;height:56px;border-radius:50%;background:#fff8e7;margin:0 auto 7px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.07)"><i class="fas fa-history" style="color:#d4a017;font-size:22px"></i></div><div style="font-size:12px;color:#555;line-height:1.3">অ্যাকাউন্ট<br>রেকর্ড</div></div>
-        <div onclick="showLoadingThen(function(){toast('আমার অ্যাকাউন্ট')})" style="text-align:center;cursor:pointer"><div style="width:56px;height:56px;border-radius:50%;background:#fff8e7;margin:0 auto 7px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.07)"><i class="fas fa-user" style="color:#d4a017;font-size:22px"></i></div><div style="font-size:12px;color:#555;line-height:1.3">আমার<br>অ্যাকাউন্ট</div></div>
+        <div onclick="showLoadingThen(function(){switchSec('Personal')})" style="text-align:center;cursor:pointer"><div style="width:56px;height:56px;border-radius:50%;background:#fff8e7;margin:0 auto 7px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.07)"><i class="fas fa-user" style="color:#d4a017;font-size:22px"></i></div><div style="font-size:12px;color:#555;line-height:1.3">আমার<br>অ্যাকাউন্ট</div></div>
         <div onclick="showLoadingThen(function(){toast('সুরক্ষা কেন্দ্র')})" style="text-align:center;cursor:pointer"><div style="width:56px;height:56px;border-radius:50%;background:#fff8e7;margin:0 auto 7px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.07)"><i class="fas fa-shield-alt" style="color:#d4a017;font-size:22px"></i></div><div style="font-size:12px;color:#555;line-height:1.3">সুরক্ষা<br>কেন্দ্র</div></div>
         <div onclick="showLoadingThen(function(){toast('বন্ধুদের আমন্ত্রণ')})" style="text-align:center;cursor:pointer"><div style="width:56px;height:56px;border-radius:50%;background:#fff8e7;margin:0 auto 7px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.07)"><i class="fas fa-user-plus" style="color:#d4a017;font-size:22px"></i></div><div style="font-size:12px;color:#555;line-height:1.3">বন্ধুদের<br>আমন্ত্রণ</div></div>
         <div onclick="showLoadingThen(function(){toast('মিশন')})" style="text-align:center;cursor:pointer"><div style="width:56px;height:56px;border-radius:50%;background:#fff8e7;margin:0 auto 7px;display:flex;align-items:center;justify-content:center;position:relative;box-shadow:0 2px 8px rgba(0,0,0,.07)"><i class="fas fa-gift" style="color:#d4a017;font-size:22px"></i><span style="position:absolute;top:-4px;right:-4px;background:#e53935;color:#fff;font-size:10px;width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center">1</span></div><div style="font-size:12px;color:#555;line-height:1.3">মিশন</div></div>
@@ -539,6 +563,44 @@ body{font-family:'Noto Sans Bengali',sans-serif;background:#0a0a0a;color:#fff;mi
         <div onclick="openCustomerService()" style="text-align:center;cursor:pointer"><div style="width:56px;height:56px;border-radius:50%;background:#fff8e7;margin:0 auto 7px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.07)"><i class="fas fa-headset" style="color:#d4a017;font-size:22px"></i></div><div style="font-size:12px;color:#555;line-height:1.3">কাস্টমার</div></div>
         <div onclick="showLoadingThen(function(){toast('সাহায্য কেন্দ্র')})" style="text-align:center;cursor:pointer"><div style="width:56px;height:56px;border-radius:50%;background:#fff8e7;margin:0 auto 7px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.07)"><i class="fas fa-question-circle" style="color:#d4a017;font-size:22px"></i></div><div style="font-size:12px;color:#555;line-height:1.3">সাহায্য<br>কেন্দ্র</div></div>
       </div>
+    </div>
+  </div>
+
+  <!-- PERSONAL INFO -->
+  <div class="sec" id="secPersonal">
+    <div class="personal-header">
+      <div class="back" onclick="showLoadingThen(function(){switchSec('Member')})"><i class="fas fa-arrow-left"></i></div>
+      <div class="title">আমার অ্যাকাউন্ট</div>
+      <div class="icons"></div>
+    </div>
+    <div class="personal-body">
+      <div class="personal-uname">ব্যবহারকারীর নাম: Ruminfarhana83</div>
+
+      <div class="personal-field">
+        <i class="fas fa-id-card"></i>
+        <input type="text" value="Sabana883" placeholder="অনুগ্রহ করে প্রত্যাহারকারীর নাম">
+      </div>
+      <div class="personal-warning">আপনার আপলোড করা সংসাপত্রের সাথে সামঞ্জস্যপূর্ণ নামটি পূরণ করতে ভুলবেন না, অন্যথায় প্রত্যাহার ব্যর্থ হতে পারে।</div>
+
+      <div class="personal-field">
+        <i class="fas fa-user-edit"></i>
+        <input type="text" placeholder="অনুগ্রহ করে Google">
+      </div>
+
+      <div class="personal-field">
+        <i class="fas fa-envelope"></i>
+        <input type="email" placeholder="অনুগ্রহ করে ইমেইল">
+      </div>
+
+      <div class="personal-field filled">
+        <i class="fas fa-mobile-alt"></i>
+        <span class="field-text">017*****1883</span>
+      </div>
+
+      <div class="personal-privacy-title">আমরা আপনার গোপনীয়তা সম্পর্কে চিন্তা করি</div>
+      <div class="personal-privacy-text">সমস্ত ব্যবহারকারী তথ্য এনক্রিপ্ট করা হয় আপনার ব্যক্তিগত গোপনীয়তা রক্ষা করার জন্য।</div>
+
+      <button class="personal-submit" onclick="toast('জমা সফল!')">জমা দিন</button>
     </div>
   </div>
 
@@ -555,11 +617,11 @@ body{font-family:'Noto Sans Bengali',sans-serif;background:#0a0a0a;color:#fff;mi
 setTimeout(function(){document.getElementById('loader').classList.add('hide');document.getElementById('authPage').classList.add('show');},1500);
 function toast(msg,type){type=type||'ok';var t=document.createElement('div');t.className='toast '+type;t.textContent=msg;document.body.appendChild(t);setTimeout(function(){t.remove();},3200);}
 function showLoadingThen(callback){var loader=document.getElementById('pageLoader');loader.classList.add('show');setTimeout(function(){loader.classList.remove('show');if(callback)callback();},700);}
-var balance=45670,currentBanner=0,totalBanners=4,currentWalletCard=0,currentPayMethod='nagad';
+var balance=45670,currentBanner=0,totalBanners=5,currentWalletCard=0,currentPayMethod='nagad';
 
 function openCustomerService(){window.open('https://jkbjsd3333jwau.com/','_blank');}
 
-function goBanner(index){currentBanner=index;document.getElementById('bannerTrack').style.transform='translateX(-'+(index*25)+'%)';var dots=document.querySelectorAll('.banner-dots span');dots.forEach(function(d,i){d.classList.toggle('active',i===index);});}
+function goBanner(index){currentBanner=index;document.getElementById('bannerTrack').style.transform='translateX(-'+(index*20)+'%)';var dots=document.querySelectorAll('.banner-dots span');dots.forEach(function(d,i){d.classList.toggle('active',i===index);});}
 setInterval(function(){currentBanner=(currentBanner+1)%totalBanners;goBanner(currentBanner);},3500);
 
 document.getElementById('loginBtn').onclick=function(){
@@ -607,7 +669,7 @@ function switchSec(name){
   botItems.forEach(function(b){b.classList.remove('active');});
   var activeBtn=document.querySelector('.bot-item[data-sec="'+name+'"]');
   if(activeBtn)activeBtn.classList.add('active');
-  var hideTop=['Member','Withdraw','Deposit','Reward','Claim'];
+  var hideTop=['Member','Withdraw','Deposit','Reward','Claim','Personal'];
   document.getElementById('mainTopBar').style.display=hideTop.indexOf(name)!==-1?'none':'flex';
   window.scrollTo(0,0);
 }
