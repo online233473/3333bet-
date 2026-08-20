@@ -9,17 +9,14 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Noto Sans Bengali',sans-serif;background:#0a0a0a;color:#fff;min-height:100vh;overflow-x:hidden}
-
 #pageLoader{position:fixed;inset:0;z-index:99998;background:rgba(0,0,0,.75);display:none;align-items:center;justify-content:center;flex-direction:column;gap:14px}
 #pageLoader.show{display:flex}
 .spinner{width:42px;height:42px;border:4px solid rgba(255,215,0,.2);border-top-color:#ffd700;border-radius:50%;animation:spin .7s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
 #pageLoader p{font-size:14px;color:#ffd700}
-
 #loader{position:fixed;inset:0;z-index:99999;background:#000;display:flex;align-items:center;justify-content:center;transition:opacity .45s,visibility .45s}
 #loader.hide{opacity:0;visibility:hidden;pointer-events:none}
 #loader img{width:100%;height:100%;object-fit:cover}
-
 #authPage{display:none;min-height:100vh;align-items:center;justify-content:center;padding:20px;background:#000}
 #authPage.show{display:flex}
 .auth-box{width:100%;max-width:380px}
@@ -44,10 +41,8 @@ body{font-family:'Noto Sans Bengali',sans-serif;background:#0a0a0a;color:#fff;mi
 #regForm .input-box{height:52px}
 #regForm .input-box .icon{width:52px;height:52px}
 #regForm label{display:block;font-size:12px;color:#888;margin:10px 0 4px}
-
 #dash{display:none;min-height:100vh;padding-bottom:78px;background:#0a0a0a}
 #dash.show{display:block}
-
 .top-bar{background:#111;padding:12px 14px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #222;position:sticky;top:0;z-index:50}
 .top-logo{font-family:'Rajdhani',sans-serif;font-size:24px;font-weight:700;color:#ffd700}
 .top-logo b{color:#fff}
@@ -56,31 +51,25 @@ body{font-family:'Noto Sans Bengali',sans-serif;background:#0a0a0a;color:#fff;mi
 .top-user .uname{font-size:13px;color:#bbb}
 .top-user .bal{font-size:15px;font-weight:700;color:#ffd700}
 .top-user .logout{width:32px;height:32px;border-radius:50%;border:1px solid #444;background:#1a1a1a;color:#aaa;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:14px}
-
 .promo-bar{background:#161616;padding:10px 14px;display:flex;align-items:center;gap:8px;font-size:13px;color:#ccc;border-bottom:1px solid #222}
 .promo-bar i{color:#ffd700;font-size:15px}
-
-/* Banner slider - 4 banners, same height */
 .banner-slider{width:100%;height:145px;overflow:hidden;position:relative}
 .banner-track{display:flex;width:400%;height:100%;transition:transform 0.6s ease-in-out}
 .banner-track img{width:25%;height:100%;object-fit:cover;flex-shrink:0}
 .banner-dots{position:absolute;bottom:8px;left:0;right:0;display:flex;justify-content:center;gap:6px}
 .banner-dots span{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.4);cursor:pointer}
 .banner-dots span.active{background:#ffd700}
-
 .icon-menu{display:flex;background:#111;padding:16px 0;border-bottom:1px solid #222}
 .icon-item{flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;cursor:pointer}
 .icon-item i{font-size:24px;color:#ffd700}
 .icon-item span{font-size:12px;color:#bbb}
 .icon-item .badge{position:relative}
 .icon-item .badge::after{content:'1';position:absolute;top:-8px;right:-10px;background:#e53935;color:#fff;font-size:10px;width:16px;height:16px;border-radius:50%;display:flex;align-items:center;justify-content:center}
-
 .main-wrap{display:flex;min-height:420px}
 .left-cat{width:74px;background:#111;padding:10px 0;flex-shrink:0;border-right:1px solid #222}
 .cat-item{display:flex;flex-direction:column;align-items:center;padding:14px 4px;cursor:pointer;font-size:12px;color:#999}
 .cat-item i{font-size:20px;margin-bottom:5px;color:#ffd700}
 .cat-item.active{color:#ffd700;background:rgba(255,215,0,.08)}
-
 .games-area{flex:1;padding:12px;overflow-y:auto}
 .games-title{display:flex;align-items:center;gap:6px;font-size:16px;font-weight:600;margin-bottom:12px;color:#ffd700}
 .game-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
@@ -88,12 +77,10 @@ body{font-family:'Noto Sans Bengali',sans-serif;background:#0a0a0a;color:#fff;mi
 .g-card img{width:100%;aspect-ratio:1;object-fit:cover;display:block}
 .g-card .heart{position:absolute;top:6px;right:6px;color:rgba(255,255,255,.65);font-size:14px}
 .g-card p{padding:8px 4px;text-align:center;font-size:12px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-
 .sec{display:none;padding-bottom:30px}
 .sec.active{display:block}
 .sec-title{font-size:19px;font-weight:700;margin-bottom:18px;display:flex;align-items:center;gap:8px;padding:16px 16px 0}
 .sec-title i{color:#ffd700}
-
 .dep-amounts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:0 16px 18px}
 .dep-amt{background:#161616;border:1.5px solid #333;border-radius:10px;padding:15px 8px;text-align:center;cursor:pointer;font-weight:600;font-size:15px}
 .dep-amt.on{border-color:#ffd700;color:#ffd700;background:rgba(255,215,0,.06)}
@@ -109,18 +96,12 @@ body{font-family:'Noto Sans Bengali',sans-serif;background:#0a0a0a;color:#fff;mi
 .pm-icon.rocket{background:rgba(112,54,160,.15);color:#9b59b6}
 .pm-info h5{font-size:15px}.pm-info p{font-size:12px;color:#888}
 .btn-main{width:calc(100% - 32px);margin:10px 16px;padding:16px;border:none;border-radius:50px;background:linear-gradient(90deg,#ffd700,#f5a623);color:#111;font-size:17px;font-weight:700;cursor:pointer;font-family:inherit}
-
-.wit-info{background:#161616;border-radius:12px;padding:16px;margin:0 16px 16px;border:1px solid #222}
-.wit-info p{font-size:13px;color:#aaa;margin-bottom:6px}
-.wit-info strong{color:#ffd700;font-size:22px}
-
 .promo-card{background:#161616;border-radius:14px;overflow:hidden;margin:0 16px 14px;border:1px solid #222}
 .promo-card img{width:100%;height:145px;object-fit:cover}
 .promo-card .body{padding:14px}
 .promo-card h4{font-size:15px;margin-bottom:6px}
 .promo-card p{font-size:13px;color:#999;margin-bottom:10px;line-height:1.5}
 .promo-card .tag{display:inline-block;background:rgba(255,215,0,.12);color:#ffd700;font-size:11px;padding:3px 10px;border-radius:20px}
-
 .bot-nav{position:fixed;bottom:0;left:0;right:0;background:#111;display:flex;padding:8px 0 12px;border-top:1px solid #222;z-index:100}
 .bot-item{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;background:none;border:none;color:#777;font-size:11px;cursor:pointer;font-family:inherit;padding:4px 0;position:relative}
 .bot-item i{font-size:22px}
@@ -130,7 +111,6 @@ body{font-family:'Noto Sans Bengali',sans-serif;background:#0a0a0a;color:#fff;mi
 .bot-item.promo .p-circle i{color:#111;font-size:22px}
 .bot-item.promo .p-circle .dot{position:absolute;top:3px;right:3px;width:11px;height:11px;background:#e53935;border-radius:50%;border:2px solid #111}
 .bot-item .m-badge{position:absolute;top:0;right:14px;background:#e53935;color:#fff;font-size:10px;width:16px;height:16px;border-radius:50%;display:flex;align-items:center;justify-content:center}
-
 .toast{position:fixed;top:18px;right:14px;padding:12px 16px;border-radius:10px;font-size:13px;z-index:9999;animation:slideIn .3s;max-width:260px}
 .toast.ok{background:#00c853;color:#000}
 .toast.er{background:#e53935;color:#fff}
@@ -138,44 +118,25 @@ body{font-family:'Noto Sans Bengali',sans-serif;background:#0a0a0a;color:#fff;mi
 </style>
 </head>
 <body>
+<div id="loader"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIIPcIJuKiif4Q8ZVcAHmISMBUJ0xWJi-f5TNYZD39V8dhUX7cgIYITBc&s=10" alt=""></div>
+<div id="pageLoader"><div class="spinner"></div><p>লোড হচ্ছে...</p></div>
 
-<div id="loader">
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIIPcIJuKiif4Q8ZVcAHmISMBUJ0xWJi-f5TNYZD39V8dhUX7cgIYITBc&s=10" alt="">
-</div>
-
-<div id="pageLoader">
-  <div class="spinner"></div>
-  <p>লোড হচ্ছে...</p>
-</div>
-
-<!-- AUTH -->
 <div id="authPage">
   <div class="auth-box">
-    <div class="logo">
-      <h1><span>3333</span><b>bet</b></h1>
-      <p id="authTitle">লগইন</p>
-    </div>
+    <div class="logo"><h1><span>3333</span><b>bet</b></h1><p id="authTitle">লগইন</p></div>
     <div id="loginForm">
       <div class="input-box"><div class="icon"><i class="fas fa-user"></i></div><input type="text" id="loginUser" placeholder="ইউজারনেম অথবা মোবাইল নম্বর"></div>
       <div class="input-box"><div class="icon"><i class="fas fa-lock"></i></div><input type="password" id="loginPass" placeholder="পাসওয়ার্ড"></div>
-      <div class="remember">
-        <label><input type="checkbox" checked> মনে রাখুন</label>
-        <a href="#" id="forgotBtn">পাসওয়ার্ড ভুলে গেছেন?</a>
-      </div>
+      <div class="remember"><label><input type="checkbox" checked> মনে রাখুন</label><a href="#" id="forgotBtn">পাসওয়ার্ড ভুলে গেছেন?</a></div>
       <button type="button" class="btn-login" id="loginBtn">লগইন</button>
       <div class="reg-link">একটি অ্যাকাউন্ট নেই? <a href="#" id="showRegBtn">নিবন্ধন</a></div>
     </div>
     <div id="regForm">
-      <label>পুরো নাম</label>
-      <div class="input-box"><div class="icon"><i class="fas fa-user"></i></div><input type="text" id="regName" placeholder="আপনার নাম"></div>
-      <label>মোবাইল নম্বর</label>
-      <div class="input-box"><div class="icon"><i class="fas fa-phone"></i></div><input type="text" id="regPhone" placeholder="মোবাইল নম্বর"></div>
-      <label>ইউজারনেম</label>
-      <div class="input-box"><div class="icon"><i class="fas fa-at"></i></div><input type="text" id="regUser" placeholder="ইউজারনেম"></div>
-      <label>পাসওয়ার্ড</label>
-      <div class="input-box"><div class="icon"><i class="fas fa-lock"></i></div><input type="password" id="regPass" placeholder="কমপক্ষে ৬ অক্ষর"></div>
-      <label>পাসওয়ার্ড নিশ্চিত</label>
-      <div class="input-box"><div class="icon"><i class="fas fa-shield-halved"></i></div><input type="password" id="regPass2" placeholder="আবার লিখুন"></div>
+      <label>পুরো নাম</label><div class="input-box"><div class="icon"><i class="fas fa-user"></i></div><input type="text" id="regName" placeholder="আপনার নাম"></div>
+      <label>মোবাইল নম্বর</label><div class="input-box"><div class="icon"><i class="fas fa-phone"></i></div><input type="text" id="regPhone" placeholder="মোবাইল নম্বর"></div>
+      <label>ইউজারনেম</label><div class="input-box"><div class="icon"><i class="fas fa-at"></i></div><input type="text" id="regUser" placeholder="ইউজারনেম"></div>
+      <label>পাসওয়ার্ড</label><div class="input-box"><div class="icon"><i class="fas fa-lock"></i></div><input type="password" id="regPass" placeholder="কমপক্ষে ৬ অক্ষর"></div>
+      <label>পাসওয়ার্ড নিশ্চিত</label><div class="input-box"><div class="icon"><i class="fas fa-shield-halved"></i></div><input type="password" id="regPass2" placeholder="আবার লিখুন"></div>
       <button type="button" class="btn-login" id="regBtn" style="margin-top:16px">অ্যাকাউন্ট তৈরি করুন</button>
       <div class="reg-link">ইতিমধ্যে অ্যাকাউন্ট আছে? <a href="#" id="showLoginBtn">লগইন</a></div>
     </div>
@@ -183,19 +144,17 @@ body{font-family:'Noto Sans Bengali',sans-serif;background:#0a0a0a;color:#fff;mi
   </div>
 </div>
 
-<!-- DASHBOARD -->
 <div id="dash">
   <div class="top-bar" id="mainTopBar">
     <div class="top-logo">🦁 3333<b>bet</b></div>
     <div class="top-user">
       <span class="vip">VIP5</span>
       <span class="uname" id="dashUser">user</span>
-      <span class="bal" id="balText">৳ ০</span>
+      <span class="bal" id="balText">৳ 45,000.00</span>
       <div class="logout" id="logoutBtn"><i class="fas fa-power-off"></i></div>
     </div>
   </div>
 
-  <!-- HOME -->
   <div class="sec active" id="secHome">
     <div class="promo-bar"><i class="fas fa-volume-up"></i><span>bKash: রক্ষণাবেক্ষণ চলছে</span></div>
     <div class="banner-slider">
@@ -230,57 +189,29 @@ body{font-family:'Noto Sans Bengali',sans-serif;background:#0a0a0a;color:#fff;mi
       <div class="games-area">
         <div class="games-title"><i class="fas fa-fire"></i> Hot Games</div>
         <div class="game-grid">
-          <div class="g-card" onclick="showLoadingThen(function(){toast('Aviator লোড হচ্ছে...')})">
-            <img src="https://images.6223027.com/TCG_GAME_ICONS/SPB/EN/SPB002.avif" alt="Aviator">
-            <i class="far fa-heart heart"></i><p>Aviator</p>
-          </div>
-          <div class="g-card" onclick="showLoadingThen(function(){toast('Super Ace')})">
-            <img src="https://images.6223027.com/TCG_GAME_ICONS/JL/EN/JL0033.avif" alt="Super Ace">
-            <i class="far fa-heart heart"></i><p>Super Ace</p>
-          </div>
-          <div class="g-card" onclick="showLoadingThen(function(){toast('SUPER ELEMENTS 2')})">
-            <img src="https://images.6223027.com/TCG_GAME_ICONS/FC/EN/22098.avif" alt="SUPER ELEMENTS 2">
-            <i class="far fa-heart heart"></i><p>SUPER ELEMENTS 2</p>
-          </div>
-          <div class="g-card" onclick="showLoadingThen(function(){toast('Wild Bounty Showdown')})">
-            <img src="https://images.6223027.com/TCG_GAME_ICONS/PG/EN/PG0113.avif" alt="Wild Bounty Showdown">
-            <i class="far fa-heart heart"></i><p>Wild Bounty Showdown</p>
-          </div>
-          <div class="g-card" onclick="showLoadingThen(function(){toast('Super Ace Deluxe')})">
-            <img src="https://images.6223027.com/TCG_GAME_ICONS/JL/EN/JL0162.avif" alt="Super Ace Deluxe">
-            <i class="far fa-heart heart"></i><p>Super Ace Deluxe</p>
-          </div>
-          <div class="g-card" onclick="showLoadingThen(function(){toast('Super Elements')})">
-            <img src="https://images.6223027.com/TCG_GAME_ICONS/FC/EN/FC0045.avif" alt="Super Elements">
-            <i class="far fa-heart heart"></i><p>Super Elements</p>
-          </div>
-          <div class="g-card" onclick="showLoadingThen(function(){toast('Boxing King')})">
-            <img src="https://images.6223027.com/TCG_GAME_ICONS/JL/EN/JL0038.avif" alt="Boxing King">
-            <i class="far fa-heart heart"></i><p>Boxing King</p>
-          </div>
-          <div class="g-card" onclick="showLoadingThen(function(){toast('Fortune Gems 3')})">
-            <img src="https://images.6223027.com/TCG_GAME_ICONS/JL/EN/JL0156.avif" alt="Fortune Gems 3">
-            <i class="far fa-heart heart"></i><p>Fortune Gems 3</p>
-          </div>
-          <div class="g-card" onclick="showLoadingThen(function(){toast('Fortune Garuda 500')})">
-            <img src="https://images.6223027.com/TCG_GAME_ICONS/JL/EN/696.avif" alt="Fortune Garuda 500">
-            <i class="far fa-heart heart"></i><p>Fortune Garuda 500</p>
-          </div>
+          <div class="g-card" onclick="showLoadingThen(function(){toast('Aviator লোড হচ্ছে...')})"><img src="https://images.6223027.com/TCG_GAME_ICONS/SPB/EN/SPB002.avif" alt="Aviator"><i class="far fa-heart heart"></i><p>Aviator</p></div>
+          <div class="g-card" onclick="showLoadingThen(function(){toast('Super Ace')})"><img src="https://images.6223027.com/TCG_GAME_ICONS/JL/EN/JL0033.avif" alt="Super Ace"><i class="far fa-heart heart"></i><p>Super Ace</p></div>
+          <div class="g-card" onclick="showLoadingThen(function(){toast('SUPER ELEMENTS 2')})"><img src="https://images.6223027.com/TCG_GAME_ICONS/FC/EN/22098.avif" alt="SUPER ELEMENTS 2"><i class="far fa-heart heart"></i><p>SUPER ELEMENTS 2</p></div>
+          <div class="g-card" onclick="showLoadingThen(function(){toast('Wild Bounty Showdown')})"><img src="https://images.6223027.com/TCG_GAME_ICONS/PG/EN/PG0113.avif" alt="Wild Bounty Showdown"><i class="far fa-heart heart"></i><p>Wild Bounty Showdown</p></div>
+          <div class="g-card" onclick="showLoadingThen(function(){toast('Super Ace Deluxe')})"><img src="https://images.6223027.com/TCG_GAME_ICONS/JL/EN/JL0162.avif" alt="Super Ace Deluxe"><i class="far fa-heart heart"></i><p>Super Ace Deluxe</p></div>
+          <div class="g-card" onclick="showLoadingThen(function(){toast('Super Elements')})"><img src="https://images.6223027.com/TCG_GAME_ICONS/FC/EN/FC0045.avif" alt="Super Elements"><i class="far fa-heart heart"></i><p>Super Elements</p></div>
+          <div class="g-card" onclick="showLoadingThen(function(){toast('Boxing King')})"><img src="https://images.6223027.com/TCG_GAME_ICONS/JL/EN/JL0038.avif" alt="Boxing King"><i class="far fa-heart heart"></i><p>Boxing King</p></div>
+          <div class="g-card" onclick="showLoadingThen(function(){toast('Fortune Gems 3')})"><img src="https://images.6223027.com/TCG_GAME_ICONS/JL/EN/JL0156.avif" alt="Fortune Gems 3"><i class="far fa-heart heart"></i><p>Fortune Gems 3</p></div>
+          <div class="g-card" onclick="showLoadingThen(function(){toast('Fortune Garuda 500')})"><img src="https://images.6223027.com/TCG_GAME_ICONS/JL/EN/696.avif" alt="Fortune Garuda 500"><i class="far fa-heart heart"></i><p>Fortune Garuda 500</p></div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- DEPOSIT -->
   <div class="sec" id="secDeposit">
     <div class="sec-title"><i class="fas fa-wallet"></i> টাকা জমা করুন</div>
     <div class="dep-amounts">
-      <div class="dep-amt" onclick="selAmt(this,500)">৳ ৫০০</div>
-      <div class="dep-amt on" onclick="selAmt(this,1000)">৳ ১,০০০</div>
-      <div class="dep-amt" onclick="selAmt(this,2000)">৳ ২,০০০</div>
-      <div class="dep-amt" onclick="selAmt(this,5000)">৳ ৫,০০০</div>
-      <div class="dep-amt" onclick="selAmt(this,10000)">৳ ১০,০০০</div>
-      <div class="dep-amt" onclick="selAmt(this,20000)">৳ ২০,০০০</div>
+      <div class="dep-amt" onclick="selAmt(this,500)">৳ 500</div>
+      <div class="dep-amt on" onclick="selAmt(this,1000)">৳ 1,000</div>
+      <div class="dep-amt" onclick="selAmt(this,2000)">৳ 2,000</div>
+      <div class="dep-amt" onclick="selAmt(this,5000)">৳ 5,000</div>
+      <div class="dep-amt" onclick="selAmt(this,10000)">৳ 10,000</div>
+      <div class="dep-amt" onclick="selAmt(this,20000)">৳ 20,000</div>
     </div>
     <div class="dep-input"><label>পরিমাণ (৳)</label><input type="number" id="depAmount" value="1000" min="100"></div>
     <div class="pay-methods">
@@ -292,88 +223,129 @@ body{font-family:'Noto Sans Bengali',sans-serif;background:#0a0a0a;color:#fff;mi
     <button class="btn-main" onclick="doDeposit()">জমা দিন</button>
   </div>
 
-  <!-- WITHDRAW -->
   <div class="sec" id="secWithdraw">
-    <div class="sec-title"><i class="fas fa-money-bill-transfer"></i> টাকা উত্তোলন</div>
-    <div class="wit-info"><p>বর্তমান ব্যালেন্স</p><strong id="witBal">৳ ০.০০</strong></div>
-    <div class="dep-input"><label>উত্তোলনের পরিমাণ (৳)</label><input type="number" id="witAmount" placeholder="পরিমাণ লিখুন" min="100"></div>
-    <div class="dep-input"><label>bKash / Nagad নম্বর</label><input type="text" id="witNumber" placeholder="01XXXXXXXXX"></div>
-    <button class="btn-main" onclick="doWithdraw()">উত্তোলন করুন</button>
+    <div style="background:#111;padding:12px 14px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #222;position:sticky;top:0;z-index:20">
+      <div onclick="showLoadingThen(function(){switchSec('Home')})" style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:18px;color:#fff"><i class="fas fa-arrow-left"></i></div>
+      <div style="font-size:17px;font-weight:600;color:#fff">Withdrawal</div>
+      <div style="display:flex;gap:14px;font-size:18px;color:#aaa">
+        <i class="fas fa-clipboard-list" style="cursor:pointer" onclick="toast('উত্তোলন রেকর্ড')"></i>
+        <i class="fas fa-headset" style="cursor:pointer" onclick="toast('কাস্টমার সাপোর্ট')"></i>
+      </div>
+    </div>
+    <div style="display:flex;background:#fff;border-bottom:1px solid #eee">
+      <div id="tabEwallet" onclick="switchWitTab('ewallet')" style="flex:1;text-align:center;padding:14px 0;font-size:15px;font-weight:600;color:#e91e63;border-bottom:3px solid #e91e63;cursor:pointer">
+        <span style="display:inline-flex;align-items:center;gap:6px"><span style="width:22px;height:22px;border-radius:50%;background:#e91e63;color:#fff;font-size:11px;display:inline-flex;align-items:center;justify-content:center;font-weight:700">E</span> E wallet</span>
+      </div>
+      <div id="tabCrypto" onclick="switchWitTab('crypto')" style="flex:1;text-align:center;padding:14px 0;font-size:15px;font-weight:600;color:#999;border-bottom:3px solid transparent;cursor:pointer">
+        <span style="display:inline-flex;align-items:center;gap:6px"><span style="width:22px;height:22px;border-radius:50%;background:#f9a825;color:#fff;font-size:12px;display:inline-flex;align-items:center;justify-content:center">₿</span> Crypto Wallet</span>
+      </div>
+    </div>
+    <div id="ewalletPanel" style="background:#f5f5f5;min-height:70vh;padding-bottom:30px">
+      <div style="padding:16px 16px 8px;font-size:14px;color:#666;font-weight:500">Bound E wallet (2/5)</div>
+      <div style="position:relative;overflow:hidden;padding:0 16px">
+        <div id="walletCardsTrack" style="display:flex;transition:transform 0.35s ease;width:200%">
+          <div style="width:50%;padding-right:8px;box-sizing:border-box">
+            <div style="background:linear-gradient(135deg,#9c27b0 0%,#7b1fa2 30%,#00bcd4 100%);border-radius:16px;padding:18px 20px;color:#fff;position:relative;overflow:hidden;min-height:110px;box-shadow:0 4px 15px rgba(156,39,176,0.3)">
+              <div style="position:absolute;right:-10px;top:10px;opacity:0.15;font-size:90px;transform:rotate(-15deg)">৳</div>
+              <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
+                <div style="width:36px;height:36px;background:#fff;border-radius:8px;display:flex;align-items:center;justify-content:center"><span style="color:#f9641b;font-weight:800;font-size:14px">নগদ</span></div>
+                <span style="font-size:18px;font-weight:700">Nagad</span>
+              </div>
+              <div style="font-size:20px;font-weight:600;letter-spacing:2px;margin-bottom:6px">*******1883</div>
+              <div style="font-size:12px;opacity:0.85">2025-07-29 04:20:19</div>
+            </div>
+          </div>
+          <div style="width:50%;padding-left:8px;box-sizing:border-box">
+            <div style="background:linear-gradient(135deg,#e91e63 0%,#c2185b 40%,#ad1457 100%);border-radius:16px;padding:18px 20px;color:#fff;position:relative;overflow:hidden;min-height:110px;box-shadow:0 4px 15px rgba(233,30,99,0.3)">
+              <div style="position:absolute;right:-10px;top:10px;opacity:0.15;font-size:90px;transform:rotate(-15deg)">৳</div>
+              <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
+                <div style="width:36px;height:36px;background:#fff;border-radius:8px;display:flex;align-items:center;justify-content:center"><span style="color:#e2136e;font-weight:800;font-size:13px">bKash</span></div>
+                <span style="font-size:18px;font-weight:700">bKash</span>
+              </div>
+              <div style="font-size:20px;font-weight:600;letter-spacing:2px;margin-bottom:6px">*******1883</div>
+              <div style="font-size:12px;opacity:0.85">2025-07-29 04:20:19</div>
+            </div>
+          </div>
+        </div>
+        <div style="display:flex;justify-content:center;gap:6px;margin-top:12px">
+          <span id="dot0" onclick="goWalletCard(0)" style="width:8px;height:8px;border-radius:50%;background:#2196f3;cursor:pointer"></span>
+          <span id="dot1" onclick="goWalletCard(1)" style="width:8px;height:8px;border-radius:50%;background:#ccc;cursor:pointer"></span>
+        </div>
+      </div>
+      <div style="position:relative;height:50px">
+        <div onclick="toast('নতুন ওয়ালেট যোগ করুন')" style="position:absolute;right:20px;top:8px;width:48px;height:48px;border-radius:50%;background:#f44336;color:#fff;display:flex;align-items:center;justify-content:center;font-size:24px;box-shadow:0 4px 12px rgba(244,67,54,0.4);cursor:pointer;z-index:5">+</div>
+      </div>
+      <div style="padding:0 16px;font-size:13px;color:#666;line-height:1.7">
+        <div style="margin-bottom:8px">Withdrawal time： 24 hours</div>
+        <div style="background:#fff;border-radius:12px;padding:14px;margin-bottom:12px;border:1px solid #eee">
+          <div style="margin-bottom:6px">💬 প্রিয় সদস্য, শুভেচ্ছা! 🎯</div>
+          <div style="margin-bottom:6px">আপনার <strong style="color:#e65100">3333bet</strong> অ্যাকাউন্টে উত্তোলনের আগে অনুগ্রহ করে আপনার ওয়ালেট (বিকাশ/নগদ/রকেট ইত্যাদি) সঠিকভাবে সংযুক্ত হয়েছে কিনা তা যাচাই করুন।</div>
+          <div style="margin-bottom:6px">ভুল ওয়ালেট সংযোগের কারণে টাকা স্থানান্তরে বিলম্ব বা ব্যর্থতা ঘটতে পারে।</div>
+          <div>🔒 দয়া করে আবার পরীক্ষা করুন এবং নিরাপদে উত্তোলন সম্পন্ন করুন! 💰</div>
+        </div>
+        <div style="margin-bottom:4px">দৈনিক উত্তোলন ৯৯ (বার), অবশিষ্ট উত্তোলন ৯৯ (বার)</div>
+        <div style="margin-bottom:2px">প্রধান ওয়ালেট : ৳ <span id="witMainBal" style="color:#000;font-weight:600">45,000.00</span></div>
+        <div style="margin-bottom:14px">উপলব্ধ পরিমাণ : ৳ <span id="witAvailBal" style="color:#000;font-weight:600">45,000.00</span></div>
+      </div>
+      <div style="padding:0 16px;margin-bottom:16px">
+        <button onclick="updateBal();toast('ব্যালেন্স রিফ্রেশ হয়েছে')" style="width:100%;padding:12px;border:none;border-radius:25px;background:#e3f2fd;color:#1976d2;font-size:15px;font-weight:600;cursor:pointer;font-family:inherit;display:flex;align-items:center;justify-content:center;gap:8px">
+          <i class="fas fa-sync-alt"></i> আপনার ব্যালেন্স রিফ্রেশ করুন
+        </button>
+      </div>
+      <div style="padding:0 16px 20px;background:#fff;margin:0 0 10px;border-top:1px solid #eee">
+        <div style="font-size:15px;font-weight:600;color:#333;padding:16px 0 12px">উত্তোলন পরিমাণ:</div>
+        <div style="position:relative;margin-bottom:14px">
+          <div style="display:flex;align-items:center;border:1.5px solid #e0e0e0;border-radius:12px;padding:14px 16px;background:#fff">
+            <span style="font-size:14px;color:#333;font-weight:500;min-width:70px">পরিমাণ</span>
+            <input type="number" id="witAmount" placeholder="500 ~ 25,000" min="500" max="25000" style="flex:1;border:none;outline:none;font-size:15px;color:#333;background:transparent;font-family:inherit;text-align:right">
+          </div>
+        </div>
+        <div style="position:relative;margin-bottom:20px">
+          <div style="display:flex;align-items:center;border:1.5px solid #e0e0e0;border-radius:12px;padding:14px 16px;background:#fff">
+            <span style="font-size:14px;color:#333;font-weight:500;min-width:110px">লেনদেন পাসওয়ার্ড</span>
+            <input type="password" id="witPass" placeholder="লেনদেন পাসওয়ার্ড" style="flex:1;border:none;outline:none;font-size:15px;color:#333;background:transparent;font-family:inherit">
+            <i class="fas fa-eye-slash" id="toggleWitPass" onclick="togglePass()" style="color:#999;cursor:pointer;font-size:16px;margin-left:8px"></i>
+          </div>
+        </div>
+        <button onclick="doWithdrawNew()" id="witSubmitBtn" style="width:100%;padding:16px;border:none;border-radius:12px;background:#bdbdbd;color:#fff;font-size:16px;font-weight:600;cursor:pointer;font-family:inherit;transition:background .2s">জমা দিন</button>
+      </div>
+      <div style="padding:0 16px 20px">
+        <div style="font-size:15px;font-weight:600;color:#333;margin-bottom:8px;text-align:center">Withdrawal turnover requirements</div>
+        <div style="background:#fff3e0;border-radius:10px;padding:12px;text-align:center;color:#e65100;font-size:13px;font-weight:500;border:1px solid #ffe0b2">Please complete the required turnover for withdrawal.</div>
+      </div>
+    </div>
+    <div id="cryptoPanel" style="display:none;background:#f5f5f5;min-height:70vh;padding:40px 20px;text-align:center;color:#999">
+      <i class="fab fa-bitcoin" style="font-size:48px;margin-bottom:12px;color:#f9a825"></i>
+      <div style="font-size:16px">Crypto Wallet coming soon</div>
+    </div>
   </div>
 
-  <!-- PROMOTION - 4 Banners + Unique Bonuses -->
   <div class="sec" id="secPromo">
     <div class="sec-title"><i class="fas fa-gift"></i> প্রমোশন</div>
-
-    <div class="promo-card">
-      <img src="https://images.6223027.com/mcs-images/announcement/xfbdtf5/1781751092226_default_mobile.png" alt="Promo 1">
-      <div class="body">
-        <h4>🎉 ওয়েলকাম বোনাস</h4>
-        <p>নতুন সদস্যদের জন্য প্রথম ডিপোজিটে <strong>১০০% বোনাস</strong> — সর্বোচ্চ ৳১০,০০০ পর্যন্ত।</p>
-        <span class="tag">নতুন ইউজার</span>
-      </div>
-    </div>
-
-    <div class="promo-card">
-      <img src="https://images.3521315.com/mcs-images/announcement/333bdtf7/1785912559342_default_mobile.png" alt="Promo 2">
-      <div class="body">
-        <h4>💰 দৈনিক ক্যাশব্যাক</h4>
-        <p>প্রতিদিন খেললেই পাবেন <strong>৫% ক্যাশব্যাক</strong>। কোনো বাজি হারালেও টাকা ফিরে পাবেন।</p>
-        <span class="tag">দৈনিক</span>
-      </div>
-    </div>
-
-    <div class="promo-card">
-      <img src="https://images.3521315.com/mcs-images/announcement/333bdtf7/1778486587279_%E8%81%94%E7%9B%9F%E5%9B%BE5_3333.png" alt="Promo 3">
-      <div class="body">
-        <h4>🔥 স্পেশাল ডিপোজিট বোনাস</h4>
-        <p>৳৫,০০০ বা তার বেশি জমা দিলে পাবেন অতিরিক্ত <strong>৫০% বোনাস</strong> + ফ্রি স্পিন।</p>
-        <span class="tag">স্পেশাল</span>
-      </div>
-    </div>
-
-    <div class="promo-card">
-      <img src="https://images.3521315.com/mcs-images/announcement/333bdtf7/1780073802161_default_mobile.gif" alt="Promo 4">
-      <div class="body">
-        <h4>👥 রেফার অ্যান্ড আর্ন</h4>
-        <p>বন্ধুকে ইনভাইট করুন এবং প্রতি সফল রেফারে পাবেন <strong>৳২০০</strong> বোনাস।</p>
-        <span class="tag">রেফার</span>
-      </div>
-    </div>
+    <div class="promo-card"><img src="https://images.6223027.com/mcs-images/announcement/xfbdtf5/1781751092226_default_mobile.png" alt="Promo 1"><div class="body"><h4>🎉 ওয়েলকাম বোনাস</h4><p>নতুন সদস্যদের জন্য প্রথম ডিপোজিটে <strong>১০০% বোনাস</strong> — সর্বোচ্চ ৳১০,০০০ পর্যন্ত।</p><span class="tag">নতুন ইউজার</span></div></div>
+    <div class="promo-card"><img src="https://images.3521315.com/mcs-images/announcement/333bdtf7/1785912559342_default_mobile.png" alt="Promo 2"><div class="body"><h4>💰 দৈনিক ক্যাশব্যাক</h4><p>প্রতিদিন খেললেই পাবেন <strong>৫% ক্যাশব্যাক</strong>। কোনো বাজি হারালেও টাকা ফিরে পাবেন।</p><span class="tag">দৈনিক</span></div></div>
+    <div class="promo-card"><img src="https://images.3521315.com/mcs-images/announcement/333bdtf7/1778486587279_%E8%81%94%E7%9B%9F%E5%9B%BE5_3333.png" alt="Promo 3"><div class="body"><h4>🔥 স্পেশাল ডিপোজিট বোনাস</h4><p>৳৫,০০০ বা তার বেশি জমা দিলে পাবেন অতিরিক্ত <strong>৫০% বোনাস</strong> + ফ্রি স্পিন।</p><span class="tag">স্পেশাল</span></div></div>
+    <div class="promo-card"><img src="https://images.3521315.com/mcs-images/announcement/333bdtf7/1780073802161_default_mobile.gif" alt="Promo 4"><div class="body"><h4>👥 রেফার অ্যান্ড আর্ন</h4><p>বন্ধুকে ইনভাইট করুন এবং প্রতি সফল রেফারে পাবেন <strong>৳২০০</strong> বোনাস।</p><span class="tag">রেফার</span></div></div>
   </div>
 
-  <!-- MEMBER -->
   <div class="sec" id="secMember" style="background:#ffffff;min-height:100vh;color:#333">
     <div style="display:flex;align-items:center;padding:14px 16px;background:#fff;border-bottom:1px solid #eee;position:sticky;top:0;z-index:10">
-      <div onclick="showLoadingThen(function(){switchSec('Home')})" style="width:38px;height:38px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:20px;color:#333">
-        <i class="fas fa-arrow-left"></i>
-      </div>
+      <div onclick="showLoadingThen(function(){switchSec('Home')})" style="width:38px;height:38px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:20px;color:#333"><i class="fas fa-arrow-left"></i></div>
       <h2 style="flex:1;text-align:center;font-size:18px;font-weight:600;margin-right:38px;color:#222">আমার অ্যাকাউন্ট</h2>
     </div>
-
     <div style="margin:16px;background:linear-gradient(135deg,#f8f9fc,#eef1f8);border-radius:16px;padding:20px;position:relative;overflow:hidden;border:1px solid #e0e4ef;box-shadow:0 2px 12px rgba(0,0,0,.06)">
       <div style="position:absolute;top:10px;right:15px;opacity:.12;font-size:80px;color:#c9a227"><i class="fas fa-medal"></i></div>
       <div style="display:flex;align-items:center;gap:14px;margin-bottom:16px">
-        <img id="profileAv" src="https://images.3521315.com//TCG_PROD_IMAGES/B2C/333BDTF7/PROFILE/1.png" alt="Profile"
-             style="width:76px;height:76px;border-radius:50%;object-fit:cover;border:3px solid #ffd700;flex-shrink:0;background:#eee">
+        <img id="profileAv" src="https://images.3521315.com//TCG_PROD_IMAGES/B2C/333BDTF7/PROFILE/1.png" alt="Profile" style="width:76px;height:76px;border-radius:50%;object-fit:cover;border:3px solid #ffd700;flex-shrink:0;background:#eee">
         <div>
-          <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
-            <span style="background:#333;color:#ffd700;font-size:12px;padding:3px 10px;border-radius:20px;font-weight:600">
-              <i class="fas fa-crown" style="font-size:11px"></i> VIP0
-            </span>
-          </div>
-          <div style="font-size:17px;font-weight:600;display:flex;align-items:center;gap:6px;color:#222">
-            <span id="profileId">1340148599</span>
-            <i class="far fa-copy" style="font-size:14px;color:#999;cursor:pointer" onclick="toast('কপি করা হয়েছে')"></i>
-          </div>
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px"><span style="background:#333;color:#ffd700;font-size:12px;padding:3px 10px;border-radius:20px;font-weight:600"><i class="fas fa-crown" style="font-size:11px"></i> VIP0</span></div>
+          <div style="font-size:17px;font-weight:600;display:flex;align-items:center;gap:6px;color:#222"><span id="profileId">1340148599</span><i class="far fa-copy" style="font-size:14px;color:#999;cursor:pointer" onclick="toast('কপি করা হয়েছে')"></i></div>
           <div style="font-size:13px;color:#888;margin-top:3px">যোগদান করেছেন: 2026-08-20</div>
         </div>
       </div>
       <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:18px">
-        <div style="font-size:28px;font-weight:700;color:#e6a800;font-family:'Rajdhani',sans-serif" id="memberBal">৳ 0.00</div>
-        <div onclick="toast('রিফ্রেশ করা হয়েছে')" style="width:36px;height:36px;border-radius:50%;background:rgba(0,0,0,.05);display:flex;align-items:center;justify-content:center;cursor:pointer">
-          <i class="fas fa-sync-alt" style="color:#666;font-size:15px"></i>
-        </div>
+        <div style="font-size:28px;font-weight:700;color:#000;font-family:'Rajdhani',sans-serif" id="memberBal">৳ 45,000.00</div>
+        <div onclick="toast('রিফ্রেশ করা হয়েছে')" style="width:36px;height:36px;border-radius:50%;background:rgba(0,0,0,.05);display:flex;align-items:center;justify-content:center;cursor:pointer"><i class="fas fa-sync-alt" style="color:#666;font-size:15px"></i></div>
       </div>
       <div style="display:flex;gap:10px">
         <button onclick="showLoadingThen(function(){switchSec('Deposit')})" style="flex:1;padding:12px 0;border:none;border-radius:25px;background:#fff;color:#333;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;box-shadow:0 2px 8px rgba(0,0,0,.08)">জমা দিন</button>
@@ -381,83 +353,25 @@ body{font-family:'Noto Sans Bengali',sans-serif;background:#0a0a0a;color:#fff;mi
         <button onclick="toast('আমার কার্ড')" style="flex:1;padding:12px 0;border:none;border-radius:25px;background:#fff;color:#333;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;box-shadow:0 2px 8px rgba(0,0,0,.08)">আমার কার্ড</button>
       </div>
     </div>
-
     <div style="padding:0 16px 20px">
       <div style="display:inline-block;background:#f0f0f0;color:#b8860b;font-size:13px;padding:5px 14px;border-radius:20px;margin-bottom:18px;font-weight:500">সদস্য সেন্টার</div>
       <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:18px 10px">
-        <div onclick="showLoadingThen(function(){toast('পুরস্কার সেন্টার')})" style="text-align:center;cursor:pointer">
-          <div style="width:56px;height:56px;border-radius:50%;background:#fff8e7;margin:0 auto 7px;display:flex;align-items:center;justify-content:center;position:relative;box-shadow:0 2px 8px rgba(0,0,0,.07)">
-            <i class="fas fa-trophy" style="color:#d4a017;font-size:22px"></i>
-            <span style="position:absolute;top:-4px;right:-4px;background:#e53935;color:#fff;font-size:10px;width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center">3</span>
-          </div>
-          <div style="font-size:12px;color:#555;line-height:1.3">পুরস্কার<br>সেন্টার</div>
-        </div>
-        <div onclick="showLoadingThen(function(){toast('বেটিং রেকর্ড')})" style="text-align:center;cursor:pointer">
-          <div style="width:56px;height:56px;border-radius:50%;background:#fff8e7;margin:0 auto 7px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.07)"><i class="fas fa-star" style="color:#d4a017;font-size:22px"></i></div>
-          <div style="font-size:12px;color:#555;line-height:1.3">বেটিং<br>রেকর্ড</div>
-        </div>
-        <div onclick="showLoadingThen(function(){toast('লাভ এবং লস')})" style="text-align:center;cursor:pointer">
-          <div style="width:56px;height:56px;border-radius:50%;background:#fff8e7;margin:0 auto 7px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.07)"><i class="fas fa-file-invoice-dollar" style="color:#d4a017;font-size:22px"></i></div>
-          <div style="font-size:12px;color:#555;line-height:1.3">লাভ এবং<br>লস</div>
-        </div>
-        <div onclick="showLoadingThen(function(){toast('জমা রেকর্ড')})" style="text-align:center;cursor:pointer">
-          <div style="width:56px;height:56px;border-radius:50%;background:#fff8e7;margin:0 auto 7px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.07)"><i class="fas fa-clipboard-list" style="color:#d4a017;font-size:22px"></i></div>
-          <div style="font-size:12px;color:#555;line-height:1.3">জমা<br>রেকর্ড</div>
-        </div>
-        <div onclick="showLoadingThen(function(){toast('উত্তোলন রেকর্ড')})" style="text-align:center;cursor:pointer">
-          <div style="width:56px;height:56px;border-radius:50%;background:#fff8e7;margin:0 auto 7px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.07)"><i class="fas fa-clipboard-check" style="color:#d4a017;font-size:22px"></i></div>
-          <div style="font-size:12px;color:#555;line-height:1.3">উত্তোলন<br>রেকর্ড</div>
-        </div>
-        <div onclick="showLoadingThen(function(){toast('অ্যাকাউন্ট রেকর্ড')})" style="text-align:center;cursor:pointer">
-          <div style="width:56px;height:56px;border-radius:50%;background:#fff8e7;margin:0 auto 7px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.07)"><i class="fas fa-history" style="color:#d4a017;font-size:22px"></i></div>
-          <div style="font-size:12px;color:#555;line-height:1.3">অ্যাকাউন্ট<br>রেকর্ড</div>
-        </div>
-        <div onclick="showLoadingThen(function(){toast('আমার অ্যাকাউন্ট')})" style="text-align:center;cursor:pointer">
-          <div style="width:56px;height:56px;border-radius:50%;background:#fff8e7;margin:0 auto 7px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.07)"><i class="fas fa-user" style="color:#d4a017;font-size:22px"></i></div>
-          <div style="font-size:12px;color:#555;line-height:1.3">আমার<br>অ্যাকাউন্ট</div>
-        </div>
-        <div onclick="showLoadingThen(function(){toast('সুরক্ষা কেন্দ্র')})" style="text-align:center;cursor:pointer">
-          <div style="width:56px;height:56px;border-radius:50%;background:#fff8e7;margin:0 auto 7px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.07)"><i class="fas fa-shield-alt" style="color:#d4a017;font-size:22px"></i></div>
-          <div style="font-size:12px;color:#555;line-height:1.3">সুরক্ষা<br>কেন্দ্র</div>
-        </div>
-        <div onclick="showLoadingThen(function(){toast('বন্ধুদের আমন্ত্রণ')})" style="text-align:center;cursor:pointer">
-          <div style="width:56px;height:56px;border-radius:50%;background:#fff8e7;margin:0 auto 7px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.07)"><i class="fas fa-user-plus" style="color:#d4a017;font-size:22px"></i></div>
-          <div style="font-size:12px;color:#555;line-height:1.3">বন্ধুদের<br>আমন্ত্রণ</div>
-        </div>
-        <div onclick="showLoadingThen(function(){toast('মিশন')})" style="text-align:center;cursor:pointer">
-          <div style="width:56px;height:56px;border-radius:50%;background:#fff8e7;margin:0 auto 7px;display:flex;align-items:center;justify-content:center;position:relative;box-shadow:0 2px 8px rgba(0,0,0,.07)">
-            <i class="fas fa-gift" style="color:#d4a017;font-size:22px"></i>
-            <span style="position:absolute;top:-4px;right:-4px;background:#e53935;color:#fff;font-size:10px;width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center">1</span>
-          </div>
-          <div style="font-size:12px;color:#555;line-height:1.3">মিশন</div>
-        </div>
-        <div onclick="showLoadingThen(function(){toast('রিবেট')})" style="text-align:center;cursor:pointer">
-          <div style="width:56px;height:56px;border-radius:50%;background:#fff8e7;margin:0 auto 7px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.07)"><i class="fas fa-hand-holding-usd" style="color:#d4a017;font-size:22px"></i></div>
-          <div style="font-size:12px;color:#555;line-height:1.3">রিবেট</div>
-        </div>
-        <div onclick="showLoadingThen(function(){toast('মেইল')})" style="text-align:center;cursor:pointer">
-          <div style="width:56px;height:56px;border-radius:50%;background:#fff8e7;margin:0 auto 7px;display:flex;align-items:center;justify-content:center;position:relative;box-shadow:0 2px 8px rgba(0,0,0,.07)">
-            <i class="fas fa-envelope" style="color:#d4a017;font-size:22px"></i>
-            <span style="position:absolute;top:-4px;right:-4px;background:#e53935;color:#fff;font-size:10px;width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center">1</span>
-          </div>
-          <div style="font-size:12px;color:#555;line-height:1.3">মেইল</div>
-        </div>
-        <div onclick="showLoadingThen(function(){toast('পরামর্শ')})" style="text-align:center;cursor:pointer">
-          <div style="width:56px;height:56px;border-radius:50%;background:#fff8e7;margin:0 auto 7px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.07)"><i class="fas fa-comment-dots" style="color:#d4a017;font-size:22px"></i></div>
-          <div style="font-size:12px;color:#555;line-height:1.3">পরামর্শ</div>
-        </div>
-        <div onclick="showLoadingThen(function(){toast('অ্যাপ')})" style="text-align:center;cursor:pointer">
-          <div style="width:56px;height:56px;border-radius:50%;background:#fff8e7;margin:0 auto 7px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.07)"><i class="fas fa-mobile-alt" style="color:#d4a017;font-size:22px"></i></div>
-          <div style="font-size:12px;color:#555;line-height:1.3">অ্যাপ</div>
-        </div>
-        <div onclick="showLoadingThen(function(){toast('কাস্টমার')})" style="text-align:center;cursor:pointer">
-          <div style="width:56px;height:56px;border-radius:50%;background:#fff8e7;margin:0 auto 7px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.07)"><i class="fas fa-headset" style="color:#d4a017;font-size:22px"></i></div>
-          <div style="font-size:12px;color:#555;line-height:1.3">কাস্টমার</div>
-        </div>
-        <div onclick="showLoadingThen(function(){toast('সাহায্য কেন্দ্র')})" style="text-align:center;cursor:pointer">
-          <div style="width:56px;height:56px;border-radius:50%;background:#fff8e7;margin:0 auto 7px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.07)"><i class="fas fa-question-circle" style="color:#d4a017;font-size:22px"></i></div>
-          <div style="font-size:12px;color:#555;line-height:1.3">সাহায্য<br>কেন্দ্র</div>
-        </div>
+        <div onclick="showLoadingThen(function(){toast('পুরস্কার সেন্টার')})" style="text-align:center;cursor:pointer"><div style="width:56px;height:56px;border-radius:50%;background:#fff8e7;margin:0 auto 7px;display:flex;align-items:center;justify-content:center;position:relative;box-shadow:0 2px 8px rgba(0,0,0,.07)"><i class="fas fa-trophy" style="color:#d4a017;font-size:22px"></i><span style="position:absolute;top:-4px;right:-4px;background:#e53935;color:#fff;font-size:10px;width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center">3</span></div><div style="font-size:12px;color:#555;line-height:1.3">পুরস্কার<br>সেন্টার</div></div>
+        <div onclick="showLoadingThen(function(){toast('বেটিং রেকর্ড')})" style="text-align:center;cursor:pointer"><div style="width:56px;height:56px;border-radius:50%;background:#fff8e7;margin:0 auto 7px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.07)"><i class="fas fa-star" style="color:#d4a017;font-size:22px"></i></div><div style="font-size:12px;color:#555;line-height:1.3">বেটিং<br>রেকর্ড</div></div>
+        <div onclick="showLoadingThen(function(){toast('লাভ এবং লস')})" style="text-align:center;cursor:pointer"><div style="width:56px;height:56px;border-radius:50%;background:#fff8e7;margin:0 auto 7px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.07)"><i class="fas fa-file-invoice-dollar" style="color:#d4a017;font-size:22px"></i></div><div style="font-size:12px;color:#555;line-height:1.3">লাভ এবং<br>লস</div></div>
+        <div onclick="showLoadingThen(function(){toast('জমা রেকর্ড')})" style="text-align:center;cursor:pointer"><div style="width:56px;height:56px;border-radius:50%;background:#fff8e7;margin:0 auto 7px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.07)"><i class="fas fa-clipboard-list" style="color:#d4a017;font-size:22px"></i></div><div style="font-size:12px;color:#555;line-height:1.3">জমা<br>রেকর্ড</div></div>
+        <div onclick="showLoadingThen(function(){toast('উত্তোলন রেকর্ড')})" style="text-align:center;cursor:pointer"><div style="width:56px;height:56px;border-radius:50%;background:#fff8e7;margin:0 auto 7px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.07)"><i class="fas fa-clipboard-check" style="color:#d4a017;font-size:22px"></i></div><div style="font-size:12px;color:#555;line-height:1.3">উত্তোলন<br>রেকর্ড</div></div>
+        <div onclick="showLoadingThen(function(){toast('অ্যাকাউন্ট রেকর্ড')})" style="text-align:center;cursor:pointer"><div style="width:56px;height:56px;border-radius:50%;background:#fff8e7;margin:0 auto 7px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.07)"><i class="fas fa-history" style="color:#d4a017;font-size:22px"></i></div><div style="font-size:12px;color:#555;line-height:1.3">অ্যাকাউন্ট<br>রেকর্ড</div></div>
+        <div onclick="showLoadingThen(function(){toast('আমার অ্যাকাউন্ট')})" style="text-align:center;cursor:pointer"><div style="width:56px;height:56px;border-radius:50%;background:#fff8e7;margin:0 auto 7px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.07)"><i class="fas fa-user" style="color:#d4a017;font-size:22px"></i></div><div style="font-size:12px;color:#555;line-height:1.3">আমার<br>অ্যাকাউন্ট</div></div>
+        <div onclick="showLoadingThen(function(){toast('সুরক্ষা কেন্দ্র')})" style="text-align:center;cursor:pointer"><div style="width:56px;height:56px;border-radius:50%;background:#fff8e7;margin:0 auto 7px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.07)"><i class="fas fa-shield-alt" style="color:#d4a017;font-size:22px"></i></div><div style="font-size:12px;color:#555;line-height:1.3">সুরক্ষা<br>কেন্দ্র</div></div>
+        <div onclick="showLoadingThen(function(){toast('বন্ধুদের আমন্ত্রণ')})" style="text-align:center;cursor:pointer"><div style="width:56px;height:56px;border-radius:50%;background:#fff8e7;margin:0 auto 7px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.07)"><i class="fas fa-user-plus" style="color:#d4a017;font-size:22px"></i></div><div style="font-size:12px;color:#555;line-height:1.3">বন্ধুদের<br>আমন্ত্রণ</div></div>
+        <div onclick="showLoadingThen(function(){toast('মিশন')})" style="text-align:center;cursor:pointer"><div style="width:56px;height:56px;border-radius:50%;background:#fff8e7;margin:0 auto 7px;display:flex;align-items:center;justify-content:center;position:relative;box-shadow:0 2px 8px rgba(0,0,0,.07)"><i class="fas fa-gift" style="color:#d4a017;font-size:22px"></i><span style="position:absolute;top:-4px;right:-4px;background:#e53935;color:#fff;font-size:10px;width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center">1</span></div><div style="font-size:12px;color:#555;line-height:1.3">মিশন</div></div>
+        <div onclick="showLoadingThen(function(){toast('রিবেট')})" style="text-align:center;cursor:pointer"><div style="width:56px;height:56px;border-radius:50%;background:#fff8e7;margin:0 auto 7px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.07)"><i class="fas fa-hand-holding-usd" style="color:#d4a017;font-size:22px"></i></div><div style="font-size:12px;color:#555;line-height:1.3">রিবেট</div></div>
+        <div onclick="showLoadingThen(function(){toast('মেইল')})" style="text-align:center;cursor:pointer"><div style="width:56px;height:56px;border-radius:50%;background:#fff8e7;margin:0 auto 7px;display:flex;align-items:center;justify-content:center;position:relative;box-shadow:0 2px 8px rgba(0,0,0,.07)"><i class="fas fa-envelope" style="color:#d4a017;font-size:22px"></i><span style="position:absolute;top:-4px;right:-4px;background:#e53935;color:#fff;font-size:10px;width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center">1</span></div><div style="font-size:12px;color:#555;line-height:1.3">মেইল</div></div>
+        <div onclick="showLoadingThen(function(){toast('পরামর্শ')})" style="text-align:center;cursor:pointer"><div style="width:56px;height:56px;border-radius:50%;background:#fff8e7;margin:0 auto 7px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.07)"><i class="fas fa-comment-dots" style="color:#d4a017;font-size:22px"></i></div><div style="font-size:12px;color:#555;line-height:1.3">পরামর্শ</div></div>
+        <div onclick="showLoadingThen(function(){toast('অ্যাপ')})" style="text-align:center;cursor:pointer"><div style="width:56px;height:56px;border-radius:50%;background:#fff8e7;margin:0 auto 7px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.07)"><i class="fas fa-mobile-alt" style="color:#d4a017;font-size:22px"></i></div><div style="font-size:12px;color:#555;line-height:1.3">অ্যাপ</div></div>
+        <div onclick="showLoadingThen(function(){toast('কাস্টমার')})" style="text-align:center;cursor:pointer"><div style="width:56px;height:56px;border-radius:50%;background:#fff8e7;margin:0 auto 7px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.07)"><i class="fas fa-headset" style="color:#d4a017;font-size:22px"></i></div><div style="font-size:12px;color:#555;line-height:1.3">কাস্টমার</div></div>
+        <div onclick="showLoadingThen(function(){toast('সাহায্য কেন্দ্র')})" style="text-align:center;cursor:pointer"><div style="width:56px;height:56px;border-radius:50%;background:#fff8e7;margin:0 auto 7px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.07)"><i class="fas fa-question-circle" style="color:#d4a017;font-size:22px"></i></div><div style="font-size:12px;color:#555;line-height:1.3">সাহায্য<br>কেন্দ্র</div></div>
       </div>
     </div>
   </div>
@@ -465,157 +379,48 @@ body{font-family:'Noto Sans Bengali',sans-serif;background:#0a0a0a;color:#fff;mi
   <div class="bot-nav">
     <button class="bot-item active" data-sec="Home"><i class="fas fa-home"></i><span>Home</span></button>
     <button class="bot-item" data-sec="Deposit"><i class="fas fa-wallet"></i><span>Deposit</span></button>
-    <button class="bot-item promo" data-sec="Promo">
-      <div class="p-circle"><i class="fas fa-gift"></i><div class="dot"></div></div>
-      <span>Promotion</span>
-    </button>
+    <button class="bot-item promo" data-sec="Promo"><div class="p-circle"><i class="fas fa-gift"></i><div class="dot"></div></div><span>Promotion</span></button>
     <button class="bot-item" data-sec="Withdraw"><i class="fas fa-money-bill-transfer"></i><span>Withdraw</span></button>
     <button class="bot-item" data-sec="Member"><i class="fas fa-user"></i><span>Member</span><div class="m-badge">4</div></button>
   </div>
 </div>
 
 <script>
-setTimeout(function(){
-  document.getElementById('loader').classList.add('hide');
-  document.getElementById('authPage').classList.add('show');
-}, 1500);
-
-function toast(msg, type){
-  type = type || 'ok';
-  var t = document.createElement('div');
-  t.className = 'toast ' + type;
-  t.textContent = msg;
-  document.body.appendChild(t);
-  setTimeout(function(){ t.remove(); }, 2600);
-}
-
-function showLoadingThen(callback){
-  var loader = document.getElementById('pageLoader');
-  loader.classList.add('show');
-  setTimeout(function(){
-    loader.classList.remove('show');
-    if(callback) callback();
-  }, 700);
-}
-
-var balance = 0;
-var currentBanner = 0;
-var totalBanners = 4;
-
-function goBanner(index){
-  currentBanner = index;
-  document.getElementById('bannerTrack').style.transform = 'translateX(-' + (index * 25) + '%)';
-  var dots = document.querySelectorAll('.banner-dots span');
-  dots.forEach(function(d,i){ d.classList.toggle('active', i === index); });
-}
-setInterval(function(){
-  currentBanner = (currentBanner + 1) % totalBanners;
-  goBanner(currentBanner);
-}, 3500);
-
-document.getElementById('loginBtn').onclick = function(){
-  var user = document.getElementById('loginUser').value.trim();
-  if(!user){ toast('ইউজারনেম লিখুন', 'er'); return; }
-  showLoadingThen(function(){ enterDash(user); });
-};
-document.getElementById('regBtn').onclick = function(){
-  var name = document.getElementById('regName').value.trim();
-  var p1 = document.getElementById('regPass').value;
-  var p2 = document.getElementById('regPass2').value;
-  if(!name){ toast('নাম লিখুন', 'er'); return; }
-  if(p1 !== p2){ toast('পাসওয়ার্ড মিলছে না!', 'er'); return; }
-  toast('অ্যাকাউন্ট তৈরি সফল!');
-  showLoadingThen(function(){ enterDash(name); });
-};
-
-function enterDash(name){
-  document.getElementById('authPage').classList.remove('show');
-  document.getElementById('dash').classList.add('show');
-  document.getElementById('dashUser').textContent = name;
-  document.getElementById('profileId').textContent = Math.floor(1000000000 + Math.random() * 900000000);
-  updateBal();
-  toast('স্বাগতম, ' + name + '!');
-}
-
+setTimeout(function(){document.getElementById('loader').classList.add('hide');document.getElementById('authPage').classList.add('show');},1500);
+function toast(msg,type){type=type||'ok';var t=document.createElement('div');t.className='toast '+type;t.textContent=msg;document.body.appendChild(t);setTimeout(function(){t.remove();},2600);}
+function showLoadingThen(callback){var loader=document.getElementById('pageLoader');loader.classList.add('show');setTimeout(function(){loader.classList.remove('show');if(callback)callback();},700);}
+var balance=45000,currentBanner=0,totalBanners=4,currentWalletCard=0;
+function goBanner(index){currentBanner=index;document.getElementById('bannerTrack').style.transform='translateX(-'+(index*25)+'%)';var dots=document.querySelectorAll('.banner-dots span');dots.forEach(function(d,i){d.classList.toggle('active',i===index);});}
+setInterval(function(){currentBanner=(currentBanner+1)%totalBanners;goBanner(currentBanner);},3500);
+document.getElementById('loginBtn').onclick=function(){var user=document.getElementById('loginUser').value.trim();if(!user){toast('ইউজারনেম লিখুন','er');return;}showLoadingThen(function(){enterDash(user);});};
+document.getElementById('regBtn').onclick=function(){var name=document.getElementById('regName').value.trim();var p1=document.getElementById('regPass').value;var p2=document.getElementById('regPass2').value;if(!name){toast('নাম লিখুন','er');return;}if(p1!==p2){toast('পাসওয়ার্ড মিলছে না!','er');return;}toast('অ্যাকাউন্ট তৈরি সফল!');showLoadingThen(function(){enterDash(name);});};
+function enterDash(name){document.getElementById('authPage').classList.remove('show');document.getElementById('dash').classList.add('show');document.getElementById('dashUser').textContent=name;document.getElementById('profileId').textContent=Math.floor(1000000000+Math.random()*900000000);updateBal();toast('স্বাগতম, '+name+'!');}
 function updateBal(){
-  var txt = '৳ ' + balance.toLocaleString('bn-BD');
+  var enTxt = balance.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
+  var txt = '৳ ' + enTxt;
   document.getElementById('balText').textContent = txt;
-  document.getElementById('witBal').textContent = txt;
-  document.getElementById('memberBal').textContent = txt;
+  if(document.getElementById('witMainBal')) document.getElementById('witMainBal').textContent = enTxt;
+  if(document.getElementById('witAvailBal')) document.getElementById('witAvailBal').textContent = enTxt;
+  if(document.getElementById('memberBal')) document.getElementById('memberBal').textContent = txt;
 }
-
-document.getElementById('logoutBtn').onclick = function(){
-  showLoadingThen(function(){
-    document.getElementById('dash').classList.remove('show');
-    document.getElementById('authPage').classList.add('show');
-    showLogin();
-    document.getElementById('loginUser').value = '';
-    document.getElementById('loginPass').value = '';
-    switchSec('Home');
-    toast('লগআউট সফল');
-  });
-};
-
-document.getElementById('showRegBtn').onclick = function(e){ e.preventDefault(); showReg(); };
-document.getElementById('showLoginBtn').onclick = function(e){ e.preventDefault(); showLogin(); };
-document.getElementById('forgotBtn').onclick = function(e){ e.preventDefault(); toast('পাসওয়ার্ড রিসেট লিংক পাঠানো হয়েছে'); };
-function showReg(){
-  document.getElementById('loginForm').style.display = 'none';
-  document.getElementById('regForm').style.display = 'block';
-  document.getElementById('authTitle').textContent = 'নিবন্ধন';
-}
-function showLogin(){
-  document.getElementById('regForm').style.display = 'none';
-  document.getElementById('loginForm').style.display = 'block';
-  document.getElementById('authTitle').textContent = 'লগইন';
-}
-
-var botItems = document.querySelectorAll('.bot-item');
-botItems.forEach(function(btn){
-  btn.onclick = function(){
-    var sec = this.getAttribute('data-sec');
-    showLoadingThen(function(){ switchSec(sec); });
-  };
-});
-
-function switchSec(name){
-  document.querySelectorAll('.sec').forEach(function(s){ s.classList.remove('active'); });
-  document.getElementById('sec' + name).classList.add('active');
-  botItems.forEach(function(b){ b.classList.remove('active'); });
-  var activeBtn = document.querySelector('.bot-item[data-sec="'+name+'"]');
-  if(activeBtn) activeBtn.classList.add('active');
-  document.getElementById('mainTopBar').style.display = (name === 'Member') ? 'none' : 'flex';
-  window.scrollTo(0,0);
-}
-
-function selAmt(el, val){
-  document.querySelectorAll('.dep-amt').forEach(function(a){ a.classList.remove('on'); });
-  el.classList.add('on');
-  document.getElementById('depAmount').value = val;
-}
-function doDeposit(){
-  var amt = parseInt(document.getElementById('depAmount').value);
-  if(!amt || amt < 100){ toast('ন্যূনতম ৳১০০ জমা করুন', 'er'); return; }
-  showLoadingThen(function(){
-    balance += amt;
-    updateBal();
-    toast('৳' + amt.toLocaleString('bn-BD') + ' সফলভাবে জমা হয়েছে!');
-  });
-}
-function doWithdraw(){
-  var amt = parseInt(document.getElementById('witAmount').value);
-  var num = document.getElementById('witNumber').value.trim();
-  if(!amt || amt < 100){ toast('ন্যূনতম ৳১০০ উত্তোলন করুন', 'er'); return; }
-  if(amt > balance){ toast('পর্যাপ্ত ব্যালেন্স নেই', 'er'); return; }
-  if(!num || num.length < 11){ toast('সঠিক নম্বর দিন', 'er'); return; }
-  showLoadingThen(function(){
-    balance -= amt;
-    updateBal();
-    toast('৳' + amt.toLocaleString('bn-BD') + ' উত্তোলনের অনুরোধ নেওয়া হয়েছে');
-    document.getElementById('witAmount').value = '';
-    document.getElementById('witNumber').value = '';
-  });
-}
+document.getElementById('logoutBtn').onclick=function(){showLoadingThen(function(){document.getElementById('dash').classList.remove('show');document.getElementById('authPage').classList.add('show');showLogin();document.getElementById('loginUser').value='';document.getElementById('loginPass').value='';switchSec('Home');toast('লগআউট সফল');});};
+document.getElementById('showRegBtn').onclick=function(e){e.preventDefault();showReg();};
+document.getElementById('showLoginBtn').onclick=function(e){e.preventDefault();showLogin();};
+document.getElementById('forgotBtn').onclick=function(e){e.preventDefault();toast('পাসওয়ার্ড রিসেট লিংক পাঠানো হয়েছে');};
+function showReg(){document.getElementById('loginForm').style.display='none';document.getElementById('regForm').style.display='block';document.getElementById('authTitle').textContent='নিবন্ধন';}
+function showLogin(){document.getElementById('regForm').style.display='none';document.getElementById('loginForm').style.display='block';document.getElementById('authTitle').textContent='লগইন';}
+var botItems=document.querySelectorAll('.bot-item');
+botItems.forEach(function(btn){btn.onclick=function(){var sec=this.getAttribute('data-sec');showLoadingThen(function(){switchSec(sec);});};});
+function switchSec(name){document.querySelectorAll('.sec').forEach(function(s){s.classList.remove('active');});document.getElementById('sec'+name).classList.add('active');botItems.forEach(function(b){b.classList.remove('active');});var activeBtn=document.querySelector('.bot-item[data-sec="'+name+'"]');if(activeBtn)activeBtn.classList.add('active');document.getElementById('mainTopBar').style.display=(name==='Member'||name==='Withdraw')?'none':'flex';window.scrollTo(0,0);}
+function selAmt(el,val){document.querySelectorAll('.dep-amt').forEach(function(a){a.classList.remove('on');});el.classList.add('on');document.getElementById('depAmount').value=val;}
+function doDeposit(){var amt=parseInt(document.getElementById('depAmount').value);if(!amt||amt<100){toast('ন্যূনতম ৳১০০ জমা করুন','er');return;}showLoadingThen(function(){balance+=amt;updateBal();toast('৳'+amt.toLocaleString('en-US')+' সফলভাবে জমা হয়েছে!');});}
+function goWalletCard(idx){currentWalletCard=idx;var track=document.getElementById('walletCardsTrack');if(track)track.style.transform='translateX(-'+(idx*50)+'%)';document.getElementById('dot0').style.background=idx===0?'#2196f3':'#ccc';document.getElementById('dot1').style.background=idx===1?'#2196f3':'#ccc';}
+function togglePass(){var inp=document.getElementById('witPass');var icon=document.getElementById('toggleWitPass');if(inp.type==='password'){inp.type='text';icon.classList.remove('fa-eye-slash');icon.classList.add('fa-eye');}else{inp.type='password';icon.classList.remove('fa-eye');icon.classList.add('fa-eye-slash');}}
+function doWithdrawNew(){var amt=parseInt(document.getElementById('witAmount').value);var pass=document.getElementById('witPass').value.trim();if(!amt||amt<500){toast('ন্যূনতম ৳৫০০ উত্তোলন করুন','er');return;}if(amt>25000){toast('সর্বোচ্চ ৳২৫,০০০ উত্তোলন করা যাবে','er');return;}if(amt>balance){toast('পর্যাপ্ত ব্যালেন্স নেই','er');return;}if(!pass||pass.length<4){toast('লেনদেন পাসওয়ার্ড দিন','er');return;}showLoadingThen(function(){balance-=amt;updateBal();toast('৳'+amt.toLocaleString('en-US')+' উত্তোলনের অনুরোধ নেওয়া হয়েছে');document.getElementById('witAmount').value='';document.getElementById('witPass').value='';});}
+document.addEventListener('DOMContentLoaded',function(){var amtInput=document.getElementById('witAmount');if(amtInput){amtInput.addEventListener('input',function(){var btn=document.getElementById('witSubmitBtn');if(this.value&&parseInt(this.value)>=500){btn.style.background='linear-gradient(90deg,#ffd700,#f5a623)';btn.style.color='#111';}else{btn.style.background='#bdbdbd';btn.style.color='#fff';}});}});
+// Touch swipe
+(function(){var track=null,startX=0,currentX=0,isDragging=false;function initSwipe(){track=document.getElementById('walletCardsTrack');if(!track)return;var container=track.parentElement;container.addEventListener('touchstart',function(e){startX=e.touches[0].clientX;isDragging=true;track.style.transition='none';},{passive:true});container.addEventListener('touchmove',function(e){if(!isDragging)return;currentX=e.touches[0].clientX;var diff=currentX-startX;var base=currentWalletCard*-50;var percent=(diff/container.offsetWidth)*50;var newPos=base+percent;if(newPos>0)newPos=0;if(newPos<-50)newPos=-50;track.style.transform='translateX('+newPos+'%)';},{passive:true});container.addEventListener('touchend',function(){if(!isDragging)return;isDragging=false;track.style.transition='transform 0.35s ease';var diff=currentX-startX;if(diff<-40&&currentWalletCard<1)goWalletCard(1);else if(diff>40&&currentWalletCard>0)goWalletCard(0);else goWalletCard(currentWalletCard);},{passive:true});}document.addEventListener('DOMContentLoaded',initSwipe);})();
+function switchWitTab(tab){if(tab==='ewallet'){document.getElementById('ewalletPanel').style.display='block';document.getElementById('cryptoPanel').style.display='none';document.getElementById('tabEwallet').style.color='#e91e63';document.getElementById('tabEwallet').style.borderBottom='3px solid #e91e63';document.getElementById('tabCrypto').style.color='#999';document.getElementById('tabCrypto').style.borderBottom='3px solid transparent';}else{document.getElementById('ewalletPanel').style.display='none';document.getElementById('cryptoPanel').style.display='block';document.getElementById('tabCrypto').style.color='#f9a825';document.getElementById('tabCrypto').style.borderBottom='3px solid #f9a825';document.getElementById('tabEwallet').style.color='#999';document.getElementById('tabEwallet').style.borderBottom='3px solid transparent';}}
 </script>
 </body>
 </html>
