@@ -45,90 +45,91 @@ body{font-family:'Noto Sans Bengali',sans-serif;background:#0a0a0a;color:#fff;mi
 #regForm .input-box .icon{width:52px;height:52px}
 #regForm label{display:block;font-size:12px;color:#888;margin:10px 0 4px}
 
-#dash{display:none;min-height:100vh;padding-bottom:72px;background:#0a0a0a}
+#dash{display:none;min-height:100vh;padding-bottom:78px;background:#0a0a0a}
 #dash.show{display:block}
 
-.top-bar{background:#111;padding:11px 14px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #222;position:sticky;top:0;z-index:50}
-.top-logo{font-family:'Rajdhani',sans-serif;font-size:22px;font-weight:700;color:#ffd700}
+.top-bar{background:#111;padding:12px 14px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #222;position:sticky;top:0;z-index:50}
+.top-logo{font-family:'Rajdhani',sans-serif;font-size:24px;font-weight:700;color:#ffd700}
 .top-logo b{color:#fff}
 .top-user{display:flex;align-items:center;gap:8px}
-.top-user .vip{background:linear-gradient(90deg,#ffd700,#f5a623);color:#111;font-size:10px;font-weight:700;padding:3px 7px;border-radius:4px}
-.top-user .uname{font-size:12px;color:#bbb}
-.top-user .bal{font-size:14px;font-weight:700;color:#ffd700}
-.top-user .logout{width:30px;height:30px;border-radius:50%;border:1px solid #444;background:#1a1a1a;color:#aaa;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:13px}
+.top-user .vip{background:linear-gradient(90deg,#ffd700,#f5a623);color:#111;font-size:11px;font-weight:700;padding:3px 8px;border-radius:4px}
+.top-user .uname{font-size:13px;color:#bbb}
+.top-user .bal{font-size:15px;font-weight:700;color:#ffd700}
+.top-user .logout{width:32px;height:32px;border-radius:50%;border:1px solid #444;background:#1a1a1a;color:#aaa;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:14px}
 
-.promo-bar{background:#161616;padding:9px 14px;display:flex;align-items:center;gap:8px;font-size:12px;color:#ccc;border-bottom:1px solid #222}
-.promo-bar i{color:#ffd700}
+.promo-bar{background:#161616;padding:10px 14px;display:flex;align-items:center;gap:8px;font-size:13px;color:#ccc;border-bottom:1px solid #222}
+.promo-bar i{color:#ffd700;font-size:15px}
 
-.banner-slider{width:100%;height:140px;overflow:hidden;position:relative}
-.banner-track{display:flex;width:200%;height:100%;transition:transform 0.6s ease-in-out}
-.banner-track img{width:50%;height:100%;object-fit:cover;flex-shrink:0}
+/* Banner slider - 4 banners, same height */
+.banner-slider{width:100%;height:145px;overflow:hidden;position:relative}
+.banner-track{display:flex;width:400%;height:100%;transition:transform 0.6s ease-in-out}
+.banner-track img{width:25%;height:100%;object-fit:cover;flex-shrink:0}
 .banner-dots{position:absolute;bottom:8px;left:0;right:0;display:flex;justify-content:center;gap:6px}
-.banner-dots span{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.4);cursor:pointer}
+.banner-dots span{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.4);cursor:pointer}
 .banner-dots span.active{background:#ffd700}
 
-.icon-menu{display:flex;background:#111;padding:14px 0;border-bottom:1px solid #222}
-.icon-item{flex:1;display:flex;flex-direction:column;align-items:center;gap:5px;cursor:pointer}
-.icon-item i{font-size:20px;color:#ffd700}
-.icon-item span{font-size:11px;color:#bbb}
+.icon-menu{display:flex;background:#111;padding:16px 0;border-bottom:1px solid #222}
+.icon-item{flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;cursor:pointer}
+.icon-item i{font-size:24px;color:#ffd700}
+.icon-item span{font-size:12px;color:#bbb}
 .icon-item .badge{position:relative}
-.icon-item .badge::after{content:'1';position:absolute;top:-7px;right:-9px;background:#e53935;color:#fff;font-size:9px;width:15px;height:15px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.icon-item .badge::after{content:'1';position:absolute;top:-8px;right:-10px;background:#e53935;color:#fff;font-size:10px;width:16px;height:16px;border-radius:50%;display:flex;align-items:center;justify-content:center}
 
 .main-wrap{display:flex;min-height:420px}
-.left-cat{width:68px;background:#111;padding:8px 0;flex-shrink:0;border-right:1px solid #222}
-.cat-item{display:flex;flex-direction:column;align-items:center;padding:13px 4px;cursor:pointer;font-size:11px;color:#999}
-.cat-item i{font-size:17px;margin-bottom:4px;color:#ffd700}
+.left-cat{width:74px;background:#111;padding:10px 0;flex-shrink:0;border-right:1px solid #222}
+.cat-item{display:flex;flex-direction:column;align-items:center;padding:14px 4px;cursor:pointer;font-size:12px;color:#999}
+.cat-item i{font-size:20px;margin-bottom:5px;color:#ffd700}
 .cat-item.active{color:#ffd700;background:rgba(255,215,0,.08)}
 
 .games-area{flex:1;padding:12px;overflow-y:auto}
-.games-title{display:flex;align-items:center;gap:6px;font-size:15px;font-weight:600;margin-bottom:12px;color:#ffd700}
-.game-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}
-.g-card{background:#161616;border-radius:10px;overflow:hidden;cursor:pointer;position:relative;border:1px solid #222}
+.games-title{display:flex;align-items:center;gap:6px;font-size:16px;font-weight:600;margin-bottom:12px;color:#ffd700}
+.game-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.g-card{background:#161616;border-radius:12px;overflow:hidden;cursor:pointer;position:relative;border:1px solid #222}
 .g-card img{width:100%;aspect-ratio:1;object-fit:cover;display:block}
-.g-card .heart{position:absolute;top:6px;right:6px;color:rgba(255,255,255,.65);font-size:13px}
-.g-card p{padding:7px 4px;text-align:center;font-size:11px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.g-card .heart{position:absolute;top:6px;right:6px;color:rgba(255,255,255,.65);font-size:14px}
+.g-card p{padding:8px 4px;text-align:center;font-size:12px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 
 .sec{display:none;padding-bottom:30px}
 .sec.active{display:block}
-.sec-title{font-size:18px;font-weight:700;margin-bottom:18px;display:flex;align-items:center;gap:8px;padding:16px 16px 0}
+.sec-title{font-size:19px;font-weight:700;margin-bottom:18px;display:flex;align-items:center;gap:8px;padding:16px 16px 0}
 .sec-title i{color:#ffd700}
 
 .dep-amounts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:0 16px 18px}
-.dep-amt{background:#161616;border:1.5px solid #333;border-radius:10px;padding:14px 8px;text-align:center;cursor:pointer;font-weight:600}
+.dep-amt{background:#161616;border:1.5px solid #333;border-radius:10px;padding:15px 8px;text-align:center;cursor:pointer;font-weight:600;font-size:15px}
 .dep-amt.on{border-color:#ffd700;color:#ffd700;background:rgba(255,215,0,.06)}
 .dep-input{margin:0 16px 16px}
-.dep-input label{display:block;font-size:12px;color:#888;margin-bottom:6px}
+.dep-input label{display:block;font-size:13px;color:#888;margin-bottom:6px}
 .dep-input input{width:100%;padding:14px;background:#111;border:1.5px solid #333;border-radius:10px;color:#fff;font-size:18px;font-family:'Rajdhani',sans-serif;font-weight:700;outline:none}
 .pay-methods{margin:20px 16px 0}
 .pay-methods h4{font-size:14px;color:#aaa;margin-bottom:10px}
-.pm-item{display:flex;align-items:center;gap:12px;padding:14px;background:#161616;border:1px solid #222;border-radius:12px;margin-bottom:8px;cursor:pointer}
-.pm-icon{width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px}
+.pm-item{display:flex;align-items:center;gap:12px;padding:15px;background:#161616;border:1px solid #222;border-radius:12px;margin-bottom:8px;cursor:pointer}
+.pm-icon{width:46px;height:46px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px}
 .pm-icon.bkash{background:rgba(230,82,26,.15);color:#e6521a}
 .pm-icon.nagad{background:rgba(249,100,27,.15);color:#f9641b}
 .pm-icon.rocket{background:rgba(112,54,160,.15);color:#9b59b6}
-.pm-info h5{font-size:14px}.pm-info p{font-size:11px;color:#888}
-.btn-main{width:calc(100% - 32px);margin:10px 16px;padding:15px;border:none;border-radius:50px;background:linear-gradient(90deg,#ffd700,#f5a623);color:#111;font-size:16px;font-weight:700;cursor:pointer;font-family:inherit}
+.pm-info h5{font-size:15px}.pm-info p{font-size:12px;color:#888}
+.btn-main{width:calc(100% - 32px);margin:10px 16px;padding:16px;border:none;border-radius:50px;background:linear-gradient(90deg,#ffd700,#f5a623);color:#111;font-size:17px;font-weight:700;cursor:pointer;font-family:inherit}
 
 .wit-info{background:#161616;border-radius:12px;padding:16px;margin:0 16px 16px;border:1px solid #222}
 .wit-info p{font-size:13px;color:#aaa;margin-bottom:6px}
-.wit-info strong{color:#ffd700;font-size:20px}
+.wit-info strong{color:#ffd700;font-size:22px}
 
 .promo-card{background:#161616;border-radius:14px;overflow:hidden;margin:0 16px 14px;border:1px solid #222}
-.promo-card img{width:100%;height:110px;object-fit:cover}
+.promo-card img{width:100%;height:145px;object-fit:cover}
 .promo-card .body{padding:14px}
-.promo-card h4{font-size:15px;margin-bottom:4px}
-.promo-card p{font-size:12px;color:#999;margin-bottom:10px}
+.promo-card h4{font-size:15px;margin-bottom:6px}
+.promo-card p{font-size:13px;color:#999;margin-bottom:10px;line-height:1.5}
 .promo-card .tag{display:inline-block;background:rgba(255,215,0,.12);color:#ffd700;font-size:11px;padding:3px 10px;border-radius:20px}
 
-.bot-nav{position:fixed;bottom:0;left:0;right:0;background:#111;display:flex;padding:6px 0 10px;border-top:1px solid #222;z-index:100}
-.bot-item{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;background:none;border:none;color:#777;font-size:10px;cursor:pointer;font-family:inherit;padding:4px 0;position:relative}
-.bot-item i{font-size:18px}
+.bot-nav{position:fixed;bottom:0;left:0;right:0;background:#111;display:flex;padding:8px 0 12px;border-top:1px solid #222;z-index:100}
+.bot-item{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;background:none;border:none;color:#777;font-size:11px;cursor:pointer;font-family:inherit;padding:4px 0;position:relative}
+.bot-item i{font-size:22px}
 .bot-item.active{color:#ffd700}
-.bot-item.promo{margin-top:-20px}
-.bot-item.promo .p-circle{width:50px;height:50px;border-radius:50%;background:linear-gradient(135deg,#ffd700,#f5a623);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 15px rgba(255,215,0,.45);position:relative}
-.bot-item.promo .p-circle i{color:#111;font-size:20px}
-.bot-item.promo .p-circle .dot{position:absolute;top:3px;right:3px;width:10px;height:10px;background:#e53935;border-radius:50%;border:2px solid #111}
-.bot-item .m-badge{position:absolute;top:0;right:16px;background:#e53935;color:#fff;font-size:9px;width:15px;height:15px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.bot-item.promo{margin-top:-22px}
+.bot-item.promo .p-circle{width:54px;height:54px;border-radius:50%;background:linear-gradient(135deg,#ffd700,#f5a623);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 15px rgba(255,215,0,.45);position:relative}
+.bot-item.promo .p-circle i{color:#111;font-size:22px}
+.bot-item.promo .p-circle .dot{position:absolute;top:3px;right:3px;width:11px;height:11px;background:#e53935;border-radius:50%;border:2px solid #111}
+.bot-item .m-badge{position:absolute;top:0;right:14px;background:#e53935;color:#fff;font-size:10px;width:16px;height:16px;border-radius:50%;display:flex;align-items:center;justify-content:center}
 
 .toast{position:fixed;top:18px;right:14px;padding:12px 16px;border-radius:10px;font-size:13px;z-index:9999;animation:slideIn .3s;max-width:260px}
 .toast.ok{background:#00c853;color:#000}
@@ -201,10 +202,14 @@ body{font-family:'Noto Sans Bengali',sans-serif;background:#0a0a0a;color:#fff;mi
       <div class="banner-track" id="bannerTrack">
         <img src="https://images.6223027.com/mcs-images/announcement/xfbdtf5/1781751092226_default_mobile.png" alt="Banner 1">
         <img src="https://images.3521315.com/mcs-images/announcement/333bdtf7/1785912559342_default_mobile.png" alt="Banner 2">
+        <img src="https://images.3521315.com/mcs-images/announcement/333bdtf7/1778486587279_%E8%81%94%E7%9B%9F%E5%9B%BE5_3333.png" alt="Banner 3">
+        <img src="https://images.3521315.com/mcs-images/announcement/333bdtf7/1780073802161_default_mobile.gif" alt="Banner 4">
       </div>
       <div class="banner-dots">
         <span class="active" onclick="goBanner(0)"></span>
         <span onclick="goBanner(1)"></span>
+        <span onclick="goBanner(2)"></span>
+        <span onclick="goBanner(3)"></span>
       </div>
     </div>
     <div class="icon-menu">
@@ -296,129 +301,162 @@ body{font-family:'Noto Sans Bengali',sans-serif;background:#0a0a0a;color:#fff;mi
     <button class="btn-main" onclick="doWithdraw()">উত্তোলন করুন</button>
   </div>
 
-  <!-- PROMOTION -->
+  <!-- PROMOTION - 4 Banners + Unique Bonuses -->
   <div class="sec" id="secPromo">
     <div class="sec-title"><i class="fas fa-gift"></i> প্রমোশন</div>
-    <div class="promo-card"><img src="https://picsum.photos/seed/pr1/600/200"><div class="body"><h4>নতুন ইউজার বোনাস</h4><p>প্রথম ডিপোজিটে ১০০% বোনাস — সর্বোচ্চ ৳১০,০০০</p><span class="tag">নতুন</span></div></div>
-    <div class="promo-card"><img src="https://picsum.photos/seed/pr2/600/200"><div class="body"><h4>দৈনিক ক্যাশব্যাক</h4><p>প্রতিদিন খেললেই ৫% ক্যাশব্যাক পান</p><span class="tag">দৈনিক</span></div></div>
-    <div class="promo-card"><img src="https://picsum.photos/seed/pr3/600/200"><div class="body"><h4>রেফার অ্যান্ড আর্ন</h4><p>বন্ধুকে ইনভাইট করুন, প্রতি রেফারে ৳২০০</p><span class="tag">রেফার</span></div></div>
+
+    <div class="promo-card">
+      <img src="https://images.6223027.com/mcs-images/announcement/xfbdtf5/1781751092226_default_mobile.png" alt="Promo 1">
+      <div class="body">
+        <h4>🎉 ওয়েলকাম বোনাস</h4>
+        <p>নতুন সদস্যদের জন্য প্রথম ডিপোজিটে <strong>১০০% বোনাস</strong> — সর্বোচ্চ ৳১০,০০০ পর্যন্ত।</p>
+        <span class="tag">নতুন ইউজার</span>
+      </div>
+    </div>
+
+    <div class="promo-card">
+      <img src="https://images.3521315.com/mcs-images/announcement/333bdtf7/1785912559342_default_mobile.png" alt="Promo 2">
+      <div class="body">
+        <h4>💰 দৈনিক ক্যাশব্যাক</h4>
+        <p>প্রতিদিন খেললেই পাবেন <strong>৫% ক্যাশব্যাক</strong>। কোনো বাজি হারালেও টাকা ফিরে পাবেন।</p>
+        <span class="tag">দৈনিক</span>
+      </div>
+    </div>
+
+    <div class="promo-card">
+      <img src="https://images.3521315.com/mcs-images/announcement/333bdtf7/1778486587279_%E8%81%94%E7%9B%9F%E5%9B%BE5_3333.png" alt="Promo 3">
+      <div class="body">
+        <h4>🔥 স্পেশাল ডিপোজিট বোনাস</h4>
+        <p>৳৫,০০০ বা তার বেশি জমা দিলে পাবেন অতিরিক্ত <strong>৫০% বোনাস</strong> + ফ্রি স্পিন।</p>
+        <span class="tag">স্পেশাল</span>
+      </div>
+    </div>
+
+    <div class="promo-card">
+      <img src="https://images.3521315.com/mcs-images/announcement/333bdtf7/1780073802161_default_mobile.gif" alt="Promo 4">
+      <div class="body">
+        <h4>👥 রেফার অ্যান্ড আর্ন</h4>
+        <p>বন্ধুকে ইনভাইট করুন এবং প্রতি সফল রেফারে পাবেন <strong>৳২০০</strong> বোনাস।</p>
+        <span class="tag">রেফার</span>
+      </div>
+    </div>
   </div>
 
-  <!-- MEMBER (White Background + Profile Image) -->
+  <!-- MEMBER -->
   <div class="sec" id="secMember" style="background:#ffffff;min-height:100vh;color:#333">
     <div style="display:flex;align-items:center;padding:14px 16px;background:#fff;border-bottom:1px solid #eee;position:sticky;top:0;z-index:10">
-      <div onclick="showLoadingThen(function(){switchSec('Home')})" style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:18px;color:#333">
+      <div onclick="showLoadingThen(function(){switchSec('Home')})" style="width:38px;height:38px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:20px;color:#333">
         <i class="fas fa-arrow-left"></i>
       </div>
-      <h2 style="flex:1;text-align:center;font-size:17px;font-weight:600;margin-right:36px;color:#222">আমার অ্যাকাউন্ট</h2>
+      <h2 style="flex:1;text-align:center;font-size:18px;font-weight:600;margin-right:38px;color:#222">আমার অ্যাকাউন্ট</h2>
     </div>
 
     <div style="margin:16px;background:linear-gradient(135deg,#f8f9fc,#eef1f8);border-radius:16px;padding:20px;position:relative;overflow:hidden;border:1px solid #e0e4ef;box-shadow:0 2px 12px rgba(0,0,0,.06)">
       <div style="position:absolute;top:10px;right:15px;opacity:.12;font-size:80px;color:#c9a227"><i class="fas fa-medal"></i></div>
       <div style="display:flex;align-items:center;gap:14px;margin-bottom:16px">
         <img id="profileAv" src="https://images.3521315.com//TCG_PROD_IMAGES/B2C/333BDTF7/PROFILE/1.png" alt="Profile"
-             style="width:70px;height:70px;border-radius:50%;object-fit:cover;border:3px solid #ffd700;flex-shrink:0;background:#eee">
+             style="width:76px;height:76px;border-radius:50%;object-fit:cover;border:3px solid #ffd700;flex-shrink:0;background:#eee">
         <div>
           <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
-            <span style="background:#333;color:#ffd700;font-size:11px;padding:3px 10px;border-radius:20px;font-weight:600">
-              <i class="fas fa-crown" style="font-size:10px"></i> VIP0
+            <span style="background:#333;color:#ffd700;font-size:12px;padding:3px 10px;border-radius:20px;font-weight:600">
+              <i class="fas fa-crown" style="font-size:11px"></i> VIP0
             </span>
           </div>
-          <div style="font-size:16px;font-weight:600;display:flex;align-items:center;gap:6px;color:#222">
+          <div style="font-size:17px;font-weight:600;display:flex;align-items:center;gap:6px;color:#222">
             <span id="profileId">1340148599</span>
-            <i class="far fa-copy" style="font-size:13px;color:#999;cursor:pointer" onclick="toast('কপি করা হয়েছে')"></i>
+            <i class="far fa-copy" style="font-size:14px;color:#999;cursor:pointer" onclick="toast('কপি করা হয়েছে')"></i>
           </div>
-          <div style="font-size:12px;color:#888;margin-top:3px">যোগদান করেছেন: 2026-08-20</div>
+          <div style="font-size:13px;color:#888;margin-top:3px">যোগদান করেছেন: 2026-08-20</div>
         </div>
       </div>
       <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:18px">
-        <div style="font-size:26px;font-weight:700;color:#e6a800;font-family:'Rajdhani',sans-serif" id="memberBal">৳ 0.00</div>
-        <div onclick="toast('রিফ্রেশ করা হয়েছে')" style="width:34px;height:34px;border-radius:50%;background:rgba(0,0,0,.05);display:flex;align-items:center;justify-content:center;cursor:pointer">
-          <i class="fas fa-sync-alt" style="color:#666;font-size:14px"></i>
+        <div style="font-size:28px;font-weight:700;color:#e6a800;font-family:'Rajdhani',sans-serif" id="memberBal">৳ 0.00</div>
+        <div onclick="toast('রিফ্রেশ করা হয়েছে')" style="width:36px;height:36px;border-radius:50%;background:rgba(0,0,0,.05);display:flex;align-items:center;justify-content:center;cursor:pointer">
+          <i class="fas fa-sync-alt" style="color:#666;font-size:15px"></i>
         </div>
       </div>
       <div style="display:flex;gap:10px">
-        <button onclick="showLoadingThen(function(){switchSec('Deposit')})" style="flex:1;padding:11px 0;border:none;border-radius:25px;background:#fff;color:#333;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;box-shadow:0 2px 8px rgba(0,0,0,.08)">জমা দিন</button>
-        <button onclick="showLoadingThen(function(){switchSec('Withdraw')})" style="flex:1;padding:11px 0;border:none;border-radius:25px;background:#fff;color:#333;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;box-shadow:0 2px 8px rgba(0,0,0,.08)">উত্তোলন</button>
-        <button onclick="toast('আমার কার্ড')" style="flex:1;padding:11px 0;border:none;border-radius:25px;background:#fff;color:#333;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;box-shadow:0 2px 8px rgba(0,0,0,.08)">আমার কার্ড</button>
+        <button onclick="showLoadingThen(function(){switchSec('Deposit')})" style="flex:1;padding:12px 0;border:none;border-radius:25px;background:#fff;color:#333;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;box-shadow:0 2px 8px rgba(0,0,0,.08)">জমা দিন</button>
+        <button onclick="showLoadingThen(function(){switchSec('Withdraw')})" style="flex:1;padding:12px 0;border:none;border-radius:25px;background:#fff;color:#333;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;box-shadow:0 2px 8px rgba(0,0,0,.08)">উত্তোলন</button>
+        <button onclick="toast('আমার কার্ড')" style="flex:1;padding:12px 0;border:none;border-radius:25px;background:#fff;color:#333;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;box-shadow:0 2px 8px rgba(0,0,0,.08)">আমার কার্ড</button>
       </div>
     </div>
 
     <div style="padding:0 16px 20px">
-      <div style="display:inline-block;background:#f0f0f0;color:#b8860b;font-size:12px;padding:4px 12px;border-radius:20px;margin-bottom:16px;font-weight:500">সদস্য সেন্টার</div>
-      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px 8px">
+      <div style="display:inline-block;background:#f0f0f0;color:#b8860b;font-size:13px;padding:5px 14px;border-radius:20px;margin-bottom:18px;font-weight:500">সদস্য সেন্টার</div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:18px 10px">
         <div onclick="showLoadingThen(function(){toast('পুরস্কার সেন্টার')})" style="text-align:center;cursor:pointer">
-          <div style="width:48px;height:48px;border-radius:50%;background:#fff8e7;margin:0 auto 6px;display:flex;align-items:center;justify-content:center;position:relative;box-shadow:0 2px 6px rgba(0,0,0,.06)">
-            <i class="fas fa-trophy" style="color:#d4a017;font-size:18px"></i>
-            <span style="position:absolute;top:-4px;right:-4px;background:#e53935;color:#fff;font-size:9px;width:16px;height:16px;border-radius:50%;display:flex;align-items:center;justify-content:center">3</span>
+          <div style="width:56px;height:56px;border-radius:50%;background:#fff8e7;margin:0 auto 7px;display:flex;align-items:center;justify-content:center;position:relative;box-shadow:0 2px 8px rgba(0,0,0,.07)">
+            <i class="fas fa-trophy" style="color:#d4a017;font-size:22px"></i>
+            <span style="position:absolute;top:-4px;right:-4px;background:#e53935;color:#fff;font-size:10px;width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center">3</span>
           </div>
-          <div style="font-size:11px;color:#555;line-height:1.3">পুরস্কার<br>সেন্টার</div>
+          <div style="font-size:12px;color:#555;line-height:1.3">পুরস্কার<br>সেন্টার</div>
         </div>
         <div onclick="showLoadingThen(function(){toast('বেটিং রেকর্ড')})" style="text-align:center;cursor:pointer">
-          <div style="width:48px;height:48px;border-radius:50%;background:#fff8e7;margin:0 auto 6px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(0,0,0,.06)"><i class="fas fa-star" style="color:#d4a017;font-size:18px"></i></div>
-          <div style="font-size:11px;color:#555;line-height:1.3">বেটিং<br>রেকর্ড</div>
+          <div style="width:56px;height:56px;border-radius:50%;background:#fff8e7;margin:0 auto 7px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.07)"><i class="fas fa-star" style="color:#d4a017;font-size:22px"></i></div>
+          <div style="font-size:12px;color:#555;line-height:1.3">বেটিং<br>রেকর্ড</div>
         </div>
         <div onclick="showLoadingThen(function(){toast('লাভ এবং লস')})" style="text-align:center;cursor:pointer">
-          <div style="width:48px;height:48px;border-radius:50%;background:#fff8e7;margin:0 auto 6px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(0,0,0,.06)"><i class="fas fa-file-invoice-dollar" style="color:#d4a017;font-size:18px"></i></div>
-          <div style="font-size:11px;color:#555;line-height:1.3">লাভ এবং<br>লস</div>
+          <div style="width:56px;height:56px;border-radius:50%;background:#fff8e7;margin:0 auto 7px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.07)"><i class="fas fa-file-invoice-dollar" style="color:#d4a017;font-size:22px"></i></div>
+          <div style="font-size:12px;color:#555;line-height:1.3">লাভ এবং<br>লস</div>
         </div>
         <div onclick="showLoadingThen(function(){toast('জমা রেকর্ড')})" style="text-align:center;cursor:pointer">
-          <div style="width:48px;height:48px;border-radius:50%;background:#fff8e7;margin:0 auto 6px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(0,0,0,.06)"><i class="fas fa-clipboard-list" style="color:#d4a017;font-size:18px"></i></div>
-          <div style="font-size:11px;color:#555;line-height:1.3">জমা<br>রেকর্ড</div>
+          <div style="width:56px;height:56px;border-radius:50%;background:#fff8e7;margin:0 auto 7px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.07)"><i class="fas fa-clipboard-list" style="color:#d4a017;font-size:22px"></i></div>
+          <div style="font-size:12px;color:#555;line-height:1.3">জমা<br>রেকর্ড</div>
         </div>
         <div onclick="showLoadingThen(function(){toast('উত্তোলন রেকর্ড')})" style="text-align:center;cursor:pointer">
-          <div style="width:48px;height:48px;border-radius:50%;background:#fff8e7;margin:0 auto 6px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(0,0,0,.06)"><i class="fas fa-clipboard-check" style="color:#d4a017;font-size:18px"></i></div>
-          <div style="font-size:11px;color:#555;line-height:1.3">উত্তোলন<br>রেকর্ড</div>
+          <div style="width:56px;height:56px;border-radius:50%;background:#fff8e7;margin:0 auto 7px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.07)"><i class="fas fa-clipboard-check" style="color:#d4a017;font-size:22px"></i></div>
+          <div style="font-size:12px;color:#555;line-height:1.3">উত্তোলন<br>রেকর্ড</div>
         </div>
         <div onclick="showLoadingThen(function(){toast('অ্যাকাউন্ট রেকর্ড')})" style="text-align:center;cursor:pointer">
-          <div style="width:48px;height:48px;border-radius:50%;background:#fff8e7;margin:0 auto 6px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(0,0,0,.06)"><i class="fas fa-history" style="color:#d4a017;font-size:18px"></i></div>
-          <div style="font-size:11px;color:#555;line-height:1.3">অ্যাকাউন্ট<br>রেকর্ড</div>
+          <div style="width:56px;height:56px;border-radius:50%;background:#fff8e7;margin:0 auto 7px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.07)"><i class="fas fa-history" style="color:#d4a017;font-size:22px"></i></div>
+          <div style="font-size:12px;color:#555;line-height:1.3">অ্যাকাউন্ট<br>রেকর্ড</div>
         </div>
         <div onclick="showLoadingThen(function(){toast('আমার অ্যাকাউন্ট')})" style="text-align:center;cursor:pointer">
-          <div style="width:48px;height:48px;border-radius:50%;background:#fff8e7;margin:0 auto 6px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(0,0,0,.06)"><i class="fas fa-user" style="color:#d4a017;font-size:18px"></i></div>
-          <div style="font-size:11px;color:#555;line-height:1.3">আমার<br>অ্যাকাউন্ট</div>
+          <div style="width:56px;height:56px;border-radius:50%;background:#fff8e7;margin:0 auto 7px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.07)"><i class="fas fa-user" style="color:#d4a017;font-size:22px"></i></div>
+          <div style="font-size:12px;color:#555;line-height:1.3">আমার<br>অ্যাকাউন্ট</div>
         </div>
         <div onclick="showLoadingThen(function(){toast('সুরক্ষা কেন্দ্র')})" style="text-align:center;cursor:pointer">
-          <div style="width:48px;height:48px;border-radius:50%;background:#fff8e7;margin:0 auto 6px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(0,0,0,.06)"><i class="fas fa-shield-alt" style="color:#d4a017;font-size:18px"></i></div>
-          <div style="font-size:11px;color:#555;line-height:1.3">সুরক্ষা<br>কেন্দ্র</div>
+          <div style="width:56px;height:56px;border-radius:50%;background:#fff8e7;margin:0 auto 7px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.07)"><i class="fas fa-shield-alt" style="color:#d4a017;font-size:22px"></i></div>
+          <div style="font-size:12px;color:#555;line-height:1.3">সুরক্ষা<br>কেন্দ্র</div>
         </div>
         <div onclick="showLoadingThen(function(){toast('বন্ধুদের আমন্ত্রণ')})" style="text-align:center;cursor:pointer">
-          <div style="width:48px;height:48px;border-radius:50%;background:#fff8e7;margin:0 auto 6px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(0,0,0,.06)"><i class="fas fa-user-plus" style="color:#d4a017;font-size:18px"></i></div>
-          <div style="font-size:11px;color:#555;line-height:1.3">বন্ধুদের<br>আমন্ত্রণ</div>
+          <div style="width:56px;height:56px;border-radius:50%;background:#fff8e7;margin:0 auto 7px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.07)"><i class="fas fa-user-plus" style="color:#d4a017;font-size:22px"></i></div>
+          <div style="font-size:12px;color:#555;line-height:1.3">বন্ধুদের<br>আমন্ত্রণ</div>
         </div>
         <div onclick="showLoadingThen(function(){toast('মিশন')})" style="text-align:center;cursor:pointer">
-          <div style="width:48px;height:48px;border-radius:50%;background:#fff8e7;margin:0 auto 6px;display:flex;align-items:center;justify-content:center;position:relative;box-shadow:0 2px 6px rgba(0,0,0,.06)">
-            <i class="fas fa-gift" style="color:#d4a017;font-size:18px"></i>
-            <span style="position:absolute;top:-4px;right:-4px;background:#e53935;color:#fff;font-size:9px;width:16px;height:16px;border-radius:50%;display:flex;align-items:center;justify-content:center">1</span>
+          <div style="width:56px;height:56px;border-radius:50%;background:#fff8e7;margin:0 auto 7px;display:flex;align-items:center;justify-content:center;position:relative;box-shadow:0 2px 8px rgba(0,0,0,.07)">
+            <i class="fas fa-gift" style="color:#d4a017;font-size:22px"></i>
+            <span style="position:absolute;top:-4px;right:-4px;background:#e53935;color:#fff;font-size:10px;width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center">1</span>
           </div>
-          <div style="font-size:11px;color:#555;line-height:1.3">মিশন</div>
+          <div style="font-size:12px;color:#555;line-height:1.3">মিশন</div>
         </div>
         <div onclick="showLoadingThen(function(){toast('রিবেট')})" style="text-align:center;cursor:pointer">
-          <div style="width:48px;height:48px;border-radius:50%;background:#fff8e7;margin:0 auto 6px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(0,0,0,.06)"><i class="fas fa-hand-holding-usd" style="color:#d4a017;font-size:18px"></i></div>
-          <div style="font-size:11px;color:#555;line-height:1.3">রিবেট</div>
+          <div style="width:56px;height:56px;border-radius:50%;background:#fff8e7;margin:0 auto 7px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.07)"><i class="fas fa-hand-holding-usd" style="color:#d4a017;font-size:22px"></i></div>
+          <div style="font-size:12px;color:#555;line-height:1.3">রিবেট</div>
         </div>
         <div onclick="showLoadingThen(function(){toast('মেইল')})" style="text-align:center;cursor:pointer">
-          <div style="width:48px;height:48px;border-radius:50%;background:#fff8e7;margin:0 auto 6px;display:flex;align-items:center;justify-content:center;position:relative;box-shadow:0 2px 6px rgba(0,0,0,.06)">
-            <i class="fas fa-envelope" style="color:#d4a017;font-size:18px"></i>
-            <span style="position:absolute;top:-4px;right:-4px;background:#e53935;color:#fff;font-size:9px;width:16px;height:16px;border-radius:50%;display:flex;align-items:center;justify-content:center">1</span>
+          <div style="width:56px;height:56px;border-radius:50%;background:#fff8e7;margin:0 auto 7px;display:flex;align-items:center;justify-content:center;position:relative;box-shadow:0 2px 8px rgba(0,0,0,.07)">
+            <i class="fas fa-envelope" style="color:#d4a017;font-size:22px"></i>
+            <span style="position:absolute;top:-4px;right:-4px;background:#e53935;color:#fff;font-size:10px;width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center">1</span>
           </div>
-          <div style="font-size:11px;color:#555;line-height:1.3">মেইল</div>
+          <div style="font-size:12px;color:#555;line-height:1.3">মেইল</div>
         </div>
         <div onclick="showLoadingThen(function(){toast('পরামর্শ')})" style="text-align:center;cursor:pointer">
-          <div style="width:48px;height:48px;border-radius:50%;background:#fff8e7;margin:0 auto 6px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(0,0,0,.06)"><i class="fas fa-comment-dots" style="color:#d4a017;font-size:18px"></i></div>
-          <div style="font-size:11px;color:#555;line-height:1.3">পরামর্শ</div>
+          <div style="width:56px;height:56px;border-radius:50%;background:#fff8e7;margin:0 auto 7px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.07)"><i class="fas fa-comment-dots" style="color:#d4a017;font-size:22px"></i></div>
+          <div style="font-size:12px;color:#555;line-height:1.3">পরামর্শ</div>
         </div>
         <div onclick="showLoadingThen(function(){toast('অ্যাপ')})" style="text-align:center;cursor:pointer">
-          <div style="width:48px;height:48px;border-radius:50%;background:#fff8e7;margin:0 auto 6px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(0,0,0,.06)"><i class="fas fa-mobile-alt" style="color:#d4a017;font-size:18px"></i></div>
-          <div style="font-size:11px;color:#555;line-height:1.3">অ্যাপ</div>
+          <div style="width:56px;height:56px;border-radius:50%;background:#fff8e7;margin:0 auto 7px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.07)"><i class="fas fa-mobile-alt" style="color:#d4a017;font-size:22px"></i></div>
+          <div style="font-size:12px;color:#555;line-height:1.3">অ্যাপ</div>
         </div>
         <div onclick="showLoadingThen(function(){toast('কাস্টমার')})" style="text-align:center;cursor:pointer">
-          <div style="width:48px;height:48px;border-radius:50%;background:#fff8e7;margin:0 auto 6px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(0,0,0,.06)"><i class="fas fa-headset" style="color:#d4a017;font-size:18px"></i></div>
-          <div style="font-size:11px;color:#555;line-height:1.3">কাস্টমার</div>
+          <div style="width:56px;height:56px;border-radius:50%;background:#fff8e7;margin:0 auto 7px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.07)"><i class="fas fa-headset" style="color:#d4a017;font-size:22px"></i></div>
+          <div style="font-size:12px;color:#555;line-height:1.3">কাস্টমার</div>
         </div>
         <div onclick="showLoadingThen(function(){toast('সাহায্য কেন্দ্র')})" style="text-align:center;cursor:pointer">
-          <div style="width:48px;height:48px;border-radius:50%;background:#fff8e7;margin:0 auto 6px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(0,0,0,.06)"><i class="fas fa-question-circle" style="color:#d4a017;font-size:18px"></i></div>
-          <div style="font-size:11px;color:#555;line-height:1.3">সাহায্য<br>কেন্দ্র</div>
+          <div style="width:56px;height:56px;border-radius:50%;background:#fff8e7;margin:0 auto 7px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.07)"><i class="fas fa-question-circle" style="color:#d4a017;font-size:22px"></i></div>
+          <div style="font-size:12px;color:#555;line-height:1.3">সাহায্য<br>কেন্দ্র</div>
         </div>
       </div>
     </div>
@@ -462,15 +500,16 @@ function showLoadingThen(callback){
 
 var balance = 0;
 var currentBanner = 0;
+var totalBanners = 4;
 
 function goBanner(index){
   currentBanner = index;
-  document.getElementById('bannerTrack').style.transform = 'translateX(-' + (index * 50) + '%)';
+  document.getElementById('bannerTrack').style.transform = 'translateX(-' + (index * 25) + '%)';
   var dots = document.querySelectorAll('.banner-dots span');
   dots.forEach(function(d,i){ d.classList.toggle('active', i === index); });
 }
 setInterval(function(){
-  currentBanner = (currentBanner + 1) % 2;
+  currentBanner = (currentBanner + 1) % totalBanners;
   goBanner(currentBanner);
 }, 3500);
 
