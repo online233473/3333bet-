@@ -54,7 +54,6 @@ body{font-family:'Noto Sans Bengali',sans-serif;background:#0a0a0a;color:#fff;mi
 .promo-bar{background:#161616;padding:9px 14px;display:flex;align-items:center;gap:8px;font-size:12px;color:#ccc;border-bottom:1px solid #222}
 .promo-bar i{color:#ffd700}
 
-/* ===== BANNER SLIDER ===== */
 .banner-slider{width:100%;height:140px;overflow:hidden;position:relative}
 .banner-track{display:flex;width:200%;height:100%;transition:transform 0.6s ease-in-out}
 .banner-track img{width:50%;height:100%;object-fit:cover;flex-shrink:0}
@@ -152,6 +151,7 @@ body{font-family:'Noto Sans Bengali',sans-serif;background:#0a0a0a;color:#fff;mi
   <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIIPcIJuKiif4Q8ZVcAHmISMBUJ0xWJi-f5TNYZD39V8dhUX7cgIYITBc&s=10" alt="">
 </div>
 
+<!-- AUTH PAGE -->
 <div id="authPage">
   <div class="auth-box">
     <div class="logo">
@@ -186,6 +186,7 @@ body{font-family:'Noto Sans Bengali',sans-serif;background:#0a0a0a;color:#fff;mi
   </div>
 </div>
 
+<!-- DASHBOARD -->
 <div id="dash">
   <div class="top-bar">
     <div class="top-logo">🦁 3333<b>bet</b></div>
@@ -201,7 +202,6 @@ body{font-family:'Noto Sans Bengali',sans-serif;background:#0a0a0a;color:#fff;mi
   <div class="sec active" id="secHome">
     <div class="promo-bar"><i class="fas fa-volume-up"></i><span>bKash: রক্ষণাবেক্ষণ চলছে</span></div>
 
-    <!-- BANNER SLIDER -->
     <div class="banner-slider">
       <div class="banner-track" id="bannerTrack">
         <img src="https://images.6223027.com/mcs-images/announcement/xfbdtf5/1781751092226_default_mobile.png" alt="Banner 1">
@@ -220,6 +220,7 @@ body{font-family:'Noto Sans Bengali',sans-serif;background:#0a0a0a;color:#fff;mi
       <div class="icon-item" onclick="toast('Agent')"><i class="fas fa-handshake"></i><span>Agent</span></div>
       <div class="icon-item" onclick="toast('Reward')"><i class="fas fa-trophy badge"></i><span>Reward</span></div>
     </div>
+
     <div class="main-wrap">
       <div class="left-cat">
         <div class="cat-item active"><i class="fas fa-dice"></i>Casino</div>
@@ -228,28 +229,64 @@ body{font-family:'Noto Sans Bengali',sans-serif;background:#0a0a0a;color:#fff;mi
         <div class="cat-item"><i class="fas fa-spade"></i>Poker</div>
         <div class="cat-item"><i class="fas fa-futbol"></i>Sports</div>
       </div>
+
       <div class="games-area">
         <div class="games-title"><i class="fas fa-fire"></i> Hot Games</div>
         <div class="game-grid">
           <!-- Aviator -->
           <div class="g-card" onclick="toast('Aviator লোড হচ্ছে...')">
-            <img src="https://www.sportalsub.net/en/wp-content/uploads/2024/09/aviator-game.jpg" alt="Aviator">
+            <img src="https://images.6223027.com/TCG_GAME_ICONS/SPB/EN/SPB002.avif" alt="Aviator">
             <i class="far fa-heart heart"></i>
             <p>Aviator</p>
           </div>
           <!-- Super Ace -->
           <div class="g-card" onclick="toast('Super Ace')">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPJMD2MG-ogggR-0gFt87xo1jfmhksq1fJkrH0GgJ7ilK4AFGtGLRhpCjd&s=10" alt="Super Ace">
+            <img src="https://images.6223027.com/TCG_GAME_ICONS/JL/EN/JL0033.avif" alt="Super Ace">
             <i class="far fa-heart heart"></i>
             <p>Super Ace</p>
           </div>
-          <div class="g-card" onclick="toast('Super Elements 2')"><img src="https://picsum.photos/seed/el2/200/200"><i class="far fa-heart heart"></i><p>SUPER ELEMENTS 2</p></div>
-          <div class="g-card" onclick="toast('Wild Bounty')"><img src="https://picsum.photos/seed/wild/200/200"><i class="far fa-heart heart"></i><p>Wild Bounty</p></div>
-          <div class="g-card" onclick="toast('Super Ace Deluxe')"><img src="https://picsum.photos/seed/del/200/200"><i class="far fa-heart heart"></i><p>Super Ace Deluxe</p></div>
-          <div class="g-card" onclick="toast('Super Elements')"><img src="https://picsum.photos/seed/el/200/200"><i class="far fa-heart heart"></i><p>Super Elements</p></div>
-          <div class="g-card" onclick="toast('Boxing King')"><img src="https://picsum.photos/seed/box/200/200"><i class="far fa-heart heart"></i><p>Boxing King</p></div>
-          <div class="g-card" onclick="toast('Fortune Ganesha')"><img src="https://picsum.photos/seed/gan/200/200"><i class="far fa-heart heart"></i><p>Fortune Ganesha</p></div>
-          <div class="g-card" onclick="toast('Nudge')"><img src="https://picsum.photos/seed/nud/200/200"><i class="far fa-heart heart"></i><p>Nudge</p></div>
+          <!-- SUPER ELEMENTS 2 -->
+          <div class="g-card" onclick="toast('SUPER ELEMENTS 2')">
+            <img src="https://images.6223027.com/TCG_GAME_ICONS/FC/EN/22098.avif" alt="SUPER ELEMENTS 2">
+            <i class="far fa-heart heart"></i>
+            <p>SUPER ELEMENTS 2</p>
+          </div>
+          <!-- Wild Bounty Showdown -->
+          <div class="g-card" onclick="toast('Wild Bounty Showdown')">
+            <img src="https://images.6223027.com/TCG_GAME_ICONS/PG/EN/PG0113.avif" alt="Wild Bounty Showdown">
+            <i class="far fa-heart heart"></i>
+            <p>Wild Bounty Showdown</p>
+          </div>
+          <!-- Super Ace Deluxe -->
+          <div class="g-card" onclick="toast('Super Ace Deluxe')">
+            <img src="https://images.6223027.com/TCG_GAME_ICONS/JL/EN/JL0162.avif" alt="Super Ace Deluxe">
+            <i class="far fa-heart heart"></i>
+            <p>Super Ace Deluxe</p>
+          </div>
+          <!-- Super Elements -->
+          <div class="g-card" onclick="toast('Super Elements')">
+            <img src="https://images.6223027.com/TCG_GAME_ICONS/FC/EN/FC0045.avif" alt="Super Elements">
+            <i class="far fa-heart heart"></i>
+            <p>Super Elements</p>
+          </div>
+          <!-- Boxing King -->
+          <div class="g-card" onclick="toast('Boxing King')">
+            <img src="https://images.6223027.com/TCG_GAME_ICONS/JL/EN/JL0038.avif" alt="Boxing King">
+            <i class="far fa-heart heart"></i>
+            <p>Boxing King</p>
+          </div>
+          <!-- Fortune Gems 3 -->
+          <div class="g-card" onclick="toast('Fortune Gems 3')">
+            <img src="https://images.6223027.com/TCG_GAME_ICONS/JL/EN/JL0156.avif" alt="Fortune Gems 3">
+            <i class="far fa-heart heart"></i>
+            <p>Fortune Gems 3</p>
+          </div>
+          <!-- Fortune Garuda 500 -->
+          <div class="g-card" onclick="toast('Fortune Garuda 500')">
+            <img src="https://images.6223027.com/TCG_GAME_ICONS/JL/EN/696.avif" alt="Fortune Garuda 500">
+            <i class="far fa-heart heart"></i>
+            <p>Fortune Garuda 500</p>
+          </div>
         </div>
       </div>
     </div>
@@ -285,7 +322,7 @@ body{font-family:'Noto Sans Bengali',sans-serif;background:#0a0a0a;color:#fff;mi
     <button class="btn-main" onclick="doWithdraw()">উত্তোলন করুন</button>
   </div>
 
-  <!-- PROMO -->
+  <!-- PROMOTION -->
   <div class="sec" id="secPromo">
     <div class="sec-title"><i class="fas fa-gift"></i> প্রমোশন</div>
     <div class="promo-card"><img src="https://picsum.photos/seed/pr1/600/200"><div class="body"><h4>নতুন ইউজার বোনাস</h4><p>প্রথম ডিপোজিটে ১০০% বোনাস — সর্বোচ্চ ৳১০,০০০</p><span class="tag">নতুন</span></div></div>
@@ -345,7 +382,6 @@ function toast(msg, type){
 var balance = 0;
 var currentBanner = 0;
 
-/* Banner Slider */
 function goBanner(index){
   currentBanner = index;
   document.getElementById('bannerTrack').style.transform = 'translateX(-' + (index * 50) + '%)';
