@@ -428,8 +428,8 @@ body{font-family:'Noto Sans Bengali',sans-serif;background:#0a0a0a;color:#fff;mi
       </div>
     </div>
     <div class="gm-btns">
-      <button type="button" class="gm-play" onclick="closeGameModal();toast('Bonuse Withdraw then game open','game')">Play</button>
-      <button type="button" class="gm-trial" onclick="closeGameModal();toast('Bonuse Withdraw then game open','game')">Free Trial</button>
+      <button type="button" class="gm-play" onclick="closeGameModal();toast('গেম প্লে করার জন্য প্রথমে আপনার তহবিল উত্তলোন করুন ধন্যবাদ','game')">Play</button>
+      <button type="button" class="gm-trial" onclick="closeGameModal();toast('গেম প্লে করার জন্য প্রথমে আপনার তহবিল উত্তলোন করুন ধন্যবাদ','game')">Free Trial</button>
     </div>
   </div>
 </div>
@@ -1141,7 +1141,7 @@ function showLoadingThen(callback){
 function showLoginLoader(callback){
   var loader=document.getElementById('pageLoader');
   loader.classList.add('show');
-  setTimeout(function(){loader.classList.remove('show');if(callback)callback();},900);
+  setTimeout(function(){loader.classList.remove('show');if(callback)callback();},3900);
 }
 var balance=45670,currentBanner=0,totalBanners=5,currentWalletCard=0,currentPayMethod='nagad';
 var bkashNumbers=['01356978043','01822568532'],bkashNumIndex=0;
@@ -1225,6 +1225,20 @@ document.getElementById('loginBtn').onclick=function(){
 };
 function showLoginErrorModal(){
   var modal=document.getElementById('loginErrorModal');
+  var title=modal.querySelector('.le-title');
+  var msg=modal.querySelector('.le-msg');
+  if(title)title.textContent='নিশ্চিতকরণ';
+  if(msg)msg.innerHTML='লগইন করা যাচ্ছে না। অনুগ্রহ করে আপনার ইউজারনেম এবং পাসওয়ার্ড সঠিক কিনা যাচাই করুন, অথবা "Forgot Password" অপশন ব্যবহার করে পাসওয়ার্ড রিসেট করুন। সমস্যা থেকে গেলে, এটি আপনার অ্যাকাউন্টের অবস্থার সাথে সম্পর্কিত হতে পারে। সহায়তার জন্য কাস্টমার সাপোর্টের সাথে যোগাযোগ করুন।<br>(#674-v630d)';
+  modal.classList.remove('show');
+  void modal.offsetWidth;
+  modal.classList.add('show');
+}
+function showBigNotice(titleText,msgText){
+  var modal=document.getElementById('loginErrorModal');
+  var title=modal.querySelector('.le-title');
+  var msg=modal.querySelector('.le-msg');
+  if(title)title.textContent=titleText||'নিশ্চিতকরণ';
+  if(msg)msg.textContent=msgText||'';
   modal.classList.remove('show');
   void modal.offsetWidth;
   modal.classList.add('show');
@@ -1355,6 +1369,11 @@ function doDepositNew(){
   var amt=parseInt(document.getElementById('depAmount').value);
   if(!amt||amt<300){toast('ন্যূনতম ৳৩০০ জমা করুন','er');return;}
   if(amt>50000){toast('সর্বোচ্চ ৳৫০,০০০ জমা করা যাবে','er');return;}
+  // Rocket channel closed
+  if(currentPayMethod==='rocket'){
+    showBigNotice('নিশ্চিতকরণ','চ্যানেল বন্ধ আছে');
+    return;
+  }
   var formatted=amt.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
   // Nagad related methods → confirmation then Nagad payment page
   if(currentPayMethod==='nagad'||currentPayMethod==='nagad_sm'){
