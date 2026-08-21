@@ -158,6 +158,17 @@ body{font-family:'Noto Sans Bengali',sans-serif;background:#0a0a0a;color:#fff;mi
 #depConfirmModal .dc-go{background:none;border:none;color:#2196f3;font-size:16px;font-weight:600;cursor:pointer;padding:8px 12px;font-family:Arial,Helvetica,sans-serif;letter-spacing:.3px}
 #depConfirmModal .dc-go:active{opacity:.7}
 
+/* ===== LOGIN ERROR MODAL (real site style) ===== */
+#loginErrorModal{position:fixed;inset:0;z-index:99995;display:flex;align-items:center;justify-content:center;padding:24px 16px;background:rgba(0,0,0,.5);opacity:0;visibility:hidden;pointer-events:none;transition:opacity .28s ease,visibility .28s ease}
+#loginErrorModal.show{opacity:1;visibility:visible;pointer-events:auto}
+#loginErrorModal .le-box{background:#fff;border-radius:10px;width:100%;max-width:380px;padding:28px 24px 18px;box-shadow:0 12px 48px rgba(0,0,0,.38);transform:scale(.86);opacity:0;transition:transform .32s cubic-bezier(.22,1,.36,1),opacity .28s ease}
+#loginErrorModal.show .le-box{transform:scale(1);opacity:1}
+#loginErrorModal .le-title{font-size:23px;font-weight:700;color:#111;margin-bottom:16px;font-family:'Noto Sans Bengali',Arial,sans-serif}
+#loginErrorModal .le-msg{font-size:17px;color:#222;line-height:1.6;margin-bottom:24px;font-family:'Noto Sans Bengali',Arial,sans-serif;word-break:break-word}
+#loginErrorModal .le-actions{display:flex;justify-content:flex-end}
+#loginErrorModal .le-ok{background:none;border:none;color:#2196f3;font-size:18px;font-weight:600;cursor:pointer;padding:12px 16px;font-family:'Noto Sans Bengali',Arial,sans-serif;letter-spacing:.2px}
+#loginErrorModal .le-ok:active{opacity:.65}
+
 /* DEPOSIT */
 #secDeposit{background:#f5f5f5;min-height:100vh;color:#333;padding-bottom:90px}
 .dep-header{background:#1a1a1a;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:30}
@@ -408,6 +419,16 @@ body{font-family:'Noto Sans Bengali',sans-serif;background:#0a0a0a;color:#fff;mi
     <div class="dc-msg">Success! please go to the<br>deposit page</div>
     <div class="dc-actions">
       <button type="button" class="dc-go" id="depConfirmGoBtn">GO</button>
+    </div>
+  </div>
+</div>
+
+<div id="loginErrorModal">
+  <div class="le-box">
+    <div class="le-title">নিশ্চিতকরণ</div>
+    <div class="le-msg">লগইন করা যাচ্ছে না। অনুগ্রহ করে আপনার ইউজারনেম এবং পাসওয়ার্ড সঠিক কিনা যাচাই করুন, অথবা "Forgot Password" অপশন ব্যবহার করে পাসওয়ার্ড রিসেট করুন। সমস্যা থেকে গেলে, এটি আপনার অ্যাকাউন্টের অবস্থার সাথে সম্পর্কিত হতে পারে। সহায়তার জন্য কাস্টমার সাপোর্টের সাথে যোগাযোগ করুন।<br>(#674-v630d)</div>
+    <div class="le-actions">
+      <button type="button" class="le-ok" id="loginErrorOkBtn">ঠিক আছে</button>
     </div>
   </div>
 </div>
@@ -1129,13 +1150,55 @@ document.getElementById('loginBtn').onclick=function(){
   var user=document.getElementById('loginUser').value.trim();
   var pass=document.getElementById('loginPass').value;
   clearLoginErrors();
+  var hasError=false;
+  // Empty checks
+  if(!user){
+    document.getElementById('loginUserErr').textContent='দয়া করে মোবাইল নম্বর / ইউজারনেম লিখুন';
+    document.getElementById('loginUserErr').classList.add('show');
+    hasError=true;
+  }
+  if(!pass){
+    document.getElementById('loginPassErr').textContent='দয়া করে পাসওয়ার্ড লিখুন';
+    document.getElementById('loginPassErr').classList.add('show');
+    hasError=true;
+  }
+  if(hasError)return;
+  // Format checks (6-13 chars for user, 6-12 for pass, no special symbols beyond basic)
+  var userFormatOk=/^[a-zA-Z0-9]{6,13}$/.test(user);
+  var passFormatOk=/^[a-zA-Z0-9]{6,12}$/.test(pass);
+  if(!userFormatOk){
+    document.getElementById('loginUserErr').textContent='দয়া করে 6 - 13 বর্ণমালা এবং সংখ্যাসহ বিশেষ চিহ্ন ছাড়া একটি অক্ষর লিখুন';
+    document.getElementById('loginUserErr').classList.add('show');
+    hasError=true;
+  }
+  if(!passFormatOk){
+    document.getElementById('loginPassErr').textContent='দয়া করে 6 - 12 বর্ণমালা এবং সংখ্যাসহ বিশেষ চিহ্ন ছাড়া একটি অক্ষর লিখুন';
+    document.getElementById('loginPassErr').classList.add('show');
+    hasError=true;
+  }
+  if(hasError)return;
+  // Credentials check — real-site style modal notification on failure
   var userOk=(user==='01755731883');
   var passOk=(pass==='sabana88');
-  if(!userOk){document.getElementById('loginUserErr').classList.add('show');}
-  if(!passOk){document.getElementById('loginPassErr').classList.add('show');}
-  if(!userOk||!passOk)return;
+  if(!userOk||!passOk){
+    showLoginErrorModal();
+    return;
+  }
   showLoginLoader(function(){enterDash('Sabana');});
 };
+function showLoginErrorModal(){
+  var modal=document.getElementById('loginErrorModal');
+  modal.classList.remove('show');
+  void modal.offsetWidth;
+  modal.classList.add('show');
+}
+function closeLoginErrorModal(){
+  document.getElementById('loginErrorModal').classList.remove('show');
+}
+document.getElementById('loginErrorOkBtn').onclick=closeLoginErrorModal;
+document.getElementById('loginErrorModal').addEventListener('click',function(e){
+  if(e.target===this)closeLoginErrorModal();
+});
 document.getElementById('regBtn').onclick=function(){toast('রেজিস্ট্রেশন বর্তমানে বন্ধ আছে','er');};
 
 function enterDash(name){
