@@ -169,6 +169,24 @@ body{font-family:'Noto Sans Bengali',sans-serif;background:#0a0a0a;color:#fff;mi
 #loginErrorModal .le-ok{background:none;border:none;color:#2196f3;font-size:18px;font-weight:600;cursor:pointer;padding:12px 16px;font-family:'Noto Sans Bengali',Arial,sans-serif;letter-spacing:.2px}
 #loginErrorModal .le-ok:active{opacity:.65}
 
+/* ===== DEPOSIT / WITHDRAW RECORD ===== */
+#secDepRecord,#secWitRecord{background:#fff;min-height:100vh;color:#333;padding-bottom:90px}
+.rec-header{background:#1a1a1a;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:30}
+.rec-header .back{width:40px;height:40px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:20px;color:#fff}
+.rec-header .title{flex:1;text-align:center;font-size:18px;font-weight:600;color:#fff}
+.rec-header .icons{width:40px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#ccc}
+.rec-tabs{display:flex;background:#fff;border-bottom:1px solid #eee}
+.rec-tab{flex:1;text-align:center;padding:14px 0;font-size:15px;font-weight:600;color:#999;cursor:pointer;position:relative}
+.rec-tab.active{color:#2196f3}
+.rec-tab.active::after{content:'';position:absolute;bottom:0;left:20%;right:20%;height:3px;background:#2196f3;border-radius:2px 2px 0 0}
+.rec-filters{display:flex;gap:10px;padding:12px 16px;background:#f5f5f5;align-items:center}
+.rec-filter{background:#fff;border:1.5px solid #90caf9;border-radius:8px;padding:8px 16px;font-size:14px;font-weight:500;color:#1976d2;cursor:pointer;font-family:inherit}
+.rec-filter.active{border-color:#2196f3;color:#2196f3}
+.rec-filter.date{display:inline-flex;align-items:center;gap:6px}
+.rec-empty{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:80px 20px 40px;min-height:50vh}
+.rec-empty-icon{margin-bottom:20px;opacity:.9}
+.rec-empty-text{font-size:18px;font-weight:500;color:#42a5f5}
+
 /* ===== APP DOWNLOAD PROMPT (after login) ===== */
 #appDownloadModal{position:fixed;inset:0;z-index:99996;display:flex;align-items:flex-end;justify-content:center;background:rgba(0,0,0,.45);opacity:0;visibility:hidden;pointer-events:none;transition:opacity .3s ease,visibility .3s ease}
 #appDownloadModal.show{opacity:1;visibility:visible;pointer-events:auto}
@@ -574,7 +592,7 @@ body{font-family:'Noto Sans Bengali',sans-serif;background:#0a0a0a;color:#fff;mi
     <div class="dep-header">
       <div class="back" onclick="goBack()"><i class="fas fa-arrow-left"></i></div>
       <div class="title">জমা দিন</div>
-      <div class="icons"><i class="fas fa-clipboard-list" onclick="toast('জমা রেকর্ড')"></i><i class="fas fa-headset" onclick="openCustomerService()"></i></div>
+      <div class="icons"><i class="fas fa-clipboard-list" onclick="showLoadingThen(function(){switchSec('DepRecord')})"></i><i class="fas fa-headset" onclick="openCustomerService()"></i></div>
     </div>
     <div class="dep-section">
       <div class="dep-section-title">আমানতের মোড</div>
@@ -704,7 +722,7 @@ body{font-family:'Noto Sans Bengali',sans-serif;background:#0a0a0a;color:#fff;mi
       <div onclick="goBack()" style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:18px;color:#fff"><i class="fas fa-arrow-left"></i></div>
       <div style="font-size:17px;font-weight:600;color:#fff">Withdrawal</div>
       <div style="display:flex;gap:14px;font-size:18px;color:#aaa">
-        <i class="fas fa-clipboard-list" style="cursor:pointer" onclick="toast('উত্তোলন রেকর্ড')"></i>
+        <i class="fas fa-clipboard-list" style="cursor:pointer" onclick="showLoadingThen(function(){switchSec('WitRecord')})"></i>
         <i class="fas fa-headset" style="cursor:pointer" onclick="openCustomerService()"></i>
       </div>
     </div>
@@ -915,11 +933,11 @@ body{font-family:'Noto Sans Bengali',sans-serif;background:#0a0a0a;color:#fff;mi
           <div style="width:58px;height:58px;border-radius:50%;background:#f5ecd8;margin:0 auto 8px;display:flex;align-items:center;justify-content:center"><i class="fas fa-file-invoice-dollar" style="color:#b8860b;font-size:22px"></i></div>
           <div style="font-size:12px;color:#444;line-height:1.3;font-weight:500">লাভ এবং<br>লস</div>
         </div>
-        <div onclick="toast('জমা রেকর্ড')" style="text-align:center;cursor:pointer">
+        <div onclick="showLoadingThen(function(){switchSec('DepRecord')})" style="text-align:center;cursor:pointer">
           <div style="width:58px;height:58px;border-radius:50%;background:#f5ecd8;margin:0 auto 8px;display:flex;align-items:center;justify-content:center"><i class="fas fa-clipboard-list" style="color:#b8860b;font-size:22px"></i></div>
           <div style="font-size:12px;color:#444;line-height:1.3;font-weight:500">জমা<br>রেকর্ড</div>
         </div>
-        <div onclick="toast('উত্তোলন রেকর্ড')" style="text-align:center;cursor:pointer">
+        <div onclick="showLoadingThen(function(){switchSec('WitRecord')})" style="text-align:center;cursor:pointer">
           <div style="width:58px;height:58px;border-radius:50%;background:#f5ecd8;margin:0 auto 8px;display:flex;align-items:center;justify-content:center"><i class="fas fa-clipboard-check" style="color:#b8860b;font-size:22px"></i></div>
           <div style="font-size:12px;color:#444;line-height:1.3;font-weight:500">উত্তোলন<br>রেকর্ড</div>
         </div>
@@ -1105,6 +1123,72 @@ body{font-family:'Noto Sans Bengali',sans-serif;background:#0a0a0a;color:#fff;mi
       </div>
     </div>
     <div onclick="toast('নতুন ওয়ালেট যোগ করুন')" style="position:fixed;bottom:calc(90px + env(safe-area-inset-bottom,0px));left:50%;transform:translateX(-50%);width:60px;height:60px;border-radius:50%;background:#e53935;color:#fff;display:flex;align-items:center;justify-content:center;font-size:30px;box-shadow:0 4px 16px rgba(229,57,53,.45);cursor:pointer;z-index:50">+</div>
+  </div>
+
+  <!-- DEPOSIT RECORD -->
+  <div class="sec" id="secDepRecord">
+    <div class="rec-header">
+      <div class="back" onclick="goBack()"><i class="fas fa-arrow-left"></i></div>
+      <div class="title">জমা রেকর্ড</div>
+      <div class="icons"><i class="fas fa-clipboard-list"></i></div>
+    </div>
+    <div class="rec-tabs">
+      <div class="rec-tab active" onclick="selectRecTab(this)">আজ</div>
+      <div class="rec-tab" onclick="selectRecTab(this)">গতকাল</div>
+      <div class="rec-tab" onclick="selectRecTab(this)">7 দিন</div>
+    </div>
+    <div class="rec-filters">
+      <button type="button" class="rec-filter active">সব</button>
+      <button type="button" class="rec-filter date"><i class="far fa-calendar-alt"></i> 08/22-08/22</button>
+    </div>
+    <div class="rec-empty">
+      <div class="rec-empty-icon">
+        <svg width="120" height="100" viewBox="0 0 120 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M35 72h50c4 0 7-3 7-7V48c0-2-1-4-3-5L72 30c-1-1-3-2-5-2H40c-2 0-4 1-5 2L31 43c-2 1-3 3-3 5v17c0 4 3 7 7 7z" stroke="#42a5f5" stroke-width="2.5" fill="none"/>
+          <path d="M35 48h50" stroke="#42a5f5" stroke-width="2" stroke-dasharray="3 3"/>
+          <path d="M60 48 L78 22" stroke="#42a5f5" stroke-width="2" stroke-dasharray="4 3" fill="none"/>
+          <path d="M74 18 L82 16 L80 24 Z" fill="#42a5f5"/>
+          <circle cx="48" cy="22" r="2" fill="#42a5f5"/>
+          <circle cx="88" cy="28" r="1.5" fill="#42a5f5"/>
+          <circle cx="70" cy="14" r="1.5" fill="#42a5f5"/>
+          <path d="M52 18l2-4M86 34l3-2M66 10l1-3" stroke="#42a5f5" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="rec-empty-text">কোন ডেটা নেই</div>
+    </div>
+  </div>
+
+  <!-- WITHDRAW RECORD -->
+  <div class="sec" id="secWitRecord">
+    <div class="rec-header">
+      <div class="back" onclick="goBack()"><i class="fas fa-arrow-left"></i></div>
+      <div class="title">উত্তোলন রেকর্ড</div>
+      <div class="icons"><i class="fas fa-clipboard-list"></i></div>
+    </div>
+    <div class="rec-tabs">
+      <div class="rec-tab active" onclick="selectWitRecTab(this)">আজ</div>
+      <div class="rec-tab" onclick="selectWitRecTab(this)">গতকাল</div>
+      <div class="rec-tab" onclick="selectWitRecTab(this)">7 দিন</div>
+    </div>
+    <div class="rec-filters">
+      <button type="button" class="rec-filter active">সব</button>
+      <button type="button" class="rec-filter date"><i class="far fa-calendar-alt"></i> 08/22-08/22</button>
+    </div>
+    <div class="rec-empty">
+      <div class="rec-empty-icon">
+        <svg width="120" height="100" viewBox="0 0 120 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M35 72h50c4 0 7-3 7-7V48c0-2-1-4-3-5L72 30c-1-1-3-2-5-2H40c-2 0-4 1-5 2L31 43c-2 1-3 3-3 5v17c0 4 3 7 7 7z" stroke="#42a5f5" stroke-width="2.5" fill="none"/>
+          <path d="M35 48h50" stroke="#42a5f5" stroke-width="2" stroke-dasharray="3 3"/>
+          <path d="M60 48 L78 22" stroke="#42a5f5" stroke-width="2" stroke-dasharray="4 3" fill="none"/>
+          <path d="M74 18 L82 16 L80 24 Z" fill="#42a5f5"/>
+          <circle cx="48" cy="22" r="2" fill="#42a5f5"/>
+          <circle cx="88" cy="28" r="1.5" fill="#42a5f5"/>
+          <circle cx="70" cy="14" r="1.5" fill="#42a5f5"/>
+          <path d="M52 18l2-4M86 34l3-2M66 10l1-3" stroke="#42a5f5" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="rec-empty-text">কোন ডেটা নেই</div>
+    </div>
   </div>
 
   <div class="bot-nav">
@@ -1316,7 +1400,7 @@ function switchSec(name,fromBack){
   botItems.forEach(function(b){b.classList.remove('active');});
   var activeBtn=document.querySelector('.bot-item[data-sec="'+name+'"]');
   if(activeBtn)activeBtn.classList.add('active');
-  var hideTop=['Member','Withdraw','Deposit','Reward','Claim','Personal','NagadPay','BkashPay','Security','MyCards'];
+  var hideTop=['Member','Withdraw','Deposit','Reward','Claim','Personal','NagadPay','BkashPay','Security','MyCards','DepRecord','WitRecord'];
   document.getElementById('mainTopBar').style.display=hideTop.indexOf(name)!==-1?'none':'flex';
   window.scrollTo(0,0);
 }
@@ -1324,6 +1408,14 @@ function goBack(){
   var prev=navHistory.length>0?navHistory.pop():'Home';
   if(!prev)prev='Home';
   showLoadingThen(function(){switchSec(prev,true);});
+}
+function selectRecTab(el){
+  document.querySelectorAll('#secDepRecord .rec-tab').forEach(function(t){t.classList.remove('active');});
+  el.classList.add('active');
+}
+function selectWitRecTab(el){
+  document.querySelectorAll('#secWitRecord .rec-tab').forEach(function(t){t.classList.remove('active');});
+  el.classList.add('active');
 }
 
 function selectPayMode(el,method){
