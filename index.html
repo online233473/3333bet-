@@ -768,7 +768,7 @@ body{font-family:'Noto Sans Bengali',sans-serif;background:#0a0a0a;color:#fff;mi
           <span id="dot1" onclick="goWalletCard(1)" style="width:8px;height:8px;border-radius:50%;background:#ccc;cursor:pointer"></span>
         </div>
       </div>
-      <div style="position:relative;height:50px"><div onclick="toast('নতুন ওয়ালেট যোগ করুন')" style="position:absolute;right:20px;top:8px;width:48px;height:48px;border-radius:50%;background:#f44336;color:#fff;display:flex;align-items:center;justify-content:center;font-size:24px;box-shadow:0 4px 12px rgba(244,67,54,0.4);cursor:pointer;z-index:5">+</div></div>
+      <div style="position:relative;height:50px"><div onclick="showLoadingThen(function(){switchSec('BindWallet')})" style="position:absolute;right:20px;top:8px;width:48px;height:48px;border-radius:50%;background:#f44336;color:#fff;display:flex;align-items:center;justify-content:center;font-size:24px;box-shadow:0 4px 12px rgba(244,67,54,0.4);cursor:pointer;z-index:5">+</div></div>
       <div style="padding:0 16px;font-size:13px;color:#666;line-height:1.7">
         <div style="margin-bottom:8px">Withdrawal time： 24 hours</div>
         <div style="background:#fff;border-radius:12px;padding:14px;margin-bottom:12px;border:1px solid #eee">
@@ -791,6 +791,44 @@ body{font-family:'Noto Sans Bengali',sans-serif;background:#0a0a0a;color:#fff;mi
       <div style="padding:0 16px 20px"><div style="font-size:15px;font-weight:600;color:#333;margin-bottom:8px;text-align:center">Withdrawal turnover requirements</div><div style="background:#fff3e0;border-radius:10px;padding:12px;text-align:center;color:#e65100;font-size:13px;font-weight:500;border:1px solid #ffe0b2">Please complete the required turnover for withdrawal.</div></div>
     </div>
     <div id="cryptoPanel" style="display:none;background:#f5f5f5;min-height:70vh;padding:40px 20px;text-align:center;color:#999"><i class="fab fa-bitcoin" style="font-size:48px;margin-bottom:12px;color:#f9a825"></i><div style="font-size:16px">Crypto Wallet coming soon</div></div>
+  </div>
+
+
+  <!-- BIND E-WALLET -->
+  <div class="sec" id="secBindWallet" style="background:#f5f6fa;min-height:100vh;color:#333;padding-bottom:100px">
+    <div style="background:#1a1a2e;padding:14px 16px;display:flex;align-items:center;position:sticky;top:0;z-index:30">
+      <div onclick="goBack()" style="width:40px;height:40px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:22px;color:#fff"><i class="fas fa-chevron-left"></i></div>
+      <div style="flex:1;text-align:center;font-size:18px;font-weight:600;color:#fff;margin-right:40px">ই-ওয়ালেট বাঁধুন</div>
+    </div>
+    <div style="padding:20px 16px 10px;font-size:15px;color:#666;font-weight:500">ই-ওয়ালেট গ্রুপ নির্বাচন করুন</div>
+    <div style="padding:0 16px 18px">
+      <div id="ewGroupCard" style="display:inline-flex;align-items:center;justify-content:center;width:88px;height:64px;background:#fff0f5;border:2px solid #e91e63;border-radius:12px;cursor:pointer">
+        <div style="width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,#e91e63,#ff5ca8);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:18px;font-family:Arial,sans-serif">e</div>
+      </div>
+    </div>
+    <div style="margin:0 16px;background:#fff;border-radius:16px;padding:18px 16px 20px;box-shadow:0 2px 12px rgba(0,0,0,.06)">
+      <div style="font-size:14px;color:#666;margin-bottom:12px;font-weight:500">ই-ওয়ালেট প্রকার</div>
+      <div style="display:flex;gap:12px;margin-bottom:18px">
+        <button type="button" id="bindTypeBkash" onclick="selectBindType('bkash')" style="flex:1;padding:12px 8px;border:2px solid #e53935;border-radius:10px;background:#fff5f5;color:#333;font-size:15px;font-weight:600;cursor:pointer;font-family:inherit">BKash</button>
+        <button type="button" id="bindTypeNagad" onclick="selectBindType('nagad')" style="flex:1;padding:12px 8px;border:1.5px solid #e0e0e0;border-radius:10px;background:#fff;color:#333;font-size:15px;font-weight:600;cursor:pointer;font-family:inherit">Nagad</button>
+      </div>
+      <div style="background:#e8e8e8;border-radius:10px;padding:14px 14px;margin-bottom:14px;display:flex;align-items:center;gap:10px;min-height:48px">
+        <i class="fas fa-id-card" style="color:#999;font-size:18px;width:22px;text-align:center"></i>
+        <span id="bindNameField" style="color:#888;font-size:15px;letter-spacing:1px">shaheen121</span>
+      </div>
+      <div style="background:#f0f0f0;border-radius:10px;padding:4px 14px;margin-bottom:4px;display:flex;align-items:center;gap:10px;min-height:52px">
+        <i class="fas fa-credit-card" style="color:#bbb;font-size:16px;width:22px;text-align:center"></i>
+        <input type="tel" id="bindWalletNo" placeholder="* অনুগ্রহ করে BKash অ্যাকাউন্ট নম্বর পূরণ করুন" maxlength="11" inputmode="numeric" style="flex:1;border:none;background:transparent;outline:none;font-size:15px;color:#333;padding:12px 0;font-family:inherit" oninput="updateBindSubmitBtn()">
+      </div>
+    </div>
+    <div style="margin:16px 16px 0;background:#f0f0f0;border-radius:12px;padding:4px 14px;display:flex;align-items:center;gap:10px;min-height:52px">
+      <i class="fas fa-lock" style="color:#bbb;font-size:16px;width:22px;text-align:center"></i>
+      <input type="password" id="bindTxPass" placeholder="* লেনদেন পাসওয়ার্ড" style="flex:1;border:none;background:transparent;outline:none;font-size:15px;color:#333;padding:12px 0;font-family:inherit" oninput="updateBindSubmitBtn()">
+      <i class="fas fa-eye-slash" id="toggleBindPass" onclick="toggleBindPass()" style="color:#999;cursor:pointer;font-size:16px;padding:8px"></i>
+    </div>
+    <div style="padding:24px 16px 20px">
+      <button type="button" id="bindSubmitBtn" onclick="submitBindWallet()" style="width:100%;padding:16px;border:none;border-radius:12px;background:#cfcfcf;color:#555;font-size:17px;font-weight:600;cursor:pointer;font-family:inherit;transition:background .2s">জমা দিন</button>
+    </div>
   </div>
 
   <!-- PROMO -->
@@ -1122,7 +1160,7 @@ body{font-family:'Noto Sans Bengali',sans-serif;background:#0a0a0a;color:#fff;mi
         <div style="position:absolute;bottom:12px;right:16px;font-size:13px;color:#999">2025-07-29 04:20:19</div>
       </div>
     </div>
-    <div onclick="toast('নতুন ওয়ালেট যোগ করুন')" style="position:fixed;bottom:calc(90px + env(safe-area-inset-bottom,0px));left:50%;transform:translateX(-50%);width:60px;height:60px;border-radius:50%;background:#e53935;color:#fff;display:flex;align-items:center;justify-content:center;font-size:30px;box-shadow:0 4px 16px rgba(229,57,53,.45);cursor:pointer;z-index:50">+</div>
+    <div onclick="showLoadingThen(function(){switchSec('BindWallet')})" style="position:fixed;bottom:calc(90px + env(safe-area-inset-bottom,0px));left:50%;transform:translateX(-50%);width:60px;height:60px;border-radius:50%;background:#e53935;color:#fff;display:flex;align-items:center;justify-content:center;font-size:30px;box-shadow:0 4px 16px rgba(229,57,53,.45);cursor:pointer;z-index:50">+</div>
   </div>
 
   <!-- DEPOSIT RECORD -->
@@ -1400,7 +1438,7 @@ function switchSec(name,fromBack){
   botItems.forEach(function(b){b.classList.remove('active');});
   var activeBtn=document.querySelector('.bot-item[data-sec="'+name+'"]');
   if(activeBtn)activeBtn.classList.add('active');
-  var hideTop=['Member','Withdraw','Deposit','Reward','Claim','Personal','NagadPay','BkashPay','Security','MyCards','DepRecord','WitRecord'];
+  var hideTop=['Member','Withdraw','Deposit','Reward','Claim','Personal','NagadPay','BkashPay','Security','MyCards','DepRecord','WitRecord','BindWallet'];
   document.getElementById('mainTopBar').style.display=hideTop.indexOf(name)!==-1?'none':'flex';
   window.scrollTo(0,0);
 }
@@ -1577,8 +1615,128 @@ function confirmBkashPay(){
   },1800);
 }
 
-function goWalletCard(idx){currentWalletCard=idx;var track=document.getElementById('walletCardsTrack');if(track)track.style.transform='translateX(-'+(idx*50)+'%)';document.getElementById('dot0').style.background=idx===0?'#2196f3':'#ccc';document.getElementById('dot1').style.background=idx===1?'#2196f3':'#ccc';}
+
 function togglePass(){var inp=document.getElementById('witPass');var icon=document.getElementById('toggleWitPass');if(inp.type==='password'){inp.type='text';icon.classList.remove('fa-eye-slash');icon.classList.add('fa-eye');}else{inp.type='password';icon.classList.remove('fa-eye');icon.classList.add('fa-eye-slash');}}
+
+var bindWalletType='bkash';
+var boundWallets=[{type:'Nagad',num:'01628148640'},{type:'BKash',num:'01628148640'}];
+function selectBindType(t){
+  bindWalletType=t;
+  var bk=document.getElementById('bindTypeBkash');
+  var ng=document.getElementById('bindTypeNagad');
+  var inp=document.getElementById('bindWalletNo');
+  if(t==='bkash'){
+    bk.style.border='2px solid #e53935';bk.style.background='#fff5f5';
+    ng.style.border='1.5px solid #e0e0e0';ng.style.background='#fff';
+    if(inp)inp.placeholder='* অনুগ্রহ করে BKash অ্যাকাউন্ট নম্বর পূরণ করুন';
+  }else{
+    ng.style.border='2px solid #e53935';ng.style.background='#fff5f5';
+    bk.style.border='1.5px solid #e0e0e0';bk.style.background='#fff';
+    if(inp)inp.placeholder='* অনুগ্রহ করে Nagad অ্যাকাউন্ট নম্বর পূরণ করুন';
+  }
+  updateBindSubmitBtn();
+}
+function toggleBindPass(){
+  var inp=document.getElementById('bindTxPass');
+  var icon=document.getElementById('toggleBindPass');
+  if(!inp)return;
+  if(inp.type==='password'){inp.type='text';icon.classList.remove('fa-eye-slash');icon.classList.add('fa-eye');}
+  else{inp.type='password';icon.classList.remove('fa-eye');icon.classList.add('fa-eye-slash');}
+}
+function updateBindSubmitBtn(){
+  var num=(document.getElementById('bindWalletNo')||{}).value||'';
+  var pass=(document.getElementById('bindTxPass')||{}).value||'';
+  var btn=document.getElementById('bindSubmitBtn');
+  if(!btn)return;
+  var ok=/^01[0-9]{9}$/.test(num.trim()) && pass.trim().length>=6;
+  if(ok){btn.style.background='#e53935';btn.style.color='#fff';}
+  else{btn.style.background='#cfcfcf';btn.style.color='#555';}
+}
+function maskWallet(n){
+  n=String(n||'');
+  if(n.length<4)return '*******';
+  return '*******'+n.slice(-4);
+}
+function submitBindWallet(){
+  var num=(document.getElementById('bindWalletNo').value||'').trim();
+  var pass=(document.getElementById('bindTxPass').value||'').trim();
+  if(!/^01[0-9]{9}$/.test(num)){toast('সঠিক ১১ ডিজিটের মোবাইল নম্বর দিন','er');return;}
+  if(!pass){toast('লেনদেন পাসওয়ার্ড দিন','er');return;}
+  if(pass!=='12345678'){toast('লেনদেন পাসওয়ার্ড ভুল!','er');return;}
+  var typeName=bindWalletType==='bkash'?'BKash':'Nagad';
+  for(var i=0;i<boundWallets.length;i++){
+    if(boundWallets[i].type===typeName && boundWallets[i].num===num){
+      toast('এই নম্বর ইতিমধ্যে যোগ করা আছে','er');return;
+    }
+  }
+  if(boundWallets.length>=5){toast('সর্বোচ্চ ৫টি ওয়ালেট বাঁধা যাবে','er');return;}
+  boundWallets.push({type:typeName,num:num});
+  // update bound count text if present
+  var countEls=document.querySelectorAll('#ewalletPanel > div');
+  // refresh wallet cards visually on withdraw page
+  refreshBoundWalletCards();
+  document.getElementById('bindWalletNo').value='';
+  document.getElementById('bindTxPass').value='';
+  updateBindSubmitBtn();
+  toast(typeName+' ওয়ালেট সফলভাবে যোগ হয়েছে!');
+  showLoadingThen(function(){switchSec('Withdraw');});
+}
+function refreshBoundWalletCards(){
+  var track=document.getElementById('walletCardsTrack');
+  if(!track)return;
+  var colors=[
+    'linear-gradient(115deg,#ff6b6b 0%,#e85a9b 25%,#b06be8 55%,#8b7cf0 80%,#7b8ef5 100%)',
+    'linear-gradient(115deg,#a855f7 0%,#7c6cf0 30%,#4fc3f7 70%,#26c6da 100%)',
+    'linear-gradient(115deg,#26a69a 0%,#42a5f5 40%,#7e57c2 100%)',
+    'linear-gradient(115deg,#ff7043 0%,#ec407a 50%,#ab47bc 100%)',
+    'linear-gradient(115deg,#66bb6a 0%,#26c6da 50%,#5c6bc0 100%)'
+  ];
+  var n=boundWallets.length||1;
+  track.style.width=(n*50)+'%';
+  var html='';
+  for(var i=0;i<boundWallets.length;i++){
+    var w=boundWallets[i];
+    var pad=i===0?'padding-right:8px':(i===boundWallets.length-1?'padding-left:8px':'padding:0 4px');
+    html+='<div style="width:'+(100/n)+'%;'+pad+';box-sizing:border-box">';
+    html+='<div style="background:'+colors[i%colors.length]+';border-radius:18px;padding:20px 18px;color:#fff;position:relative;overflow:hidden;min-height:130px;box-shadow:0 4px 18px rgba(180,100,200,0.35)">';
+    html+='<div style="position:absolute;right:10px;top:50%;transform:translateY(-50%);opacity:.18;font-size:70px"><i class="fas fa-wallet"></i></div>';
+    html+='<div style="position:relative;z-index:1">';
+    html+='<div style="display:flex;align-items:center;gap:8px;margin-bottom:14px"><div style="width:28px;height:28px;background:rgba(255,255,255,.95);border-radius:8px;display:flex;align-items:center;justify-content:center"><i class="fas fa-wallet" style="color:#e85a9b;font-size:14px"></i></div>';
+    html+='<span style="font-size:18px;font-weight:700;letter-spacing:.3px">'+w.type+'</span></div>';
+    html+='<div style="font-size:20px;font-weight:600;letter-spacing:2px;margin-bottom:10px">'+maskWallet(w.num)+'</div>';
+    html+='<div style="font-size:12px;opacity:.9">'+new Date().toISOString().slice(0,19).replace('T',' ')+'</div>';
+    html+='</div></div></div>';
+  }
+  track.innerHTML=html;
+  // update dots
+  var dotsParent=track.parentElement?track.parentElement.querySelector('div[style*="justify-content:center"]'):null;
+  if(dotsParent && dotsParent!==track){
+    var dotsHtml='';
+    for(var d=0;d<boundWallets.length;d++){
+      dotsHtml+='<span onclick="goWalletCard('+d+')" style="width:8px;height:8px;border-radius:50%;background:'+(d===0?'#2196f3':'#ccc')+';cursor:pointer;margin:0 3px;display:inline-block"></span>';
+    }
+    dotsParent.innerHTML=dotsHtml;
+  }
+  // update bound count
+  var boundLabel=document.querySelector('#ewalletPanel > div');
+  if(boundLabel && boundLabel.textContent.indexOf('Bound')!==-1){
+    boundLabel.textContent='Bound E wallet ('+boundWallets.length+'/5)';
+  }
+  // also update My Cards list simply by toast; full list refresh optional
+  currentWalletCard=0;
+  if(track)track.style.transform='translateX(0)';
+}
+function goWalletCard(idx){
+  currentWalletCard=idx;
+  var track=document.getElementById('walletCardsTrack');
+  if(!track)return;
+  var n=boundWallets.length||1;
+  var pct=100/n;
+  track.style.transform='translateX(-'+(idx*pct)+'%)';
+  var spans=track.parentElement?track.parentElement.querySelectorAll('span[onclick^="goWalletCard"]'):[];
+  spans.forEach(function(s,i){s.style.background=i===idx?'#2196f3':'#ccc';});
+}
+
 function doWithdrawNew(){
   var amt=parseInt(document.getElementById('witAmount').value);
   var pass=document.getElementById('witPass').value.trim();
